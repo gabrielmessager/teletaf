@@ -7,7 +7,7 @@ export default function Home({ isConnected, jobs }) {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Create Next App test</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
