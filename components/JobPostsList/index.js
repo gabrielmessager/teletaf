@@ -1,0 +1,1 @@
+export { JobPostsList } from "./JobPostsList"

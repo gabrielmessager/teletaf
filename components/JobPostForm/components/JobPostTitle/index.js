@@ -1,0 +1,1 @@
+export { JobPostTitle } from "./JobPostTitle"

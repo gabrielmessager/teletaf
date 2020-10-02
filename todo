@@ -1,0 +1,2 @@
+[] - adjust <Time /> in <JobPost /> - see line 30-32 + line 91
+[] - remove mockData in <JobPostsList />

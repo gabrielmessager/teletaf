@@ -1,0 +1,1 @@
+export { JobPostDescription } from "./JobPostDescription"

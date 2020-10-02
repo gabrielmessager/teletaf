@@ -1,0 +1,1 @@
+export { JobPostDesign } from "./JobPostDesign"
