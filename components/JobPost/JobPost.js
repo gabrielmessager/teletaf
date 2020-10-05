@@ -33,10 +33,6 @@ const dateFromObjectId = (objectId) => {
 export const JobPost = ({ onClick, jobpost, isOpen }) => {
   const tags = [jobpost?.primary_tag, ...jobpost?.extra_tags];
   const date = dateFromObjectId(jobpost?._id);
-  // const date = ObjectId(id).getTimestamp();
-  console.log("date", date);
-
-  // const date = new Date(jobpost?.createdAt);
   const formattedDate = date.toISOString();
   const postedAt = formatDistanceToNowStrict(date);
   const [height, setHeight] = useState(0);

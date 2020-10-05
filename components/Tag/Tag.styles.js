@@ -1,9 +1,9 @@
-import styled from "styled-components"
-import { nunitoExtraBold } from "../../theme/fonts"
+import styled from "styled-components";
+import { nunitoExtraBold } from "../../theme/fonts";
 
 export const Container = styled.div`
-  background-color: ${p => p.backgroundColor || "none"};
-  border: ${p => !p.backgroundColor && "solid 2px black"};
+  background-color: ${(p) => p.backgroundColor || "none"};
+  border: ${(p) => !p.backgroundColor && "solid 2px black"};
   border-radius: 4px;
   display: inline-block;
   ${nunitoExtraBold}
@@ -14,7 +14,7 @@ export const Container = styled.div`
   max-width: 140px;
   overflow: hidden;
   padding: 4px;
-  padding-top: 6px;
+  /* padding-top: 6px; */
   text-overflow: ellipsis;
   text-transform: uppercase;
   vertical-align: middle;
@@ -24,4 +24,4 @@ export const Container = styled.div`
     color: white;
     background-color: black;
   }
-`
+`;
