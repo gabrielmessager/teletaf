@@ -1,14 +1,15 @@
-import styled, { css } from "styled-components"
-import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts"
-import { easeCurves } from "../../theme/eases"
+import styled, { css } from "styled-components";
+import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts";
+import { easeCurves } from "../../theme/eases";
 
 export const Container = styled.div`
   position: relative;
-`
+  height: 100%;
+`;
 
 export const StyledInput = styled.input`
   ${nunitoRegular};
-  font-size: ${p => `${p.fontSize}px`};
+  font-size: ${(p) => `${p.fontSize}px`};
   border: none;
   width: calc(100% - 16px);
   flex: 1;
@@ -16,14 +17,14 @@ export const StyledInput = styled.input`
   background: transparent;
   caret-color: "blue";
   outline: none;
-  color: ${p => p.color};
+  color: ${(p) => p.color};
   appearance: none;
   height: 100%;
   letter-spacing: 0.4px;
 
 
   &::placeholder {
-    color: ${p => p.color};
+    color: ${(p) => p.color};
   }
 
   &[type="search"]::-webkit-search-cancel-button {
@@ -49,7 +50,7 @@ export const StyledInput = styled.input`
     box-shadow 0.2s ${easeCurves.primary}, opacity 0.2s ${easeCurves.primary},
     color 0.2s ${easeCurves.primary};
   border-radius: 4px;
-`
+`;
 
 export const ErrorMessage = styled.div`
   ${nunitoRegular};
@@ -59,4 +60,4 @@ export const ErrorMessage = styled.div`
   top: 0;
   left: calc(100% + 16px);
   width: 100%;
-`
+`;

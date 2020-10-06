@@ -24,8 +24,8 @@ import { Tag } from "../Tag";
 import { Time } from "../Time";
 import { Button } from "../Button";
 import { useEffect } from "react";
-// import { ObjectId } from "mongodb";
 
+// helper to get `created_at` from mongodb
 const dateFromObjectId = (objectId) => {
   return new Date(parseInt(objectId.substring(0, 8), 16) * 1000);
 };
@@ -73,12 +73,14 @@ export const JobPost = ({ onClick, jobpost, isOpen }) => {
     <div style={{ width: "100%" }}>
       <Container onClick={onClick}>
         <ThumbContainer>
-          <Thumb src={jobpost?.companyLogo} />
+          <Thumb src={jobpost?.company_logo} />
         </ThumbContainer>
         <JobContainer>
-          <CompanyName>{jobpost?.companyName}</CompanyName>
+          <CompanyName>{jobpost?.company_name}</CompanyName>
           <JobTitle>{jobpost?.title}</JobTitle>
           <div>
+            <Tag backgroundColor="lightgrey">{jobpost?.contract_type}</Tag>
+            <Tag backgroundColor="lightgrey">{jobpost?.contract_duration}</Tag>
             <Tag backgroundColor="lightgrey">{jobpost?.location}</Tag>
           </div>
           <TagsContainer className="JobPost__TagsContainer__Mobile">
@@ -98,14 +100,33 @@ export const JobPost = ({ onClick, jobpost, isOpen }) => {
             Postuler
           </Button>
         </TimeAndButtonContainer>
-        {/* <h2>{jobpost?.description}</h2> */}
-        {/* <h2>{jobpost?.requirements}</h2> */}
-        {/* <h2>{jobpost?.responsibilities}</h2> */}
-        {/* <h2>{jobpost?.salary}</h2> */}
-        {/* <h2>{jobpost?.url}</h2> */}
       </Container>
       <DescriptionContainer height={height} isOpen={!isOpen}>
-        <Description ref={ref}>{jobpost?.description}</Description>
+        <Description ref={ref}>
+          {jobpost?.description}
+          <h3>Vos responsabilités 💼</h3>
+          <ul>
+            {jobpost?.responsabilities?.map((responsability) => (
+              <li>{responsability}</li>
+            ))}
+          </ul>
+          <h3>Votre expérience 🏆</h3>
+          <ul>
+            {jobpost?.requirements?.map((requirement) => (
+              <li>{requirement}</li>
+            ))}
+          </ul>
+          <h3>Les avantages 👌</h3>
+          <ul>
+            {jobpost?.benefits?.map((benefit) => (
+              <li>{benefit}</li>
+            ))}
+          </ul>
+          <h3>Rémunération 💰</h3>
+          <ul>
+            <li>{jobpost?.salary}</li>
+          </ul>
+        </Description>
         <Button className="JobPost__ApplyButton__Mobile" href={jobpost?.url}>
           Postuler
         </Button>

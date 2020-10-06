@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts"
-import { easeCurves } from "../../theme/eases"
-import { theme } from "../../theme/theme"
+import styled from "styled-components";
+import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts";
+import { easeCurves } from "../../theme/eases";
+import { theme } from "../../theme/theme";
 
 export const Container = styled.div`
   display: flex;
@@ -42,7 +42,7 @@ export const Container = styled.div`
       display: none;
     }
   }
-`
+`;
 
 export const JobContainer = styled.div`
   display: flex;
@@ -56,7 +56,7 @@ export const JobContainer = styled.div`
   ${theme.mediaQueries.mobile} {
     width: 80%;
   }
-`
+`;
 
 export const ThumbContainer = styled.div`
   min-width: 48px;
@@ -65,19 +65,21 @@ export const ThumbContainer = styled.div`
   height: 48px;
   background-color: red;
   border-radius: 4px;
-`
+`;
 
 export const JobTitle = styled.h2`
   ${nunitoBold}
   font-size: 18px;
   margin: 0;
-`
+  margin-bottom: 4px;
+`;
 
 export const CompanyName = styled.h3`
   ${nunitoLight}
   font-size: 16px;
   margin: 0;
-`
+  margin-bottom: 4px;
+`;
 
 export const TagsContainer = styled.div`
   padding: 0 16px;
@@ -87,7 +89,7 @@ export const TagsContainer = styled.div`
     width: 100%;
     padding: 4px 0;
   }
-`
+`;
 
 export const TimeAndButtonContainer = styled.div`
   display: flex;
@@ -98,8 +100,9 @@ export const TimeAndButtonContainer = styled.div`
   ${theme.mediaQueries.mobile} {
     width: 20%;
   }
-`
+`;
 export const DescriptionContainer = styled.div`
+  ${nunitoLight}
   will-change: transform;
   overflow-y: hidden;
   transition: height 0.3s ${easeCurves.primary};
@@ -107,21 +110,22 @@ export const DescriptionContainer = styled.div`
   width: calc(100% + 32px);
   cursor: pointer;
   transform: translateZ(0);
+  line-height: 1.5;
 
   .JobPost__ApplyButton__Mobile {
     display: none;
   }
 
-  ${p => p.isOpen} && {
-    height: ${p => `${p.height}px`};
+  ${(p) => p.isOpen} && {
+    height: ${(p) => `${p.height}px`};
   }
 
   ${theme.mediaQueries.mobile} {
     display: flex;
     flex-direction: column;
 
-    ${p => p.isOpen} && {
-      height: ${p => `calc(${p.height}px + 48px)`};
+    ${(p) => p.isOpen} && {
+      height: ${(p) => `calc(${p.height}px + 48px)`};
     }
 
     .JobPost__ApplyButton__Mobile {
@@ -129,11 +133,11 @@ export const DescriptionContainer = styled.div`
       margin: 0 auto;
     }
   }
-`
+`;
 
 export const Description = styled.p`
   ${nunitoRegular}
   font-size: 16px;
   margin: 0;
   padding: 16px 80px;
-`
+`;

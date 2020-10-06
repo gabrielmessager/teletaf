@@ -1,2 +1,4 @@
 [] - adjust <Time /> in <JobPost /> - see line 30-32 + line 91
 [] - adjust mobile and desktop layout
+[] - favicon
+[] - Rework <Header /> + <HeaderImage />

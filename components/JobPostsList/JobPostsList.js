@@ -26,11 +26,11 @@ export const JobPostsList = ({ jobs }) => {
       {jobs.map((jobpost) => (
         <JobPost
           onClick={() => {
-            toggleJobPost(jobpost.id);
+            toggleJobPost(jobpost._id);
           }}
-          isOpen={!!openedJobPosts[jobpost.id]}
+          isOpen={!!openedJobPosts[jobpost._id]}
           jobpost={jobpost}
-          key={jobpost.id}
+          key={jobpost._id}
         />
       ))}
     </Container>

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { connectToDatabase } from "../util/mongodb";
+import { NewsletterEmailBar } from "../components/NewsletterEmailBar";
 import { JobPostsList } from "../components/JobPostsList";
 
 export default function Home({ isConnected, jobs }) {
@@ -7,11 +8,22 @@ export default function Home({ isConnected, jobs }) {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Télétaf</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
 
-      <main>{isConnected && <JobPostsList jobs={jobs} />}</main>
+      <main>
+        {isConnected && (
+          <>
+            <NewsletterEmailBar />
+            <JobPostsList jobs={jobs} />
+          </>
+        )}
+      </main>
     </div>
   );
 }

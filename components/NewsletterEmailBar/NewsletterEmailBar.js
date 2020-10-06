@@ -1,9 +1,8 @@
-import React from "react"
-import Media from "react-media"
-import { HeaderImage } from "../HeaderImage"
-import { Input } from "../Input"
-import { Select } from "../Select"
-import { LARGE } from "../../theme/theme"
+import React from "react";
+import Media from "react-media";
+import { Input } from "../Input";
+import { Select } from "../Select";
+import { LARGE } from "../../theme/theme";
 import {
   Container,
   InputContainer,
@@ -12,7 +11,7 @@ import {
   InnerContainer,
   Text,
   MobileContainer,
-} from "./NewsletterEmailBar.styles"
+} from "./NewsletterEmailBar.styles";
 
 function renderDesktop() {
   return (
@@ -20,7 +19,8 @@ function renderDesktop() {
       <Container>
         <InnerContainer>
           <Text>
-            Envoyez-moi les dernières offres de télétravail une fois par
+            Je souhaite recevoir les dernières offres de télétravail une fois
+            par
           </Text>
           <SelectContainer>
             <Select
@@ -47,7 +47,7 @@ function renderDesktop() {
         </InnerContainer>
       </Container>
     </>
-  )
+  );
 }
 
 function renderMobile() {
@@ -85,12 +85,12 @@ function renderMobile() {
         </InnerContainer>
       </Container>
     </>
-  )
+  );
 }
 export function NewsletterEmailBar() {
   return (
     <Media query={LARGE}>
-      {isLarge => (isLarge ? renderDesktop() : renderMobile())}
+      {(isLarge) => (isLarge ? renderDesktop() : renderMobile())}
     </Media>
-  )
+  );
 }

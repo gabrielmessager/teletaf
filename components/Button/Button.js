@@ -1,5 +1,5 @@
-import React from "react"
-import { StyledButton } from "./Button.styles"
+import React from "react";
+import { StyledButton } from "./Button.styles";
 
 export function Button({
   backgroundColor,
@@ -15,8 +15,9 @@ export function Button({
       className={className}
       color={color}
       href={href}
+      target={href && "_blank"}
     >
       {children}
     </StyledButton>
-  )
+  );
 }

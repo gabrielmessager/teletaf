@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import { Button } from "../Button"
-import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts"
-import { theme, MEDIUM_DOWN } from "../../theme/theme"
+import styled from "styled-components";
+import { Button } from "../Button";
+import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts";
+import { theme, MEDIUM_DOWN } from "../../theme/theme";
 
 export const Container = styled.div`
   width: 100%;
@@ -9,7 +9,8 @@ export const Container = styled.div`
   position: fixed;
   bottom: 0;
   background-color: black;
-`
+  z-index: 2;
+`;
 
 export const InnerContainer = styled.div`
   display: flex;
@@ -20,13 +21,13 @@ export const InnerContainer = styled.div`
   @media ${MEDIUM_DOWN} {
     flex-direction: column;
   }
-`
+`;
 
 export const MobileContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 
 export const InputContainer = styled.div`
   background-color: black;
@@ -39,7 +40,7 @@ export const InputContainer = styled.div`
   @media ${MEDIUM_DOWN} {
     width: 200px;
   }
-`
+`;
 
 export const Text = styled.p`
   ${nunitoRegular};
@@ -51,12 +52,12 @@ export const Text = styled.p`
   @media ${MEDIUM_DOWN} {
     font-size: 14px;
   }
-`
+`;
 
 export const SelectContainer = styled.div`
   margin-right: 8px;
-`
+`;
 
 export const StyledButton = styled(Button)`
   height: 42px;
-`
+`;

@@ -14,7 +14,6 @@ export const Container = styled.div`
   max-width: 140px;
   overflow: hidden;
   padding: 4px;
-  /* padding-top: 6px; */
   text-overflow: ellipsis;
   text-transform: uppercase;
   vertical-align: middle;
