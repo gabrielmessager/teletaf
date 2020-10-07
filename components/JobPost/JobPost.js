@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React, { useState, useLayoutEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import formatDistanceToNowStrict from "date-fns/formatDistanceToNowStrict";
@@ -41,33 +34,16 @@ export const JobPost = ({ onClick, jobpost, isOpen }) => {
   useLayoutEffect(() => {
     if (ref.current) {
       setHeight(ref.current.offsetHeight);
+
+      function updateHeight() {
+        setHeight(ref.current.offsetHeight);
+      }
+
+      // recalculate height of each job post when window is resized.
+      window.addEventListener("resize", updateHeight);
+      return () => window.removeEventListener("resize", updateHeight);
     }
   }, []);
-
-  // console.log("height", height)
-
-  // addOns: {
-  //   showLogo: randomBoolean(),
-  //   autobumpAfter30Days: randomBoolean(),
-  //   highlightPost: randomBoolean(),
-  //   useCompanyBrandColor: randomBoolean(),
-  //   isSticky: randomBoolean(),
-  // },
-  // applicationProcess: faker.lorem.text(),
-  // companyLogo: faker.image.avatar(),
-  // companyName: faker.company.companyName(),
-  // createdAt
-  // description: faker.name.jobDescriptor(),
-  // email: faker.internet.email(),
-  // extraTags: [faker.lorem.word(), faker.lorem.word()],
-  // id: faker.random.uuid(),
-  // location: faker.name.jobArea(),
-  // title: faker.name.jobTitle(),
-  // primaryTag: faker.lorem.word(),
-  // requirements: faker.lorem.text(),
-  // responsibilities: faker.lorem.text(),
-  // salary: faker.finance.amount(),
-  // url: faker.internet.url(),
 
   return (
     <div style={{ width: "100%" }}>

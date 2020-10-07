@@ -13,7 +13,7 @@ export default function Home({ isConnected, jobs }) {
         <link
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap"
           rel="stylesheet"
-        ></link>
+        />
       </Head>
 
       <main>
@@ -36,6 +36,9 @@ export async function getServerSideProps(context) {
   const jobs = await db.collection("jobs").find({}).toArray();
 
   return {
-    props: { isConnected, jobs: JSON.parse(JSON.stringify(jobs)) },
+    props: {
+      isConnected,
+      jobs: JSON.parse(JSON.stringify(jobs)),
+    },
   };
 }
