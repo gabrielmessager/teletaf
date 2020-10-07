@@ -7,6 +7,7 @@ export function Button({
   color,
   children,
   href = null,
+  onClick,
 }) {
   return (
     <StyledButton
@@ -15,6 +16,7 @@ export function Button({
       className={className}
       color={color}
       href={href}
+      onClick={onClick}
       target={href && "_blank"}
     >
       {children}
