@@ -2,6 +2,7 @@ import Head from "next/head";
 import { connectToDatabase } from "../util/mongodb";
 import { NewsletterEmailBar } from "../components/NewsletterEmailBar";
 import { JobPostsList } from "../components/JobPostsList";
+import { Header } from "../components/Header";
 
 export default function Home({ isConnected, jobs }) {
   console.log("jobs", jobs);
@@ -19,6 +20,7 @@ export default function Home({ isConnected, jobs }) {
       <main>
         {isConnected && (
           <>
+            <Header />
             <NewsletterEmailBar />
             <JobPostsList jobs={jobs} />
           </>

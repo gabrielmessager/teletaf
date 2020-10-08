@@ -1,22 +1,25 @@
-import styled from "styled-components"
-import { theme } from "../../theme/theme"
+import styled from "styled-components";
+import { theme } from "../../theme/theme";
+import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts";
 
 export const Container = styled.div`
-  position: relative;
-  z-index: 1;
-`
+  ${nunitoRegular}
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+`;
 
-export const InputContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  width: 500px;
-  height: 56px;
-  border-radius: 8px;
+export const UnorderedList = styled.ul`
+  display: flex;
+  list-style-type: none;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+`;
 
-  ${theme.mediaQueries.mobile} {
-    width: 70%;
-  }
-`
+export const ListElement = styled.li`
+  padding: 8px;
+`;

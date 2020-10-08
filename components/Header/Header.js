@@ -1,27 +1,27 @@
 import React from "react";
 import Media from "react-media";
-// import { HeaderImage } from "../HeaderImage";
-import { Input } from "../Input";
-import { Container, InputContainer } from "./Header.styles";
-import { NewsletterEmailBar } from "../NewsletterEmailBar";
+import Link from "next/link";
+import { Container, ListElement, UnorderedList } from "./Header.styles";
 import { LARGE } from "../../theme/theme";
+import Logo from "./logo.svg";
 
-export function Header({ showNewsletterEmailBar }) {
+export function Header() {
   return (
     <Container>
-      {/* <HeaderImage /> */}
-      {/* <InputContainer>
-        <Media query={LARGE}>
-          {isLarge =>
-            isLarge ? (
-              <Input fontSize={24} placeholder="trouvez votre taf à distance" />
-            ) : (
-              <Input fontSize={14} placeholder="trouvez votre taf à distance" />
-            )
-          }
-        </Media>
-      </InputContainer> */}
-      {showNewsletterEmailBar && <NewsletterEmailBar />}
+      <nav>
+        <Logo />
+        <UnorderedList>
+          <ListElement>
+            <Link href="/about">Pourquoi Télétaf?</Link>
+          </ListElement>
+          <ListElement>
+            <Link href="/resources">Resources</Link>
+          </ListElement>
+          <ListElement>
+            <Link href="/new-jobpost">Publier mon annonce</Link>
+          </ListElement>
+        </UnorderedList>
+      </nav>
     </Container>
   );
 }
