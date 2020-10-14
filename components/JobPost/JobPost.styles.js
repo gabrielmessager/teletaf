@@ -135,7 +135,7 @@ export const DescriptionContainer = styled.div`
   }
 `;
 
-export const Description = styled.p`
+export const Description = styled.div`
   ${nunitoRegular}
   font-size: 16px;
   margin: 0;

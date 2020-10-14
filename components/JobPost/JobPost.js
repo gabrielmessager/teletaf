@@ -82,20 +82,20 @@ export const JobPost = ({ onClick, jobpost, isOpen }) => {
           {jobpost?.description}
           <h3>Vos responsabilités 💼</h3>
           <ul>
-            {jobpost?.responsabilities?.map((responsability) => (
-              <li>{responsability}</li>
+            {jobpost?.responsabilities?.map((responsability, i) => (
+              <li key={i}>{responsability}</li>
             ))}
           </ul>
           <h3>Votre expérience 🏆</h3>
           <ul>
-            {jobpost?.requirements?.map((requirement) => (
-              <li>{requirement}</li>
+            {jobpost?.requirements?.map((requirement, i) => (
+              <li key={i}>{requirement}</li>
             ))}
           </ul>
           <h3>Les avantages 👌</h3>
           <ul>
-            {jobpost?.benefits?.map((benefit) => (
-              <li>{benefit}</li>
+            {jobpost?.benefits?.map((benefit, i) => (
+              <li key={i}>{benefit}</li>
             ))}
           </ul>
           <h3>Rémunération 💰</h3>

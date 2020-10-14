@@ -1,5 +1,5 @@
-import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Head from "next/head";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Header } from "../components/Header";
 
 const GlobalStyle = createGlobalStyle`
@@ -17,6 +17,7 @@ const theme = {
 };
 
 export default function App({ Component, pageProps }) {
+  console.log("pageProps", pageProps);
   return (
     <>
       <GlobalStyle />

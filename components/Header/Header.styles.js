@@ -9,8 +9,7 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: red;
+  justify-content: space-evenly;
 `;
 
 export const UnorderedList = styled.ul`
@@ -23,8 +22,8 @@ export const UnorderedList = styled.ul`
 `;
 
 export const ListElement = styled.li`
-  padding: 8px;
+  padding: 16px;
   a {
-    text-decoration: none;
+    text-decoration: none !important;
   }
 `;
