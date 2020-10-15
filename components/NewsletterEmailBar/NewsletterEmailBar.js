@@ -12,23 +12,19 @@ import {
   Text,
   FormContainer,
 } from "./NewsletterEmailBar.styles";
+import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 export function NewsletterEmailBar({ onSubmit }) {
   const [fontSize, setFontSize] = useState(18);
+  const { windowWidth } = useWindowWidth();
 
   useEffect(() => {
-    function updateFontSize() {
-      const isMobile = window.innerWidth < LARGE_MIN;
-      const newFontSize = isMobile ? 14 : 18;
-      setFontSize(newFontSize);
-    }
-    if (window.innerWidth < LARGE_MIN) {
+    if (windowWidth > LARGE_MIN) {
+      setFontSize(18);
+    } else {
       setFontSize(14);
     }
-    // recalculate font size when window is resized.
-    window.addEventListener("resize", updateFontSize);
-    return () => window.removeEventListener("resize", updateFontSize);
-  }, [fontSize, setFontSize]);
+  });
 
   async function onSubmit(email) {
     try {
