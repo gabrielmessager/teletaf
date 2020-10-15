@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Media from "react-media";
 import { Input } from "../Input";
 import { Select } from "../Select";
-import { LARGE, LARGE_MIN } from "../../theme/theme";
+import { LARGE_MIN } from "../../theme/theme";
 import {
   Container,
   InputContainer,
@@ -52,50 +52,43 @@ export function NewsletterEmailBar({ onSubmit }) {
   }
 
   return (
-    <Media query={LARGE}>
-      {(isLarge) => {
-        return (
-          <Container>
-            <InnerContainer>
-              <Text>
-                Je souhaite recevoir les dernières offres de télétravail une
-                fois par
-              </Text>
-              <FormContainer>
-                <SelectContainer>
-                  <Select
-                    backgroundColor="black"
-                    color="white"
-                    fontSize={fontSize}
-                    id="newsletter-frequence-select"
-                    name="newsletter frequence"
-                    values={["...", "jour", "semaine"]}
-                  />
-                </SelectContainer>
-                <Text>à</Text>
-                <InputContainer>
-                  <Input
-                    fontSize={fontSize}
-                    color="white"
-                    placeholder="email@exemple.com"
-                    className="NewsletterEmailBar__Input"
-                  />
-                </InputContainer>
-                <StyledButton
-                  backgroundColor="white"
-                  color="black"
-                  onClick={() => {
-                    console.log("clicking");
-                    onSubmit({ email: "test" });
-                  }}
-                >
-                  CONFIRMER
-                </StyledButton>
-              </FormContainer>
-            </InnerContainer>
-          </Container>
-        );
-      }}
-    </Media>
+    <Container>
+      <InnerContainer>
+        <Text>
+          Je souhaite recevoir les dernières offres de télétravail une fois par
+        </Text>
+        <FormContainer>
+          <SelectContainer>
+            <Select
+              backgroundColor="black"
+              color="white"
+              fontSize={fontSize}
+              id="newsletter-frequence-select"
+              name="newsletter frequence"
+              values={["...", "jour", "semaine"]}
+            />
+          </SelectContainer>
+          <Text>à</Text>
+          <InputContainer>
+            <Input
+              fontSize={fontSize}
+              color="white"
+              placeholder="email@exemple.com"
+              className="NewsletterEmailBar__Input"
+            />
+          </InputContainer>
+          <StyledButton
+            backgroundColor="white"
+            color="black"
+            onClick={() => {
+              console.log("clicking");
+              onSubmit({ email: "test" });
+            }}
+          >
+            CONFIRMER
+          </StyledButton>
+        </FormContainer>
+      </InnerContainer>
+    </Container>
   );
 }
