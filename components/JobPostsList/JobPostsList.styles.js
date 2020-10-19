@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { theme } from "../../theme/theme"
+import styled from "styled-components";
+import { theme } from "../../theme/theme";
 
 export const Container = styled.div`
   display: flex;
@@ -8,9 +8,9 @@ export const Container = styled.div`
   align-items: center;
   width: 900px;
   margin: 0 auto;
-  padding-bottom: 64px;
+  padding-bottom: 116px;
 
   ${theme.mediaQueries.tablet} {
     width: 100%;
   }
-`
+`;

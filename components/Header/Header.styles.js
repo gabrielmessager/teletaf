@@ -30,10 +30,28 @@ export const UnorderedList = styled.ul`
   padding: 0;
 `;
 
+export const BulletContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const Bullet = styled.div`
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #000;
+  transition: opacity 0.2s ease-in-out;
+`;
+
 export const ListElement = styled.li`
   padding: 16px;
   a {
     text-decoration: none;
+    color: #000;
+  }
+  ${Bullet} {
+    opacity: ${(p) => (p.isSelected ? "1" : "0")};
   }
 `;
 

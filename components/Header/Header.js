@@ -9,18 +9,27 @@ import {
   ImageContainer,
   MobileWrapper,
   MobileNav,
+  Bullet,
+  BulletContainer,
 } from "./Header.styles";
 import Logo from "../../static/logo.svg";
 import MenuIcon from "../../static/icon_menu.svg";
 import { Button } from "../../components/Button";
 import { LARGE, LARGE_MIN } from "../../theme/theme";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
+import {
+  HOME_URL,
+  ABOUT_URL,
+  RESOURCES_URL,
+  NEW_JOBPOST_URL,
+} from "../../constants/routes";
 
 export function Header({ pathname }) {
   const [showFixedNavbar, setShowFixedNavbar] = useState(false);
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   const [isLarge, setIsLarge] = useState(false);
   const { windowWidth } = useWindowWidth();
+  console.log("pathname", pathname);
 
   useEffect(() => {
     if (windowWidth > LARGE_MIN) {
@@ -51,15 +60,24 @@ export function Header({ pathname }) {
         </Link>
         <nav>
           <UnorderedList>
-            <ListElement>
+            <ListElement isSelected={pathname === ABOUT_URL}>
               <Link href="/about">Pourquoi choisir Télétaf?</Link>
+              <BulletContainer>
+                <Bullet />
+              </BulletContainer>
             </ListElement>
 
-            <ListElement>
+            <ListElement isSelected={pathname === HOME_URL}>
               <Link href="/">Annonces</Link>
+              <BulletContainer>
+                <Bullet />
+              </BulletContainer>
             </ListElement>
-            <ListElement>
+            <ListElement isSelected={pathname === RESOURCES_URL}>
               <Link href="/resources">Resources</Link>
+              <BulletContainer>
+                <Bullet />
+              </BulletContainer>
             </ListElement>
           </UnorderedList>
         </nav>

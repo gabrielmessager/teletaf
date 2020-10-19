@@ -11,7 +11,7 @@ export const Container = styled.div`
   transition: background-color 0.3s ${easeCurves.primary};
   background-color: ${theme.colors.whiteA100};
   border-radius: ${(p) => (p.isOpen ? "0" : "4px")};
-  margin-bottom: ${(p) => (p.isOpen ? "0" : "8px")};
+  margin-top: 8px;
 
   .JobPost__ApplyButton__Desktop {
     opacity: 0;
@@ -114,8 +114,7 @@ export const DescriptionContainer = styled.div`
   transform: translateZ(0);
   line-height: 1.5;
   background-color: ${theme.colors.whiteA100};
-  border-radius: ${(p) => (p.isOpen ? "0" : "4px 0")};
-  margin-bottom: ${(p) => (p.isOpen ? "0" : "8px")};
+  border-radius: ${(p) => (p.isOpen ? "0" : "0 0 4px 4px")};
 
   .JobPost__ApplyButton__Mobile {
     display: none;

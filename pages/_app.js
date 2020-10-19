@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Header } from "../components/Header";
 import { theme } from "../theme/theme";
@@ -20,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
 export default function App({ Component, pageProps }) {
   console.log("pageProps", pageProps);
+  const router = useRouter();
   return (
     <>
       <GlobalStyle />
@@ -32,7 +34,7 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        <Header />
+        <Header pathname={router.pathname} />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
