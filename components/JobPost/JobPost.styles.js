@@ -9,7 +9,9 @@ export const Container = styled.div`
   padding: 16px;
   cursor: pointer;
   transition: background-color 0.3s ${easeCurves.primary};
-  border-radius: 4px;
+  background-color: ${theme.colors.whiteA100};
+  border-radius: ${(p) => (p.isOpen ? "0" : "4px")};
+  margin-bottom: ${(p) => (p.isOpen ? "0" : "8px")};
 
   .JobPost__ApplyButton__Desktop {
     opacity: 0;
@@ -17,7 +19,7 @@ export const Container = styled.div`
   }
 
   &:hover {
-    background-color: ${theme.colors.gray010};
+    background-color: ${theme.colors.gray020};
     .JobPost__ApplyButton__Desktop {
       opacity: 1;
     }
@@ -63,8 +65,9 @@ export const ThumbContainer = styled.div`
   min-height: 48px;
   width: 48px;
   height: 48px;
-  background-color: red;
+  background-color: ${theme.colors.whiteA100};
   border-radius: 4px;
+  border: 1px solid ${theme.colors.gray020};
 `;
 
 export const JobTitle = styled.h2`
@@ -107,10 +110,12 @@ export const DescriptionContainer = styled.div`
   overflow-y: hidden;
   transition: height 0.3s ${easeCurves.primary};
   height: 0px;
-  width: calc(100% + 32px);
   cursor: pointer;
   transform: translateZ(0);
   line-height: 1.5;
+  background-color: ${theme.colors.whiteA100};
+  border-radius: ${(p) => (p.isOpen ? "0" : "4px 0")};
+  margin-bottom: ${(p) => (p.isOpen ? "0" : "8px")};
 
   .JobPost__ApplyButton__Mobile {
     display: none;

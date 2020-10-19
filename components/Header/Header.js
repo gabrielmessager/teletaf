@@ -18,9 +18,8 @@ import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 export function Header({ pathname }) {
   const [showFixedNavbar, setShowFixedNavbar] = useState(false);
-  const [openMobileMenu, setOpenMobileMenu] = useState(false);
+  const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   const [isLarge, setIsLarge] = useState(false);
-
   const { windowWidth } = useWindowWidth();
 
   useEffect(() => {
@@ -71,10 +70,12 @@ export function Header({ pathname }) {
     </Wrapper>
   ) : (
     <>
-      <ImageContainer onClick={() => setOpenMobileMenu(!openMobileMenu)}>
+      <ImageContainer
+        onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
+      >
         <img src={MenuIcon} width="24" height="17" />
       </ImageContainer>
-      <MobileWrapper isOpen={openMobileMenu}>
+      <MobileWrapper isOpen={isMobileMenuOpened}>
         <MobileNav>
           <UnorderedList>
             <ListElement>

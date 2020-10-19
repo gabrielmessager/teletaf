@@ -23,7 +23,7 @@ const dateFromObjectId = (objectId) => {
   return new Date(parseInt(objectId.substring(0, 8), 16) * 1000);
 };
 
-export const JobPost = ({ onClick, jobpost, isOpen }) => {
+export const JobPost = ({ onClick, jobpost, isOpen = false }) => {
   const tags = [jobpost?.primary_tag, ...jobpost?.extra_tags];
   const date = dateFromObjectId(jobpost?._id);
   const formattedDate = date.toISOString();
@@ -47,7 +47,7 @@ export const JobPost = ({ onClick, jobpost, isOpen }) => {
 
   return (
     <div style={{ width: "100%" }}>
-      <Container onClick={onClick}>
+      <Container onClick={onClick} isOpen={isOpen}>
         <ThumbContainer>
           <Thumb src={jobpost?.company_logo} />
         </ThumbContainer>

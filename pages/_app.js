@@ -1,20 +1,22 @@
 import Head from "next/head";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Header } from "../components/Header";
+import { theme } from "../theme/theme";
 
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: ${theme.colors.gray010};
   }
 `;
 
-const theme = {
-  colors: {
-    primary: "#0070f3",
-  },
-};
+// const theme = {
+//   colors: {
+//     primary: "#0070f3",
+//   },
+// };
 
 export default function App({ Component, pageProps }) {
   console.log("pageProps", pageProps);

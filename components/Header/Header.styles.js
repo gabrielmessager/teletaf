@@ -53,6 +53,7 @@ export const ImageContainer = styled.div`
   z-index: 1;
   background-color: #fff;
   border-radius: 4px;
+  cursor: pointer;
 `;
 
 export const MobileWrapper = styled.div`
