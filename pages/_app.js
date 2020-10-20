@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     background-color: ${theme.colors.gray010};
     overflow-x: hidden;
+
+    > #__next {
+      overflow-x: hidden;
+    }
   }
 `;
 
