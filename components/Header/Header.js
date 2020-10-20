@@ -91,7 +91,7 @@ export function Header({ pathname }) {
       </Container>
     </Wrapper>
   ) : (
-    <>
+    <div style={{ overflowX: "hidden" }}>
       <ImageContainer
         onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
       >
@@ -113,6 +113,6 @@ export function Header({ pathname }) {
           </UnorderedList>
         </MobileNav>
       </MobileWrapper>
-    </>
+    </div>
   );
 }

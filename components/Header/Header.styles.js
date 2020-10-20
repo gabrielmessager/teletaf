@@ -75,7 +75,6 @@ export const ImageContainer = styled.div`
 `;
 
 export const MobileWrapper = styled.div`
-  overflow: hidden;
   position: absolute;
   left: 100%;
   background-color: #fff;
