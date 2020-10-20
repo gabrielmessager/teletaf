@@ -1,9 +1,8 @@
 [] - adjust <Time /> in <JobPost /> - see line 30-32 + line 91
 [] - adjust mobile and desktop layout
+[] - remove side padding for job description on mobile
 [] - favicon
-[] - Rework <Header /> + <HeaderImage /> + cleanup drop shadow + test on mobile
-[] - fix Header on mobile
-[] - remove padding for job description on mobile
+[] - <HeaderImage />
 [] - cleanup API methods
 [] - add email validation for newsletter
 [] - try to send email using AWS SES - https://www.mongodb.com/blog/post/sending-email-from-your-frontend-application-using-mongodb-stitch-and-aws-ses

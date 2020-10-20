@@ -17,7 +17,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  box-shadow: -2px 0px 8px 0px grey;
+  box-shadow: -2px 0px 8px 0px ${theme.colors.gray030};
 `;
 
 export const UnorderedList = styled.ul`
@@ -68,6 +68,7 @@ export const ImageContainer = styled.div`
   top: 0px;
   right: 0px;
   padding: 16px;
+  margin-top: 8px;
   z-index: 1;
   background-color: #fff;
   border-radius: 4px;
@@ -75,6 +76,10 @@ export const ImageContainer = styled.div`
 `;
 
 export const MobileWrapper = styled.div`
+  overflow-x: hidden;
+`;
+
+export const NavContainer = styled.div`
   position: absolute;
   left: 100%;
   background-color: #fff;
@@ -85,7 +90,7 @@ export const MobileWrapper = styled.div`
   -ms-transform: translateX(100%);
   transition: transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
-  box-shadow: -2px 0px 8px 0px grey;
+  box-shadow: -2px 0px 8px 0px ${theme.colors.gray030};
   ${(p) =>
     p.isOpen &&
     `transform: translateX(-50%);

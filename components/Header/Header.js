@@ -8,6 +8,7 @@ import {
   Wrapper,
   ImageContainer,
   MobileWrapper,
+  NavContainer,
   MobileNav,
   Bullet,
   BulletContainer,
@@ -55,8 +56,6 @@ export function Header({ pathname }) {
     return () => window.removeEventListener("scroll", shouldShowFixedNavbar);
   }, [showFixedNavbar, isLarge]);
 
-  console.log("isLarge", isLarge);
-
   return isLarge ? (
     <Wrapper>
       <Container showFixedNavbar={showFixedNavbar}>
@@ -92,13 +91,13 @@ export function Header({ pathname }) {
       </Container>
     </Wrapper>
   ) : (
-    <div style={{ overflowX: "hidden" }}>
+    <MobileWrapper>
       <ImageContainer
         onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
       >
         <img src={MenuIcon} width="24" height="17" />
       </ImageContainer>
-      <MobileWrapper isOpen={isMobileMenuOpened}>
+      <NavContainer isOpen={isMobileMenuOpened}>
         <MobileNav>
           <UnorderedList>
             <ListElement>
@@ -113,7 +112,7 @@ export function Header({ pathname }) {
             </ListElement>
           </UnorderedList>
         </MobileNav>
-      </MobileWrapper>
-    </div>
+      </NavContainer>
+    </MobileWrapper>
   );
 }
