@@ -42,10 +42,12 @@ export function Header({ pathname }) {
   useEffect(() => {
     function shouldShowFixedNavbar(e) {
       const scrollTop = e.target.documentElement.scrollTop;
-      if (scrollTop > 1 && windowWidth > LARGE_MIN) {
-        setShowFixedNavbar(true);
-      } else {
-        setShowFixedNavbar(false);
+      if (windowWidth > LARGE_MIN) {
+        if (scrollTop > 1) {
+          setShowFixedNavbar(true);
+        } else {
+          setShowFixedNavbar(false);
+        }
       }
     }
     window.addEventListener("scroll", shouldShowFixedNavbar);
