@@ -30,6 +30,7 @@ export function Header({ pathname }) {
   const [isLarge, setIsLarge] = useState(false);
   const { windowWidth } = useWindowWidth();
   console.log("pathname", pathname);
+  console.log("windowWidth", windowWidth);
 
   useEffect(() => {
     if (windowWidth > LARGE_MIN) {
