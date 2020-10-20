@@ -42,7 +42,7 @@ export function Header({ pathname }) {
   useEffect(() => {
     function shouldShowFixedNavbar(e) {
       const scrollTop = e.target.documentElement.scrollTop;
-      if (windowWidth > LARGE_MIN) {
+      if (isLarge) {
         if (scrollTop > 1) {
           setShowFixedNavbar(true);
         } else {
@@ -52,7 +52,9 @@ export function Header({ pathname }) {
     }
     window.addEventListener("scroll", shouldShowFixedNavbar);
     return () => window.removeEventListener("scroll", shouldShowFixedNavbar);
-  }, [showFixedNavbar]);
+  }, [showFixedNavbar, isLarge]);
+
+  console.log("isLarge", isLarge);
 
   return isLarge ? (
     <Wrapper>
