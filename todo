@@ -1,5 +1,7 @@
 [] - adjust <Time /> in <JobPost /> - see line 30-32 + line 91
-[] - adjust mobile and desktop layout
+[] - test browsers
+[] - create new job post page
+[] - add resources
 [] - favicon
 [] - <HeaderImage />
 [] - cleanup API methods
