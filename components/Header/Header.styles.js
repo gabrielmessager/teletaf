@@ -3,6 +3,10 @@ import Link from "next/link";
 import { theme } from "../../theme/theme";
 import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts";
 
+export const StyledImage = styled.img`
+  cursor: pointer;
+`;
+
 export const Wrapper = styled.div`
   position: relative;
   height: 70px;
@@ -37,8 +41,8 @@ export const BulletContainer = styled.div`
 
 export const Bullet = styled.div`
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: #000;
   transition: opacity 0.2s ease-in-out;
@@ -69,7 +73,7 @@ export const ImageContainer = styled.div`
   right: 0px;
   padding: 16px;
   margin-top: 8px;
-  z-index: 1;
+  z-index: 2;
   background-color: #fff;
   border-radius: 4px;
   cursor: pointer;
@@ -91,6 +95,7 @@ export const NavContainer = styled.div`
   transition: transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
   box-shadow: -2px 0px 8px 0px ${theme.colors.gray030};
+  z-index: 1;
   ${(p) =>
     p.isOpen &&
     `transform: translateX(-50%);

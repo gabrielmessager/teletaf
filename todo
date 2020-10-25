@@ -1,6 +1,5 @@
 [] - adjust <Time /> in <JobPost /> - see line 30-32 + line 91
 [] - adjust mobile and desktop layout
-[] - remove side padding for job description on mobile
 [] - favicon
 [] - <HeaderImage />
 [] - cleanup API methods

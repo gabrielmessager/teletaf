@@ -55,6 +55,7 @@ export const Text = styled.p`
 `;
 
 export const SelectContainer = styled.div`
+  height: 40px;
   margin-right: 8px;
 `;
 

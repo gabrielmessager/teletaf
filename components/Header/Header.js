@@ -12,9 +12,10 @@ import {
   MobileNav,
   Bullet,
   BulletContainer,
+  StyledImage,
 } from "./Header.styles";
-import Logo from "../../static/logo.svg";
-import MenuIcon from "../../static/icon_menu.svg";
+import Logo from "../../public/logo.svg";
+import MenuIcon from "../../public/icon_menu.svg";
 import { Button } from "../../components/Button";
 import { LARGE, LARGE_MIN } from "../../theme/theme";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
@@ -60,7 +61,7 @@ export function Header({ pathname }) {
     <Wrapper>
       <Container showFixedNavbar={showFixedNavbar}>
         <Link href="/">
-          <img src={Logo} width="40" height="40" />
+          <StyledImage src={Logo} width="40" height="40" />
         </Link>
         <nav>
           <UnorderedList>
@@ -100,15 +101,24 @@ export function Header({ pathname }) {
       <NavContainer isOpen={isMobileMenuOpened}>
         <MobileNav>
           <UnorderedList>
-            <ListElement>
+            <ListElement isSelected={pathname === ABOUT_URL}>
               <Link href="/about">Pourquoi choisir Télétaf?</Link>
+              <BulletContainer>
+                <Bullet />
+              </BulletContainer>
             </ListElement>
 
-            <ListElement>
+            <ListElement isSelected={pathname === HOME_URL}>
               <Link href="/">Annonces</Link>
+              <BulletContainer>
+                <Bullet />
+              </BulletContainer>
             </ListElement>
-            <ListElement>
+            <ListElement isSelected={pathname === RESOURCES_URL}>
               <Link href="/resources">Resources</Link>
+              <BulletContainer>
+                <Bullet />
+              </BulletContainer>
             </ListElement>
           </UnorderedList>
         </MobileNav>

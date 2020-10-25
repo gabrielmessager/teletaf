@@ -129,7 +129,7 @@ export const DescriptionContainer = styled.div`
     flex-direction: column;
 
     ${(p) => p.isOpen} && {
-      height: ${(p) => `calc(${p.height}px + 48px)`};
+      height: ${(p) => `calc(${p.height}px + 64px)`};
     }
 
     .JobPost__ApplyButton__Mobile {
@@ -144,4 +144,8 @@ export const Description = styled.div`
   font-size: 16px;
   margin: 0;
   padding: 16px 80px;
+
+  ${theme.mediaQueries.mobile} {
+    padding: 16px 32px;
+  }
 `;
