@@ -5,6 +5,8 @@ export function About() {
   return (
     <Container>
       <H1>Une plateforme pour trouver votre prochain travail à distance</H1>
+      <H3>Travaillez depuis chez vous 👩‍💻</H3>
+      <Paragraph>Avantage du télétravail</Paragraph>
       <H3>Parlez vous français? 🇫🇷</H3>
       <Paragraph>
         Trouvez des offres de télétravail uniquement destinées aux personnes
@@ -33,7 +35,9 @@ export function About() {
       <Paragraph>
         Nous ne stockons aucune donnée vous concernant. Pas besoin de créer de
         compte avec mot de passe ou de confirmer votre email avant de consulter
-        nos offres.
+        nos offres. Dans le cas où vous souscririez à notre newsletter, votre
+        email ne sera pas partagé avec des organismes commerciaux tiers. Et vous
+        pouvez toujours vous désinscrire à tout moment.
       </Paragraph>
 
       {/* <H2>Qui sommes nous? 👋</H2>
