@@ -16,6 +16,8 @@ import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 export function NewsletterEmailBar({ onSubmit }) {
   const [fontSize, setFontSize] = useState(18);
+  const [error, setError] = useState(null);
+  const [value, setValue] = useState(null);
   const { windowWidth } = useWindowWidth();
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export function NewsletterEmailBar({ onSubmit }) {
   async function onSubmit(email) {
     try {
       const contentType = "application/json";
-      const res = await fetch("/api/newsletter", {
+      const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: {
           Accept: contentType,
@@ -43,9 +45,13 @@ export function NewsletterEmailBar({ onSubmit }) {
         throw new Error(res.status);
       }
     } catch (error) {
+      setError(error);
       console.log("Failed", error);
     }
   }
+
+  console.log("error", error);
+  console.log("value", value);
 
   return (
     <Container>
@@ -71,6 +77,11 @@ export function NewsletterEmailBar({ onSubmit }) {
               color="white"
               placeholder="email@exemple.com"
               className="NewsletterEmailBar__Input"
+              onChange={(e) => {
+                console.log("EVENT", e.target);
+                setValue(e.target.value);
+              }}
+              value={value}
             />
           </InputContainer>
           <StyledButton
@@ -78,7 +89,7 @@ export function NewsletterEmailBar({ onSubmit }) {
             color="black"
             onClick={() => {
               console.log("clicking");
-              onSubmit({ email: "test" });
+              onSubmit({ email: value });
             }}
           >
             CONFIRMER

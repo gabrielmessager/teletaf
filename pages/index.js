@@ -5,6 +5,7 @@ import { JobPostsList } from "../components/JobPostsList";
 
 export default function Home({ isConnected, jobs }) {
   console.log("jobs", jobs);
+  console.log("MAILCHIMP_KEY", process.env.MAILCHIMP_API_KEY);
   return (
     <main>
       {isConnected && (
