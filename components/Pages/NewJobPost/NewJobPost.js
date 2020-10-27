@@ -6,7 +6,6 @@ export function NewJobPost() {
     <Container>
       <H1>Publier votre annonce sur Télétaf 📝</H1>
       <H3>Contactez nous 📮</H3>
-      <Paragraph>Cette section est en cours de construction 👷‍♂️.</Paragraph>
       <Paragraph>
         <b>
           Pour publier votre annonce, veuillez nous envoyer un email à

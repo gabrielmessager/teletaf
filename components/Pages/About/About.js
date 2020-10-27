@@ -9,7 +9,7 @@ export function About() {
       <Paragraph>Avantage du télétravail</Paragraph>
       <H3>Parlez vous français? 🇫🇷</H3>
       <Paragraph>
-        Trouvez des offres de télétravail uniquement destinées aux personnes
+        Nos offres de télétravail sont princinpalement destinées aux personnes
         francophones. Nous sommes 285 millions de francophones à travers le
         monde, ce qui fait du français la 5ème langue la plus parlée au monde!
       </Paragraph>
