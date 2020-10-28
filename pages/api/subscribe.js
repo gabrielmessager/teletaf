@@ -1,6 +1,6 @@
 import mailchimp from "@mailchimp/mailchimp_marketing";
 
-async function run(email) {
+async function subscribeEmail(email) {
   mailchimp.setConfig({
     apiKey: process.env.MAILCHIMP_API_KEY,
     server: "us2",
@@ -20,12 +20,9 @@ async function run(email) {
 export default async (req, res) => {
   try {
     const { email } = req.body;
-    console.log("email", email);
-
-    const response = await run(email);
+    const response = await subscribeEmail(email);
     res.status(201).json({ success: true, error: "" });
   } catch (error) {
-    console.log("ERROR", error);
     res
       .status(400)
       .json({ success: false, error: error.message || error.toString() });

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import PropTypes from "prop-types"
 import { JobPost } from "../JobPost";
 import { Container } from "./JobPostsList.styles";
 

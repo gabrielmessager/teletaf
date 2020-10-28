@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts";
 import { easeCurves } from "../../theme/eases";
 import { theme } from "../../theme/theme";
+import { Button } from "../Button";
 
 export const Container = styled.div`
   display: flex;
@@ -28,14 +29,12 @@ export const Container = styled.div`
   .JobPost__TagsContainer__Desktop {
     display: block;
   }
-  .JobPost__TagsContainer__Mobile,
-  .JobPost__ApplyButton__Mobile {
+  .JobPost__TagsContainer__Mobile {
     display: none;
   }
 
   ${theme.mediaQueries.mobile} {
-    .JobPost__TagsContainer__Mobile,
-    .JobPost__ApplyButton__Mobile {
+    .JobPost__TagsContainer__Mobile {
       display: block;
     }
 
@@ -104,6 +103,7 @@ export const TimeAndButtonContainer = styled.div`
     width: 20%;
   }
 `;
+
 export const DescriptionContainer = styled.div`
   ${nunitoLight}
   will-change: transform;
@@ -116,8 +116,9 @@ export const DescriptionContainer = styled.div`
   background-color: ${theme.colors.whiteA100};
   border-radius: ${(p) => (p.isOpen ? "0" : "0 0 4px 4px")};
 
-  .JobPost__ApplyButton__Mobile {
-    display: none;
+  h5 {
+    ${nunitoLight}
+    text-align: center;
   }
 
   ${(p) => p.isOpen} && {
@@ -129,12 +130,7 @@ export const DescriptionContainer = styled.div`
     flex-direction: column;
 
     ${(p) => p.isOpen} && {
-      height: ${(p) => `calc(${p.height}px + 64px)`};
-    }
-
-    .JobPost__ApplyButton__Mobile {
-      display: block;
-      margin: 0 auto;
+      height: ${(p) => p.height};
     }
   }
 `;
@@ -148,4 +144,17 @@ export const Description = styled.div`
   ${theme.mediaQueries.mobile} {
     padding: 16px 32px;
   }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+`;
+
+export const StyledButton = styled(Button)`
+  width: 200px;
+  height: 50px;
+  font-size: 18px;
 `;

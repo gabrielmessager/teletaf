@@ -1,16 +1,16 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
   overflow: hidden;
   border-radius: 4px;
   width: 100%;
   height: 100%;
-`
+`;
 
 export const PrimaryThumb = styled.div`
   width: 100%;
   height: 100%;
-`
+`;
 
 export const ThumbWrapper = styled.div`
   display: flex;
@@ -19,10 +19,10 @@ export const ThumbWrapper = styled.div`
   border-radius: 4px;
   width: 100%;
   height: 100%;
-`
+`;
 
 export const StyledImage = styled.img`
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
   height: 100%;
-`
+`;

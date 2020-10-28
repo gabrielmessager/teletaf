@@ -16,7 +16,7 @@ import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 export function NewsletterEmailBar({ onSubmit }) {
   const [fontSize, setFontSize] = useState(18);
-  const [error, setError] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
   const [value, setValue] = useState(null);
   const { windowWidth } = useWindowWidth();
 
@@ -45,22 +45,19 @@ export function NewsletterEmailBar({ onSubmit }) {
         throw new Error(res.status);
       }
     } catch (error) {
-      setError(error);
-      console.log("Failed", error);
+      setErrorMessage(error);
     }
   }
-
-  console.log("error", error);
-  console.log("value", value);
 
   return (
     <Container>
       <InnerContainer>
         <Text>
           Je souhaite recevoir les dernières offres de télétravail une fois par
+          semaine
         </Text>
         <FormContainer>
-          <SelectContainer>
+          {/* <SelectContainer>
             <Select
               backgroundColor="black"
               color="white"
@@ -69,7 +66,7 @@ export function NewsletterEmailBar({ onSubmit }) {
               name="newsletter frequence"
               values={["...", "jour", "semaine"]}
             />
-          </SelectContainer>
+          </SelectContainer> */}
           <Text>à</Text>
           <InputContainer>
             <Input

@@ -1,10 +1,9 @@
 [] - adjust <Time /> in <JobPost /> - see line 30-32 + line 91
 [] - test browsers
-[] - create new job post page
+[x] - create new job post page
 [] - add resources
 [] - favicon
 [] - <HeaderImage />
-[] - cleanup API methods
 [] - add email validation for newsletter
-[] - try to send email using AWS SES - https://www.mongodb.com/blog/post/sending-email-from-your-frontend-application-using-mongodb-stitch-and-aws-ses
-https://www.youtube.com/watch?v=4HQ6x62RFD0&feature=youtu.be&ab_channel=AydrianHoward
+
+https://about.gitlab.com/company/culture/all-remote/guide/
