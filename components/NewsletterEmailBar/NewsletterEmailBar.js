@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useLayoutEffect, useRef } from "react";
 import Media from "react-media";
 import { Input } from "../Input";
 import { Select } from "../Select";
@@ -11,14 +11,19 @@ import {
   InnerContainer,
   Text,
   FormContainer,
+  ErrorMessage,
 } from "./NewsletterEmailBar.styles";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
+import { useRefHeight } from "../../hooks/useRefHeight";
 
 export function NewsletterEmailBar({ onSubmit }) {
   const [fontSize, setFontSize] = useState(18);
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [value, setValue] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [value, setValue] = useState("");
   const { windowWidth } = useWindowWidth();
+  const ref = useRef(null);
+  const refHeight = useRefHeight(ref);
 
   useEffect(() => {
     if (windowWidth > LARGE_MIN) {
@@ -26,10 +31,17 @@ export function NewsletterEmailBar({ onSubmit }) {
     } else {
       setFontSize(14);
     }
-  });
+  }, [fontSize, setFontSize, windowWidth]);
 
-  async function onSubmit(email) {
+  async function onSubmit({ email }) {
+    console.log("email", email);
+    if (!email) {
+      setErrorMessage("Veuillez indiquer votre email 📮");
+      return;
+    }
     try {
+      await setErrorMessage("");
+      await setIsSubmitting(true);
       const contentType = "application/json";
       const res = await fetch("/api/subscribe", {
         method: "POST",
@@ -45,13 +57,22 @@ export function NewsletterEmailBar({ onSubmit }) {
         throw new Error(res.status);
       }
     } catch (error) {
-      setErrorMessage(error);
+      setErrorMessage(
+        "Hmm... Nous n’avons pas pu vous enregistrer 🤔. Contactez-nous à télétaf@gmail.com"
+      );
     }
+    await setIsSubmitting(false);
   }
+
+  console.log("errorMessage", errorMessage);
 
   return (
     <Container>
-      <InnerContainer>
+      <ErrorMessage height={refHeight} isActive={!!errorMessage.length}>
+        <Text dark>{errorMessage}</Text>
+      </ErrorMessage>
+
+      <InnerContainer ref={ref}>
         <Text>
           Je souhaite recevoir les dernières offres de télétravail une fois par
           semaine à
@@ -75,7 +96,6 @@ export function NewsletterEmailBar({ onSubmit }) {
               placeholder="email@exemple.com"
               className="NewsletterEmailBar__Input"
               onChange={(e) => {
-                console.log("EVENT", e.target);
                 setValue(e.target.value);
               }}
               value={value}
@@ -84,6 +104,7 @@ export function NewsletterEmailBar({ onSubmit }) {
           <StyledButton
             backgroundColor="white"
             color="black"
+            disabled={isSubmitting}
             onClick={() => {
               console.log("clicking");
               onSubmit({ email: value });

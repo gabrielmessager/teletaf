@@ -6,6 +6,7 @@ export function Button({
   className,
   color,
   children,
+  disabled,
   href = null,
   onClick,
   target,
@@ -17,6 +18,7 @@ export function Button({
       backgroundColor={backgroundColor}
       className={className}
       color={color}
+      disabled={disabled}
       href={href}
       onClick={onClick}
       target={href && !target ? "_blank" : target}

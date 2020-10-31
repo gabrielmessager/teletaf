@@ -18,7 +18,7 @@ import { Thumb } from "../Thumb";
 import { Tag } from "../Tag";
 import { Time } from "../Time";
 import { Button } from "../Button";
-import { useEffect } from "react";
+import { useRefHeight } from "../../hooks/useRefHeight";
 
 // helper to get `created_at` from mongodb
 const dateFromObjectId = (objectId) => {
@@ -30,22 +30,8 @@ export const JobPost = ({ onClick, jobpost, isOpen = false }) => {
   const date = dateFromObjectId(jobpost?._id);
   const formattedDate = date.toISOString();
   const postedAt = formatDistanceToNowStrict(date);
-  const [height, setHeight] = useState(0);
   const ref = useRef(null);
-
-  useLayoutEffect(() => {
-    if (ref.current) {
-      setHeight(ref.current.offsetHeight);
-
-      function updateHeight() {
-        setHeight(ref.current.offsetHeight);
-      }
-
-      // recalculate height of each job post when window is resized.
-      window.addEventListener("resize", updateHeight);
-      return () => window.removeEventListener("resize", updateHeight);
-    }
-  }, []);
+  const refHeight = useRefHeight(ref);
 
   return (
     <div style={{ width: "100%" }}>
@@ -79,7 +65,7 @@ export const JobPost = ({ onClick, jobpost, isOpen = false }) => {
           </Button>
         </TimeAndButtonContainer>
       </Container>
-      <DescriptionContainer height={height} isOpen={!isOpen}>
+      <DescriptionContainer height={refHeight} isOpen={!isOpen}>
         <Description ref={ref}>
           {jobpost?.description}
           {jobpost?.responsabilities?.length > 0 && (

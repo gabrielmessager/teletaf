@@ -4,8 +4,14 @@
 [] - add resources
 [] - favicon
 [] - <HeaderImage />
-[] - add email validation for newsletter
-[] - handle error / confirmation when subscribing to newsletter
+[x] - add email validation for newsletter
+[x] - handle error / confirmation when subscribing to newsletter
 [] - font-size job description + in general mobile
+[] - add mailto to all emails
+[] - add data about if user applied to job
+[] - add section about workig remotely
+[] - add best equipment to work remotely in resources
+[] - add link to company when clicking on name or thumbnail
+[] - distiguish between views and applications
 
 https://about.gitlab.com/company/culture/all-remote/guide/

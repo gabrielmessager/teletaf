@@ -45,8 +45,9 @@ export const InputContainer = styled.div`
 export const Text = styled.p`
   ${nunitoRegular};
   font-size: 18px;
-  color: white;
-  margin-right: 4px;
+  color: ${(p) => (p.dark ? "#000" : "#fff")};
+  /* margin-right: 4px; */
+  padding: 0 8px;
   letter-spacing: 0.4px;
 
   @media ${MEDIUM_DOWN} {
@@ -62,4 +63,21 @@ export const SelectContainer = styled.div`
 
 export const StyledButton = styled(Button)`
   height: 42px;
+`;
+
+export const ErrorMessage = styled.div`
+  position: absolute;
+  text-align: center;
+  box-shadow: -2px 0px 8px 0px ${theme.colors.gray030};
+  bottom: ${(p) => `calc(${p.height}px + 16px)`};
+  width: 100%;
+  background-color: #fff;
+  height: ${(p) => (p.isActive ? "64px" : 0)};
+  opacity: ${(p) => (p.isActive ? "1" : 0)};
+  transition: all 0.2s ease-in;
+  overflow: hidden;
+
+  @media ${MEDIUM_DOWN} {
+    height: ${(p) => (p.isActive ? "51px" : 0)};
+  }
 `;
