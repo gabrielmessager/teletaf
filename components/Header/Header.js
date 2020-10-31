@@ -40,7 +40,7 @@ export function Header({ pathname }) {
     } else {
       setIsLarge(false);
     }
-  });
+  }, [windowWidth]);
 
   useEffect(() => {
     function shouldShowFixedNavbar(e) {

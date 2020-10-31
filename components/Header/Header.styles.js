@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { theme } from "../../theme/theme";
+import { theme, MEDIUM_DOWN } from "../../theme/theme";
 import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts";
+
+const MOBILE_OFFSET = 75;
 
 export const StyledImage = styled.img`
   cursor: pointer;
@@ -32,6 +34,10 @@ export const UnorderedList = styled.ul`
   background: #fff;
   margin: 0;
   padding: 0;
+
+  @media ${MEDIUM_DOWN} {
+    width: ${MOBILE_OFFSET}%;
+  }
 `;
 
 export const BulletContainer = styled.div`
@@ -98,8 +104,8 @@ export const NavContainer = styled.div`
   z-index: 1;
   ${(p) =>
     p.isOpen &&
-    `transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
+    `transform: translateX(-${MOBILE_OFFSET}%);
+    -webkit-transform: translateX(-${MOBILE_OFFSET}%);
+    -ms-transform: translateX(-${MOBILE_OFFSET}%);
   `}
 `;

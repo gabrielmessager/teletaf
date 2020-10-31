@@ -5,5 +5,7 @@
 [] - favicon
 [] - <HeaderImage />
 [] - add email validation for newsletter
+[] - handle error / confirmation when subscribing to newsletter
+[] - font-size job description + in general mobile
 
 https://about.gitlab.com/company/culture/all-remote/guide/

@@ -5,12 +5,15 @@ import { Header } from "../components/Header";
 import { theme } from "../theme/theme";
 
 const GlobalStyle = createGlobalStyle`
+  html, body {
+    position: relative;
+    overflow-x: hidden;
+  }
   body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: ${theme.colors.gray010};
-    overflow-x: hidden;
   }
 `;
 

@@ -54,7 +54,7 @@ export function NewsletterEmailBar({ onSubmit }) {
       <InnerContainer>
         <Text>
           Je souhaite recevoir les dernières offres de télétravail une fois par
-          semaine
+          semaine à
         </Text>
         <FormContainer>
           {/* <SelectContainer>
@@ -67,7 +67,7 @@ export function NewsletterEmailBar({ onSubmit }) {
               values={["...", "jour", "semaine"]}
             />
           </SelectContainer> */}
-          <Text>à</Text>
+          {/* <Text>à</Text> */}
           <InputContainer>
             <Input
               fontSize={fontSize}
