@@ -26,6 +26,12 @@ import {
   NEW_JOBPOST_URL,
 } from "../../constants/routes";
 
+const MENU = {
+  ABOUT: "Pourquoi choisir Télétaf?",
+  HOME: "Annonces",
+  RESOURCES: "Ressources",
+};
+
 export function Header({ pathname }) {
   const [showFixedNavbar, setShowFixedNavbar] = useState(false);
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
@@ -59,25 +65,25 @@ export function Header({ pathname }) {
     <Wrapper>
       <Container showFixedNavbar={showFixedNavbar}>
         <Link href="/">
-          <StyledImage src={Logo} width="40" height="40" />
+          <StyledImage src={Logo} width="153" height="35" />
         </Link>
         <nav>
           <UnorderedList>
             <ListElement isSelected={pathname === ABOUT_URL}>
-              <Link href="/about">Pourquoi choisir Télétaf?</Link>
+              <Link href="/about">{MENU.ABOUT}</Link>
               <BulletContainer>
                 <Bullet />
               </BulletContainer>
             </ListElement>
 
             <ListElement isSelected={pathname === HOME_URL}>
-              <Link href="/">Annonces</Link>
+              <Link href="/">{MENU.HOME}</Link>
               <BulletContainer>
                 <Bullet />
               </BulletContainer>
             </ListElement>
             <ListElement isSelected={pathname === RESOURCES_URL}>
-              <Link href="/resources">Resources</Link>
+              <Link href="/resources">{MENU.RESOURCES}</Link>
               <BulletContainer>
                 <Bullet />
               </BulletContainer>
@@ -100,20 +106,20 @@ export function Header({ pathname }) {
         <MobileNav>
           <UnorderedList>
             <ListElement isSelected={pathname === ABOUT_URL}>
-              <Link href="/about">Pourquoi choisir Télétaf?</Link>
+              <Link href="/about">{MENU.ABOUT}</Link>
               <BulletContainer>
                 <Bullet />
               </BulletContainer>
             </ListElement>
 
             <ListElement isSelected={pathname === HOME_URL}>
-              <Link href="/">Annonces</Link>
+              <Link href="/">{MENU.HOME}</Link>
               <BulletContainer>
                 <Bullet />
               </BulletContainer>
             </ListElement>
             <ListElement isSelected={pathname === RESOURCES_URL}>
-              <Link href="/resources">Resources</Link>
+              <Link href="/resources">{MENU.RESOURCES}</Link>
               <BulletContainer>
                 <Bullet />
               </BulletContainer>

@@ -24,7 +24,7 @@ export default function App({ Component, pageProps, router }) {
       <GlobalStyle />
       <Head>
         <title>Télétaf</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
         <link
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap"
           rel="stylesheet"
