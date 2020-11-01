@@ -7,6 +7,7 @@
 [x] - add email validation for newsletter
 [x] - handle error / confirmation when subscribing to newsletter
 [] - font-size job description + in general mobile
+[] - add confirmation message when email is successfully registered
 [] - add mailto to all emails
 [] - add data about if user applied to job
 [] - add section about workig remotely

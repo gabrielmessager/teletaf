@@ -1,9 +1,10 @@
 import { useEffect, useLayoutEffect, useState } from "react";
+import { useIsomorphicLayoutEffect } from "../useIsomorphicLayoutEffect";
 
 export function useRefHeight(ref = null) {
   const [height, setHeight] = useState(0);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (ref.current) {
       setHeight(ref.current.offsetHeight);
 

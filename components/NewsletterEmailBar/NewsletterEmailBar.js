@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useLayoutEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Media from "react-media";
 import { Input } from "../Input";
 import { Select } from "../Select";
