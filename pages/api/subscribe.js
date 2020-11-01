@@ -13,7 +13,6 @@ async function subscribeEmail(email) {
       status: "subscribed",
     }
   );
-
   return response;
 }
 

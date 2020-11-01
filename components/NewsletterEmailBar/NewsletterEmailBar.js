@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Media from "react-media";
 import { Input } from "../Input";
 import { Select } from "../Select";
-import { LARGE_MIN } from "../../theme/theme";
+import { LARGE_MIN, theme } from "../../theme/theme";
 import {
   Container,
   InputContainer,
@@ -11,19 +11,25 @@ import {
   InnerContainer,
   Text,
   FormContainer,
-  ErrorMessage,
+  MessageContainer,
+  Message,
+  CloseButton,
 } from "./NewsletterEmailBar.styles";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 import { useRefHeight } from "../../hooks/useRefHeight";
 
 export function NewsletterEmailBar({ onSubmit }) {
   const [fontSize, setFontSize] = useState(18);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [value, setValue] = useState("");
   const { windowWidth } = useWindowWidth();
   const ref = useRef(null);
   const refHeight = useRefHeight(ref);
+
+  function hideMessage() {
+    setTimeout(() => setMessage(""), 5000);
+  }
 
   useEffect(() => {
     if (windowWidth > LARGE_MIN) {
@@ -34,14 +40,14 @@ export function NewsletterEmailBar({ onSubmit }) {
   }, [fontSize, setFontSize, windowWidth]);
 
   async function onSubmit({ email }) {
-    console.log("email", email);
     if (!email) {
-      setErrorMessage("Veuillez indiquer votre email 📮");
+      setMessage("⚠️ Veuillez indiquer votre email 📮");
+      hideMessage();
       return;
     }
     try {
-      await setErrorMessage("");
-      await setIsSubmitting(true);
+      setMessage("");
+      setIsSubmitting(true);
       const contentType = "application/json";
       const res = await fetch("/api/subscribe", {
         method: "POST",
@@ -49,28 +55,39 @@ export function NewsletterEmailBar({ onSubmit }) {
           Accept: contentType,
           "Content-Type": contentType,
         },
-        body: JSON.stringify(email),
+        body: JSON.stringify({ email }),
       });
 
       // Throw error with status code in case Fetch API req failed
       if (!res.ok) {
         throw new Error(res.status);
       }
-    } catch (error) {
-      setErrorMessage(
-        "Hmm... Nous n’avons pas pu vous enregistrer 🤔. Contactez-nous à télétaf@gmail.com"
-      );
-    }
-    await setIsSubmitting(false);
-  }
 
-  console.log("errorMessage", errorMessage);
+      setMessage("🙏 Merci! Votre email a bien été enregistré! ✅");
+      setValue("");
+      hideMessage();
+    } catch (error) {
+      setMessage(
+        "Hmm...🤔 Nous n’avons pas pu vous enregistrer. Contactez-nous à télétaf@gmail.com"
+      );
+      hideMessage();
+    }
+    setIsSubmitting(false);
+  }
 
   return (
     <Container>
-      <ErrorMessage height={refHeight} isActive={!!errorMessage.length}>
-        <Text dark>{errorMessage}</Text>
-      </ErrorMessage>
+      <MessageContainer height={refHeight} isActive={!!message.length}>
+        <Message>
+          <Text dark>{message}</Text>
+          <CloseButton
+            backgroundColor={theme.colors.red050}
+            onClick={() => setMessage("")}
+          >
+            x
+          </CloseButton>
+        </Message>
+      </MessageContainer>
 
       <InnerContainer ref={ref}>
         <Text>
@@ -99,16 +116,15 @@ export function NewsletterEmailBar({ onSubmit }) {
                 setValue(e.target.value);
               }}
               value={value}
+              type="email"
+              required
             />
           </InputContainer>
           <StyledButton
             backgroundColor="white"
             color="black"
             disabled={isSubmitting}
-            onClick={() => {
-              console.log("clicking");
-              onSubmit({ email: value });
-            }}
+            onClick={() => onSubmit({ email: value })}
           >
             CONFIRMER
           </StyledButton>

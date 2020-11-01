@@ -23,7 +23,7 @@ export const InnerContainer = styled.div`
   }
 `;
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,7 +65,7 @@ export const StyledButton = styled(Button)`
   height: 42px;
 `;
 
-export const ErrorMessage = styled.div`
+export const MessageContainer = styled.div`
   position: absolute;
   text-align: center;
   box-shadow: -2px 0px 8px 0px ${theme.colors.gray030};
@@ -80,4 +80,15 @@ export const ErrorMessage = styled.div`
   @media ${MEDIUM_DOWN} {
     height: ${(p) => (p.isActive ? "51px" : 0)};
   }
+`;
+
+export const Message = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const CloseButton = styled(Button)`
+  position: absolute;
+  right: 24px;
 `;

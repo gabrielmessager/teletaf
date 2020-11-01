@@ -1,5 +1,5 @@
-import React from "react"
-import { Container, ErrorMessage, StyledInput } from "./Input.styles"
+import React from "react";
+import { Container, ErrorMessage, StyledInput } from "./Input.styles";
 
 export function Input({
   onBlur,
@@ -11,7 +11,6 @@ export function Input({
   errors,
   ...other
 }) {
-  console.log("erros", errors)
   return (
     <Container>
       <StyledInput
@@ -27,5 +26,5 @@ export function Input({
       />
       {errors && <ErrorMessage>{errors}</ErrorMessage>}
     </Container>
-  )
+  );
 }
