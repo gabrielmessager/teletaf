@@ -10,6 +10,7 @@
 [] - make mobile menu fixed
 [] - font-size job description + in general mobile
 [x] - add confirmation message when email is successfully registered
+[] - fix Message for newsletter on mobile (slightly off screen)
 [] - add mailto to all emails
 [] - add data about if user applied to job
 [] - add section about workig remotely

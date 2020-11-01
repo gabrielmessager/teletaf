@@ -9,6 +9,7 @@
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.22",
     "date-fns": "2.16.1",
+    "framer-motion": "^2.9.4",
     "mongodb": "^3.6.2",
     "next": "latest",
     "next-images": "^1.6.0",

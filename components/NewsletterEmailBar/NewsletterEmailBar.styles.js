@@ -81,14 +81,3 @@ export const MessageContainer = styled.div`
     height: ${(p) => (p.isActive ? "51px" : 0)};
   }
 `;
-
-export const Message = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const CloseButton = styled(Button)`
-  position: absolute;
-  right: 24px;
-`;

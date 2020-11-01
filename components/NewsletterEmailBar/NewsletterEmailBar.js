@@ -12,8 +12,6 @@ import {
   Text,
   FormContainer,
   MessageContainer,
-  Message,
-  CloseButton,
 } from "./NewsletterEmailBar.styles";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 import { useRefHeight } from "../../hooks/useRefHeight";
@@ -78,15 +76,7 @@ export function NewsletterEmailBar({ onSubmit }) {
   return (
     <Container>
       <MessageContainer height={refHeight} isActive={!!message.length}>
-        <Message>
-          <Text dark>{message}</Text>
-          <CloseButton
-            backgroundColor={theme.colors.red050}
-            onClick={() => setMessage("")}
-          >
-            x
-          </CloseButton>
-        </Message>
+        <Text dark>{message}</Text>
       </MessageContainer>
 
       <InnerContainer ref={ref}>

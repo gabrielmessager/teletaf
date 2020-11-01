@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Header } from "../components/Header";
 import { theme } from "../theme/theme";
@@ -17,15 +17,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// const theme = {
-//   colors: {
-//     primary: "#0070f3",
-//   },
-// };
-
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps, router }) {
   console.log("pageProps", pageProps);
-  const router = useRouter();
   return (
     <>
       <GlobalStyle />
@@ -40,7 +33,21 @@ export default function App({ Component, pageProps }) {
       </Head>
       <ThemeProvider theme={theme}>
         <Header pathname={router.pathname} />
-        <Component {...pageProps} />
+        <motion.div
+          key={router.route}
+          initial="pageInitial"
+          animate="pageAnimate"
+          variants={{
+            pageInitial: {
+              opacity: 0,
+            },
+            pageAnimate: {
+              opacity: 1,
+            },
+          }}
+        >
+          <Component {...pageProps} />
+        </motion.div>
       </ThemeProvider>
     </>
   );
