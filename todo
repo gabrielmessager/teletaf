@@ -6,13 +6,17 @@
 [] - <HeaderImage />
 [x] - add email validation for newsletter
 [x] - handle error / confirmation when subscribing to newsletter
+[] - allow to close mobile menu by clicking wherever
+[] - make mobile menu fixed
 [] - font-size job description + in general mobile
-[] - add confirmation message when email is successfully registered
+[x] - add confirmation message when email is successfully registered
 [] - add mailto to all emails
 [] - add data about if user applied to job
 [] - add section about workig remotely
 [] - add best equipment to work remotely in resources
 [] - add link to company when clicking on name or thumbnail
-[] - distiguish between views and applications
+[] - Jobpost - show # views and # applications
+[] - add page transition / loader
+[] - see if we can add filters
 
 https://about.gitlab.com/company/culture/all-remote/guide/

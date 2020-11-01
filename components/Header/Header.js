@@ -31,8 +31,6 @@ export function Header({ pathname }) {
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   const [isLarge, setIsLarge] = useState(false);
   const { windowWidth } = useWindowWidth();
-  console.log("pathname", pathname);
-  console.log("windowWidth", windowWidth);
 
   useEffect(() => {
     if (windowWidth > LARGE_MIN) {
@@ -40,7 +38,7 @@ export function Header({ pathname }) {
     } else {
       setIsLarge(false);
     }
-  }, [windowWidth]);
+  }, [isLarge, setIsLarge, windowWidth]);
 
   useEffect(() => {
     function shouldShowFixedNavbar(e) {
@@ -55,7 +53,7 @@ export function Header({ pathname }) {
     }
     window.addEventListener("scroll", shouldShowFixedNavbar);
     return () => window.removeEventListener("scroll", shouldShowFixedNavbar);
-  }, [showFixedNavbar, isLarge]);
+  }, [showFixedNavbar, setShowFixedNavbar, isLarge]);
 
   return isLarge ? (
     <Wrapper>

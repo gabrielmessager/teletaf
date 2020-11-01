@@ -39,7 +39,7 @@ export function About() {
         email ne sera pas partagé avec des organismes commerciaux tiers. Et vous
         pouvez toujours vous désinscrire à tout moment.
       </Paragraph>
-      <H3>Vous avez une question ou une suggestion ❓</H3>
+      <H3>Vous avez une question / suggestion ❓</H3>
       <Paragraph>
         N'hésitez pas à nous contacter à l'adresse suivante: email@example.com.
         Nous ferons notre possible pour vous répondre sous 24h ⏱.
