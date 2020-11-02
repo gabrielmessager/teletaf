@@ -23,7 +23,7 @@ export default function App({ Component, pageProps, router }) {
     <>
       <GlobalStyle />
       <Head>
-        <title>Télétaf</title>
+        <title>Télétaf | Offres de télétravail pour francophones</title>
         <link rel="icon" href="/favicon.svg" />
         <link
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap"
