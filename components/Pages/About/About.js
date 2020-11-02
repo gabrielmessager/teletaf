@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Container, H1, H2, H3, Paragraph } from "../Components";
+import React, { useState } from 'react';
+import { Container, H1, H3, Paragraph } from '../Components';
 
 export function About() {
   return (

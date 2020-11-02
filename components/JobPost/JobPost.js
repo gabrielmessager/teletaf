@@ -1,6 +1,6 @@
-import React, { useState, useRef } from "react";
-import PropTypes from "prop-types";
-import formatDistanceToNowStrict from "date-fns/formatDistanceToNowStrict";
+import React, { useState, useRef } from 'react';
+import PropTypes from 'prop-types';
+import formatDistanceToNowStrict from 'date-fns/formatDistanceToNowStrict';
 import {
   ButtonContainer,
   Container,
@@ -13,12 +13,12 @@ import {
   ThumbContainer,
   TimeAndButtonContainer,
   StyledButton,
-} from "./JobPost.styles";
-import { Thumb } from "../Thumb";
-import { Tag } from "../Tag";
-import { Time } from "../Time";
-import { Button } from "../Button";
-import { useRefHeight } from "../../hooks/useRefHeight";
+} from './JobPost.styles';
+import { Thumb } from '../Thumb';
+import { Tag } from '../Tag';
+import { Time } from '../Time';
+import { Button } from '../Button';
+import { useRefHeight } from '../../hooks/useRefHeight';
 
 // helper to get `created_at` from mongodb
 const dateFromObjectId = (objectId) => {
@@ -34,7 +34,7 @@ export const JobPost = ({ onClick, jobpost, isOpen = false }) => {
   const refHeight = useRefHeight(ref);
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: '100%' }}>
       <Container onClick={onClick} isOpen={isOpen}>
         <ThumbContainer>
           <Thumb src={jobpost?.company_logo} />
