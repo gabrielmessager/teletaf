@@ -20,7 +20,13 @@ import { Time } from '../../../../components/Time';
 import { Button } from '../../../../components/Button';
 import { useRefHeight } from '../../../../hooks/useRefHeight';
 
-export const Card = ({ onClick, jobpost, isOpen = false }) => {
+export const Card = ({
+  onClick,
+  children,
+  isOpen = false,
+  title,
+  subtitle,
+}) => {
   // const tags = [jobpost?.primary_tag, ...jobpost?.extra_tags];
   // const date = dateFromObjectId(jobpost?._id);
   // const formattedDate = date.toISOString();
@@ -35,13 +41,13 @@ export const Card = ({ onClick, jobpost, isOpen = false }) => {
           <Thumb src={jobpost?.company_logo} />
         </ThumbContainer> */}
         <JobContainer>
-          <CompanyName>Travailler à distance</CompanyName>
-          <JobTitle>Les avantages pour les salariés</JobTitle>
-          <div>
+          <CompanyName>{title}</CompanyName>
+          <JobTitle>{subtitle}</JobTitle>
+          {/* <div>
             <Tag backgroundColor="lightgrey">{jobpost?.contract_type}</Tag>
             <Tag backgroundColor="lightgrey">{jobpost?.contract_duration}</Tag>
             <Tag backgroundColor="lightgrey">{jobpost?.location}</Tag>
-          </div>
+          </div> */}
           {/* <TagsContainer className="JobPost__TagsContainer__Mobile">
             {tags.map((tag) => (
               <Tag key={tag}>{tag}</Tag>
@@ -55,7 +61,7 @@ export const Card = ({ onClick, jobpost, isOpen = false }) => {
         </TagsContainer> */}
       </Container>
       <DescriptionContainer height={refHeight} isOpen={!isOpen}>
-        <Description ref={ref}>wkejfbkjbwekfjbwefkjb</Description>
+        <Description ref={ref}>{children}</Description>
       </DescriptionContainer>
     </div>
   );

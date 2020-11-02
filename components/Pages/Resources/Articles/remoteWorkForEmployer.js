@@ -1,23 +1,9 @@
-import React, { useState } from 'react';
-import { Card, Container, H3, Paragraph } from '../../../Components';
+import React from 'react';
+import { Paragraph } from '../../Components';
 
-export function WorkRemoteForEmployer() {
-  const [openedCards, setOpenedCards] = useState({});
-
-  const toggleJobPost = (cardId) => {
-    // close JobPost if currently opened
-    if (openedCards[cardId]) {
-      return setOpenedCards({ ...openedCards, [cardId]: false });
-    }
-    setOpenedCards({ ...openedCards, [cardId]: true });
-  };
-  return (
-    <Container>
-      <Card onClick={() => toggleJobPost(1)} isOpen={!!openedCards[1]} />
-      <H3>
-        Voici quelques uns des avantages lorsque vous proposez le travail à
-        distance:
-      </H3>
+export const remoteWorkForEmployer = {
+  content: () => (
+    <>
       <Paragraph>
         1. Embauchez des gens qualifiés sans réfléchir à savoir où ils habitent.
       </Paragraph>
@@ -58,6 +44,8 @@ export function WorkRemoteForEmployer() {
         10. Avec plus de flexibilité, vous attirez plus de diversité au sein de
         votre organisation
       </Paragraph>
-    </Container>
-  );
-}
+    </>
+  ),
+  title: 'Télétravail',
+  subtitle: 'Les avantages pour l’employeur',
+};

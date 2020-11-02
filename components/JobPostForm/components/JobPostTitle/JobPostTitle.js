@@ -1,10 +1,10 @@
-import { Formik, Form, Field, ErrorMessage, withFormik } from "formik"
-import React, { useState, useEffect } from "react"
-import * as Yup from "yup"
-import { Input } from "../../../Input"
-import { FormSection, FormSubSectionContainer } from "../../../FormSection"
-import { Label } from "../../../Label"
-import { Description, InputContainer } from "./JobPostTitle.styles"
+import { Formik, Form, Field, ErrorMessage, withFormik } from 'formik';
+import React, { useState, useEffect } from 'react';
+import * as Yup from 'yup';
+import { Input } from '../../../Input';
+import { FormSection, FormSubSectionContainer } from '../../../FormSection';
+import { Label } from '../../../Label';
+import { Description, InputContainer } from './JobPostTitle.styles';
 
 function InnerForm({
   handleChange,
@@ -15,10 +15,9 @@ function InnerForm({
   values,
   setJobPostTitle,
 }) {
-  console.log(touched)
   useEffect(() => {
-    setJobPostTitle({ title: values.title, companyName: values.companyName })
-  }, [values])
+    setJobPostTitle({ title: values.title, companyName: values.companyName });
+  }, [setJobPostTitle, values]);
   return (
     <FormSection title="Titre de votre annonce">
       <form>
@@ -40,7 +39,7 @@ function InnerForm({
             sans utiliser de longues phrases comme "Recherche Assistante de
             direction". Chaque annonce est limitée à un role bien precis. Si
             vous souhaitez poster plusieurs roles, vous devrez créer plusieurs
-            announces.{" "}
+            announces.{' '}
           </Description>
         </FormSubSectionContainer>
         <FormSubSectionContainer>
@@ -62,18 +61,18 @@ function InnerForm({
         </FormSubSectionContainer>
       </form>
     </FormSection>
-  )
+  );
 }
 
 const formikOptions = {
   validateOnChange: true,
   validationSchema: Yup.object().shape({
-    title: Yup.string().required("Veuillez entrer le titre de votre annonce"),
+    title: Yup.string().required('Veuillez entrer le titre de votre annonce'),
 
     companyName: Yup.string()
-      .required("Veuillez indiquer le nom de votre société")
-      .min(8, "Password is too short - should be 8 chars minimum."),
+      .required('Veuillez indiquer le nom de votre société')
+      .min(8, 'Password is too short - should be 8 chars minimum.'),
   }),
-}
+};
 
-export const JobPostTitle = withFormik(formikOptions)(InnerForm)
+export const JobPostTitle = withFormik(formikOptions)(InnerForm);

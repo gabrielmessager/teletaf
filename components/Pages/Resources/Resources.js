@@ -1,14 +1,33 @@
 import React, { useState } from 'react';
-import { Container, Paragraph } from '../Components';
-import { WorkRemoteForEmployees } from './Articles/WorkRemoteForEmployees';
-import { WorkRemoteForEmployer } from './Articles/WorkRemoteForEmployer';
+import { Card, Container } from '../Components';
+import { articles } from './Articles';
 
 export function Resources() {
+  const [openedCards, setOpenedCards] = useState({});
+  const toggleCard = (cardId) => {
+    // close JobPost if currently opened
+    if (openedCards[cardId]) {
+      return setOpenedCards({ ...openedCards, [cardId]: false });
+    }
+    setOpenedCards({ ...openedCards, [cardId]: true });
+  };
+
   return (
     <Container>
-      <Paragraph>Resources</Paragraph>
-      <WorkRemoteForEmployees />
-      <WorkRemoteForEmployer />
+      {articles.map((article, i) => {
+        const { content, title, subtitle } = article;
+        return (
+          <Card
+            onClick={() => toggleCard(i)}
+            isOpen={!!openedCards[i]}
+            key={`Card_${i}`}
+            title={title}
+            subtitle={subtitle}
+          >
+            {content()}
+          </Card>
+        );
+      })}
     </Container>
   );
 }

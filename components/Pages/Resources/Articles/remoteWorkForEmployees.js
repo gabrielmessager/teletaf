@@ -1,12 +1,9 @@
 import React from 'react';
-import { Container, H3, Paragraph } from '../../../Components';
+import { Paragraph } from '../../Components';
 
-export function WorkRemoteForEmployees() {
-  return (
-    <Container>
-      <H3>
-        Voici quelques uns des avantages lorsque vous travaillez à distance:
-      </H3>
+export const remoteWorkForEmployees = {
+  content: () => (
+    <>
       <Paragraph>
         1. Offrez-vous plus de fléxibilité dans votre vie quotidienne (pour vos
         enfants, parents, amis, courses, activités sportives, livraisons)
@@ -81,6 +78,8 @@ export function WorkRemoteForEmployees() {
       </Paragraph>
 
       <Paragraph>15. Les habits de travail ne sont pas requis</Paragraph>
-    </Container>
-  );
-}
+    </>
+  ),
+  title: 'Télétravail',
+  subtitle: 'Les avantages pour le salarié',
+};

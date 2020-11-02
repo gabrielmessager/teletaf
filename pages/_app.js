@@ -1,8 +1,9 @@
-import Head from "next/head";
-import { motion } from "framer-motion";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import { Header } from "../components/Header";
-import { theme } from "../theme/theme";
+import React from 'react';
+import Head from 'next/head';
+import { motion } from 'framer-motion';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { Header } from '../components/Header';
+import { theme } from '../theme/theme';
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -18,7 +19,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default function App({ Component, pageProps, router }) {
-  console.log("pageProps", pageProps);
   return (
     <>
       <GlobalStyle />
