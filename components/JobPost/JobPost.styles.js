@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts";
-import { easeCurves } from "../../theme/eases";
-import { theme } from "../../theme/theme";
-import { Button } from "../Button";
+import styled from 'styled-components';
+import { nunitoLight, nunitoRegular, nunitoBold } from '../../theme/fonts';
+import { easeCurves } from '../../theme/eases';
+import { theme } from '../../theme/theme';
+import { Button } from '../Button';
 
 export const Container = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ export const Container = styled.div`
   cursor: pointer;
   transition: background-color 0.3s ${easeCurves.primary};
   background-color: ${theme.colors.whiteA100};
-  border-radius: ${(p) => (p.isOpen ? "0" : "4px")};
+  border-radius: ${(p) => (p.isOpen ? '0' : '4px')};
   margin-top: 8px;
 
   .JobPost__ApplyButton__Desktop {
@@ -81,6 +81,10 @@ export const CompanyName = styled.h3`
   font-size: 16px;
   margin: 0;
   margin-bottom: 4px;
+
+  span {
+    margin-right: 4px;
+  }
 `;
 
 export const TagsContainer = styled.div`
@@ -114,7 +118,7 @@ export const DescriptionContainer = styled.div`
   transform: translateZ(0);
   line-height: 1.5;
   background-color: ${theme.colors.whiteA100};
-  border-radius: ${(p) => (p.isOpen ? "0" : "0 0 4px 4px")};
+  border-radius: ${(p) => (p.isOpen ? '0' : '0 0 4px 4px')};
 
   h5 {
     ${nunitoLight}

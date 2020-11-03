@@ -40,7 +40,10 @@ export const JobPost = ({ onClick, jobpost, isOpen = false }) => {
           <Thumb src={jobpost?.company_logo} />
         </ThumbContainer>
         <JobContainer>
-          <CompanyName>{jobpost?.company_name}</CompanyName>
+          <CompanyName>
+            <span>{jobpost?.company_name}</span>
+            {/* {jobpost?.is_recruiting_agency && <>🕵️‍♀️</>} */}
+          </CompanyName>
           <JobTitle>{jobpost?.title}</JobTitle>
           <div>
             <Tag backgroundColor="lightgrey">{jobpost?.contract_type}</Tag>
@@ -67,7 +70,12 @@ export const JobPost = ({ onClick, jobpost, isOpen = false }) => {
       </Container>
       <DescriptionContainer height={refHeight} isOpen={!isOpen}>
         <Description ref={ref}>
-          {jobpost?.description}
+          {jobpost?.job_description && (
+            <>
+              <h3>Description du poste 👩‍💻</h3>
+              {jobpost?.job_description}
+            </>
+          )}
           {jobpost?.responsabilities?.length > 0 && (
             <>
               <h3>Vos responsabilités 💼</h3>
@@ -104,6 +112,12 @@ export const JobPost = ({ onClick, jobpost, isOpen = false }) => {
               <ul>
                 <li>{jobpost?.salary}</li>
               </ul>
+            </>
+          )}
+          {jobpost?.company_description && (
+            <>
+              <h3>Qui sommes nous? 👋</h3>
+              {jobpost?.company_description}
             </>
           )}
           <ButtonContainer>

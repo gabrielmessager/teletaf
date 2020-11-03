@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { nunitoRegular } from "../../../../theme/fonts";
+import styled from 'styled-components';
+import { nunitoRegular } from '../../../../theme/fonts';
 
 export const Paragraph = styled.p`
   ${nunitoRegular};

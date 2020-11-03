@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Container, H1, H3, Paragraph } from '../Components';
 
 export function About() {
@@ -6,7 +7,11 @@ export function About() {
     <Container>
       <H1>Une plateforme pour trouver votre prochain travail à distance</H1>
       <H3>Travaillez depuis chez vous 👩‍💻</H3>
-      <Paragraph>Avantage du télétravail</Paragraph>
+      <Paragraph>
+        Nous avons listé{' '}
+        <Link href="/resources">les différents avantages télétravail</Link>.
+        N'attendez plus!
+      </Paragraph>
       <H3>Parlez vous français? 🇫🇷</H3>
       <Paragraph>
         Nos offres de télétravail sont principalement destinées aux personnes

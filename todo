@@ -3,6 +3,7 @@
 [x] - create new job post page
 [] - add resources
 [x] - favicon
+[] - change "days" to say "jours"
 [] - <HeaderImage />
 [x] - add email validation for newsletter
 [x] - handle error / confirmation when subscribing to newsletter
@@ -19,6 +20,7 @@
 [] - Jobpost - show # views and # applications
 [x] - add page transition / loader
 [] - see if we can add filters
+[] - report expired offer
 
 https://about.gitlab.com/company/culture/all-remote/guide/
 
@@ -28,3 +30,52 @@ http://www.physilife.in/2020/04/03/work-from-home-ergonomics/
 
 https://about.gitlab.com/handbook/spending-company-money/equipment-examples/
 https://about.gitlab.com/handbook/
+
+[x] - indicate if cabinet de recrutement
+
+Achats / Comptabilité / Gestion (1750)
+Conseil / Etudes (151)
+Ressources Humaines (231)
+Secrétariat / Assistanat (208)
+Direction d'entreprise (47)
+Immobilier (234)
+-> ADMINISTRATIF / GESTION / RH
+
+
+Arts / Artisanat d'art (24) / Spectacle (32)
+-> ARTS
+
+Banque / Assurance (319)
+-> BANQUE / ASSURANCE
+
+Bâtiment / Travaux Publics (1106)
+Transport / Logistique (608)
+-> BATIMENT / LOGISTIQUE
+
+Commerce / Vente (1822)
+-> COMMERCE / VENTE
+
+
+Communication / Multimédia (241) / Marketing / Stratégie commerciale (264)
+-> COMMUNICATION / MARKETING
+
+Espaces verts et naturels / Agriculture / Pêche / Soins aux animaux (172)
+-> NATURE
+
+Hôtellerie - Restauration / Tourisme / Animation (579)
+-> TOURISME
+
+Industrie (1306)
+-> INDUSTRIE
+
+Informatique / Télécommunication (1365)
+Installation / Maintenance (1306)
+-> INFORMATIQUE / IT
+
+Santé (667)
+Services à la personne / à la collectivité (1648)
+-> SANTE
+
+
+
+
