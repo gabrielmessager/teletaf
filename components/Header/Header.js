@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import Media from "react-media";
-import Link from "next/link";
+import React, { useEffect, useState } from 'react';
+import Media from 'react-media';
+import Link from 'next/link';
 import {
   Container,
   ListElement,
@@ -13,23 +13,23 @@ import {
   Bullet,
   BulletContainer,
   StyledImage,
-} from "./Header.styles";
-import Logo from "../../public/logo.svg";
-import MenuIcon from "../../public/icon_menu.svg";
-import { Button } from "../../components/Button";
-import { LARGE, LARGE_MIN } from "../../theme/theme";
-import { useWindowWidth } from "../../hooks/useWindowWidth";
+} from './Header.styles';
+import Logo from '../../public/logo.svg';
+import MenuIcon from '../../public/icon_menu.svg';
+import { Button } from '../../components/Button';
+import { LARGE, LARGE_MIN } from '../../theme/theme';
+import { useWindowWidth } from '../../hooks/useWindowWidth';
 import {
   HOME_URL,
   ABOUT_URL,
   RESOURCES_URL,
   NEW_JOBPOST_URL,
-} from "../../constants/routes";
+} from '../../constants/routes';
 
 const MENU = {
-  ABOUT: "Pourquoi choisir Télétaf?",
-  HOME: "Annonces",
-  RESOURCES: "Ressources",
+  ABOUT: 'Pourquoi choisir Télétaf?',
+  HOME: 'Annonces',
+  RESOURCES: 'Ressources',
 };
 
 export function Header({ pathname }) {
@@ -37,6 +37,10 @@ export function Header({ pathname }) {
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   const [isLarge, setIsLarge] = useState(false);
   const { windowWidth } = useWindowWidth();
+
+  useEffect(() => {
+    setIsMobileMenuOpened(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (windowWidth > LARGE_MIN) {
@@ -57,8 +61,8 @@ export function Header({ pathname }) {
         }
       }
     }
-    window.addEventListener("scroll", shouldShowFixedNavbar);
-    return () => window.removeEventListener("scroll", shouldShowFixedNavbar);
+    window.addEventListener('scroll', shouldShowFixedNavbar);
+    return () => window.removeEventListener('scroll', shouldShowFixedNavbar);
   }, [showFixedNavbar, setShowFixedNavbar, isLarge]);
 
   return isLarge ? (

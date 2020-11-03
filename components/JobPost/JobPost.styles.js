@@ -119,6 +119,7 @@ export const DescriptionContainer = styled.div`
   line-height: 1.5;
   background-color: ${theme.colors.whiteA100};
   border-radius: ${(p) => (p.isOpen ? '0' : '0 0 4px 4px')};
+  will-change: transform, height;
 
   h5 {
     ${nunitoLight}
@@ -127,6 +128,8 @@ export const DescriptionContainer = styled.div`
 
   ${(p) => p.isOpen} && {
     height: ${(p) => `${p.height}px`};
+    transform: translateZ(0);
+    will-change: transform, height;
   }
 
   ${theme.mediaQueries.mobile} {

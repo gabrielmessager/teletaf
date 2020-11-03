@@ -9,14 +9,16 @@ export function About() {
       <H3>Travaillez depuis chez vous 👩‍💻</H3>
       <Paragraph>
         Nous avons listé{' '}
-        <Link href="/resources">les différents avantages télétravail</Link>.
-        N'attendez plus!
+        <Link href="/resources">les différents avantages du télétravail</Link>.
+        N'attendez plus et consultez <Link href="/">nos offres</Link> dès
+        maintenant.
       </Paragraph>
       <H3>Parlez vous français? 🇫🇷</H3>
       <Paragraph>
-        Nos offres de télétravail sont principalement destinées aux personnes
-        francophones. Nous sommes 285 millions de francophones à travers le
-        monde, ce qui fait du français la 5ème langue la plus parlée au monde!
+        Nos offres de télétravail proviennent d'entreprises francophones et sont
+        principalement destinées aux personnes francophones. Nous sommes 285
+        millions de francophones à travers le monde, ce qui fait du français la
+        5ème langue la plus parlée au monde!
       </Paragraph>
       <H3>Consultez des offres récentes 🆕</H3>
       <Paragraph>
