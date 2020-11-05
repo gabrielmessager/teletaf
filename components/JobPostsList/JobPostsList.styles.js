@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { theme } from "../../theme/theme";
+import styled from 'styled-components';
+import { theme } from '../../theme/theme';
+import { nunitoBold } from '../../theme/fonts';
 
 export const Container = styled.div`
   display: flex;
@@ -13,4 +14,50 @@ export const Container = styled.div`
   ${theme.mediaQueries.tablet} {
     width: 100%;
   }
+`;
+
+export const FilterContainer = styled.div`
+  width: 100%;
+  ${nunitoBold}
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  text-align: center;
+  margin-top: 8px;
+`;
+
+export const Filter = styled.div`
+  width: 66px;
+  height: 40px;
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  pointer-events: all;
+  transition: background-color 0.2s ease-in-out;
+  background-color: ${(p) => p.isSelected && `${theme.colors.gray020}`};
+
+  span {
+    margin-bottom: 4px;
+    pointer-events: none;
+  }
+
+  &:hover {
+    background-color: ${(p) =>
+      p.isSelected ? `${theme.colors.gray020}` : '#fff'};
+  }
+`;
+
+export const EmptyContainer = styled.div`
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ${nunitoBold}
+  font-size: 18px;
 `;
