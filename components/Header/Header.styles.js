@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import Link from "next/link";
-import { theme, MEDIUM_DOWN } from "../../theme/theme";
-import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts";
+import styled from 'styled-components';
+import Link from 'next/link';
+import { theme, MEDIUM_DOWN } from '../../theme/theme';
+import { nunitoLight, nunitoRegular, nunitoBold } from '../../theme/fonts';
 
 const MOBILE_OFFSET = 75;
 
@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  position: ${(p) => p.showFixedNavbar && "fixed"};
+  position: ${(p) => p.showFixedNavbar && 'fixed'};
   background-color: #fff;
   height: 70px;
   width: 100%;
@@ -61,7 +61,7 @@ export const ListElement = styled.li`
     color: #000;
   }
   ${Bullet} {
-    opacity: ${(p) => (p.isSelected ? "1" : "0")};
+    opacity: ${(p) => (p.isSelected ? '1' : '0')};
   }
 `;
 
@@ -78,6 +78,7 @@ export const ImageContainer = styled.div`
   top: 0px;
   right: 0px;
   padding: 16px;
+  padding-top: 19px;
   margin-top: 8px;
   z-index: 2;
   background-color: #fff;

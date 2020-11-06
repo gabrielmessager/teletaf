@@ -30,6 +30,10 @@ export const FilterContainer = styled.div`
   justify-content: space-between;
   align-items: start;
   text-align: center;
+
+  ${theme.mediaQueries.tablet} {
+    padding-right: 66px;
+  }
 `;
 
 export const Filter = styled.div`
