@@ -9,8 +9,9 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     position: relative;
     overflow-x: hidden;
-    overflow-y: auto;
-    height: 100vh;
+    height: 100%;
+    /* overflow-y: auto;
+    height: 100vh; */
   }
   body {
     margin: 0;
