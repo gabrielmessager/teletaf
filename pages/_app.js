@@ -45,10 +45,10 @@ export default function App({ Component, pageProps, router }) {
               opacity: 1,
             },
           }}
-          style={{
-            height: '100vh',
-            overflowY: 'scroll',
-          }}
+          // style={{
+          //   height: '100vh',
+          //   overflowY: 'scroll',
+          // }}
         >
           <Component {...pageProps} />
         </motion.div>
