@@ -11,9 +11,9 @@ export const remoteWorkForEmployer = {
       </Paragraph>
       <H3>Des employés plus productifs 🏃‍♂️</H3>
       <Paragraph>
-        Vos employés sont plus productifs par le simple fait qu'il y a moins de
-        distractions autour d'eux. Ceci suppose que vous les assistiez avec les
-        outils, la structure et la culture pour leur permettre d'exceller.
+        Vos employés sont plus productifs car il y a moins de distractions
+        autour d'eux. Cela suppose aussi que vous les assistiez avec les outils,
+        la structure et la culture pour leur permettre d'exceller au quotidien.
       </Paragraph>
       <H3>Diminuez vos coût fixes 💵</H3>
       <Paragraph>
@@ -31,14 +31,16 @@ export const remoteWorkForEmployer = {
       <Paragraph>
         Faire grandir votre entreprise n'a jamais été aussi facile. Par exemple,
         en période de croissance importante, vous devriez changer de locaux
-        relativement souvent ce qui entraine des coûts et des dépenses
-        inévitables. Grâce au télétravail, ceci n'est plus un souci.
+        relativement souvent ce qui entraine des dépenses importantes mais pas
+        forcément idéales pour votre entreprise. Grâce au télétravail, ceci
+        n'est plus un souci et vous pouvez affecter ces fonds où vous en avez
+        vraiment besoin.
       </Paragraph>
       <H3>Pensez au futur 🔮</H3>
       <Paragraph>
         Les employés de demain s'attendent à avoir plus de possibilités pour
-        travailler à distance. Ils sont aussi bien plus familiers avec le
-        travail en ligne que leurs ainés.
+        travailler à distance. Ils sont aussi bien plus familiers avec la
+        technologie et le travail en ligne que leurs ainés.
       </Paragraph>
       <H3>Des groupes de travail plus efficaces 💡</H3>
       <Paragraph>
@@ -49,7 +51,7 @@ export const remoteWorkForEmployer = {
       <H3>Moins de frais à l'embauche 💰</H3>
       <Paragraph>
         Vous n'avez pas besoin de couvrir les frais de déménagement lorsqu'un
-        nouvel employé rejoint votre équipe.
+        nouvel employé rejoint votre équipe par exemple.
       </Paragraph>
       <H3>
         Votre entreprise peut continuer de fonctionner en toute circonstance 👌

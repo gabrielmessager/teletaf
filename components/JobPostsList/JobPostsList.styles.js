@@ -16,6 +16,12 @@ export const Container = styled.div`
   }
 `;
 
+export const FilterWrapper = styled.div`
+  overflow-x: scroll;
+  width: 100%;
+  margin-top: 8px;
+`;
+
 export const FilterContainer = styled.div`
   width: 100%;
   ${nunitoBold}
@@ -24,7 +30,12 @@ export const FilterContainer = styled.div`
   justify-content: space-between;
   align-items: start;
   text-align: center;
-  margin-top: 8px;
+
+  ${theme.mediaQueries.tablet} {
+    overflow-x: scroll;
+    width: 900px;
+    justify-content: left;
+  }
 `;
 
 export const Filter = styled.div`
@@ -40,6 +51,7 @@ export const Filter = styled.div`
   pointer-events: all;
   transition: background-color 0.2s ease-in-out;
   background-color: ${(p) => p.isSelected && `${theme.colors.gray020}`};
+  text-transform: uppercase;
 
   span {
     margin-bottom: 4px;
@@ -60,4 +72,9 @@ export const EmptyContainer = styled.div`
   justify-content: center;
   ${nunitoBold}
   font-size: 18px;
+`;
+
+export const Text = styled.div`
+  padding: 16px;
+  text-align: center;
 `;

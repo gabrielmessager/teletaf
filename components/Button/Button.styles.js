@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { lighten, darken } from "polished";
-import { buttonReset } from "../../theme/buttonReset";
-import { easeCurves } from "../../theme/eases";
-import { nunitoBold } from "../../theme/fonts";
-import { theme } from "../../theme/theme";
+import styled from 'styled-components';
+import { lighten, darken } from 'polished';
+import { buttonReset } from '../../theme/buttonReset';
+import { easeCurves } from '../../theme/eases';
+import { nunitoBold } from '../../theme/fonts';
+import { theme } from '../../theme/theme';
 
 export const StyledButton = styled.button`
   ${buttonReset};
@@ -19,7 +19,7 @@ export const StyledButton = styled.button`
     color 0.05s ${easeCurves.primary}, box-shadow 0.05s ${easeCurves.primary};
   box-shadow: 0 0 0 0 transparent;
   background-color: ${(p) => p.backgroundColor || theme.colors.green050};
-  color: ${(p) => p.color || "white"};
+  color: ${(p) => p.color || 'white'};
   font-size: 14px;
   height: 32px;
   line-height: 32px;

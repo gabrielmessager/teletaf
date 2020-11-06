@@ -63,7 +63,12 @@ export const JobPost = ({ onClick, jobpost, isOpen = false }) => {
         </TagsContainer>
         <TimeAndButtonContainer>
           <Time datetime={formattedDate}>{postedAt}</Time>
-          <Button className="JobPost__ApplyButton__Desktop" href={jobpost?.url}>
+          <Button
+            className="JobPost__ApplyButton__Desktop"
+            href={jobpost?.url}
+            // prevent job post from opening
+            onClick={(e) => e.stopPropagation()}
+          >
             Postuler
           </Button>
         </TimeAndButtonContainer>

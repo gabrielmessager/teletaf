@@ -6,47 +6,49 @@ import {
   EmptyContainer,
   FilterContainer,
   Filter,
+  FilterWrapper,
+  Text,
 } from './JobPostsList.styles';
 
 const FILTERS = {
   ARTS: {
-    label: 'ARTS',
+    label: 'arts',
     emoji: <span>🎨</span>,
   },
   GESTION: {
-    label: 'GESTION',
+    label: 'gestion',
     emoji: <span>🗄</span>,
   },
   TOURISME: {
-    label: 'TOURISME',
+    label: 'tourisme',
     emoji: <span>✈️</span>,
   },
   LOGISTIQUE: {
-    label: 'LOGISTIQUE',
+    label: 'logistique',
     emoji: <span>🏗</span>,
   },
   NATURE: {
-    label: 'NATURE',
+    label: 'nature',
     emoji: <span>🌲</span>,
   },
   MARKETING: {
-    label: 'MARKETING',
+    label: 'marketing',
     emoji: <span>📈</span>,
   },
   INDUSTRIE: {
-    label: 'INDUSTRIE',
+    label: 'industrie',
     emoji: <span>🏭</span>,
   },
   BANQUE: {
-    label: 'BANQUE',
+    label: 'banque',
     emoji: <span>🏦</span>,
   },
   IT: {
-    label: 'IT',
+    label: 'it',
     emoji: <span>💻</span>,
   },
   SANTE: {
-    label: 'SANTÉ',
+    label: 'santé',
     emoji: <span>🚑</span>,
   },
 };
@@ -78,21 +80,24 @@ export const JobPostsList = ({ jobposts }) => {
 
   return (
     <Container>
-      <FilterContainer>
-        {Object.keys(FILTERS).map((key) => {
-          const { emoji, label } = FILTERS[key];
-          return (
-            <Filter
-              isSelected={selectedFilter === label}
-              onClick={onFilterClick}
-              data-filter={label}
-            >
-              {emoji}
-              <span>{label}</span>
-            </Filter>
-          );
-        })}
-      </FilterContainer>
+      <FilterWrapper>
+        <FilterContainer>
+          {Object.keys(FILTERS).map((key) => {
+            const { emoji, label } = FILTERS[key];
+            return (
+              <Filter
+                isSelected={selectedFilter === label}
+                onClick={onFilterClick}
+                data-filter={label}
+              >
+                {emoji}
+                <span>{label}</span>
+              </Filter>
+            );
+          })}
+        </FilterContainer>
+      </FilterWrapper>
+
       {jobposts.length > 0 ? (
         <>
           {jobposts.map((jobpost) => (
@@ -108,8 +113,10 @@ export const JobPostsList = ({ jobposts }) => {
         </>
       ) : (
         <EmptyContainer>
-          Nous continuons de chercher des offres d'emploi pour cette catégorie
-          🙂.
+          <Text>
+            Nous continuons de chercher des offres d'emploi pour cette
+            catégorie. 🙂
+          </Text>
         </EmptyContainer>
       )}
     </Container>

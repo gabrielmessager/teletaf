@@ -6,15 +6,17 @@ export const remoteWorkForEmployees = {
     <>
       <H3 style={{ marginTop: 0 }}>Fléxibilité 👶</H3>
       <Paragraph>
-        Offrez-vous plus de fléxibilité dans votre vie quotidienne (pour vos
-        enfants, parents, amis, courses, activités sportives, livraisons)
+        Offrez-vous plus de fléxibilité dans votre vie quotidienne pour vous
+        occuper de vos enfants, parents, amis, mais aussi lorsqu'il s'agit de
+        faire de petites courses ou livraisons. Vous pouvez également dégager
+        plus de temps pour vos activités sportives.
       </Paragraph>
       <H3>Moins de stress, plus de pouvoir d'achat 🧘</H3>
       <Paragraph>
         Dites au-revoir au temps passé ainsi qu'à l'argent depensé dans votre
         trajet pour aller travailler (coût de votre abonnement de métro ou de
         bus, prix de l'essence, frais d'entretien de votre véhicule, péages,
-        etc..)
+        etc..).
       </Paragraph>
       <H3>Sécurité 🔒</H3>
       <Paragraph>
@@ -37,12 +39,13 @@ export const remoteWorkForEmployees = {
       <Paragraph>
         Vous avez la possibilité de voyager sans prendre de vacances pour être
         proche de votre famille ou simplement pour découvrir une nouvelle région
-        après le travail.
+        après votre journée de travail.
       </Paragraph>
       <H3>Faire des expériences 👘</H3>
       <Paragraph>
         Vous avez la liberté de déménager, d'être indépendant de votre lieu de
-        résidence ou même de voyager avec d'autres travailleurs à distance.
+        résidence ou même de voyager avec d'investir dans un espace de travail
+        avec d'autres travailleurs à distance.
       </Paragraph>
       <H3>Prenez soin de vous 😷</H3>
       <Paragraph>
@@ -50,8 +53,9 @@ export const remoteWorkForEmployees = {
       </Paragraph>
       <H3>Améliorez votre relationnel 👍</H3>
       <Paragraph>
-        Cela peut faciliter la communication avec des collègues difficiles ce
-        qui reduit les problèmes personnels au sein de l'entreprise.
+        Travailler à distance peut faciliter la communication avec des collègues
+        difficiles ce qui reduit vos problèmes personnels ou votre anxiété
+        lorsque vous allez travailler.
       </Paragraph>
       <H3>Aménagez votre espace de travail 🖼</H3>
       <Paragraph>
@@ -71,11 +75,15 @@ export const remoteWorkForEmployees = {
       </Paragraph>
       <H3>Maitrisez votre budget repas 🍽</H3>
       <Paragraph>
-        Mangez chez vous est meilleur pour votre santé et moins cher de manger à
-        l'exterieur.
+        Mangez chez vous est meilleur pour votre santé et moins cher que de
+        manger à l'exterieur tous les midis.
       </Paragraph>
       <H3>Fini le dresscode formel 👔</H3>
-      <Paragraph>Les habits de travail ne sont pas requis</Paragraph>
+      <Paragraph>
+        Les habits de travail ne sont pas requis. Bien sur, il n'est pas
+        question de travailler en pyjama, mais vous pouvez faire tomber la veste
+        pour être plus à l'aise.
+      </Paragraph>
     </>
   ),
   title: 'Télétravail',
