@@ -6,18 +6,19 @@ import { Header } from '../components/Header';
 import { theme } from '../theme/theme';
 
 const GlobalStyle = createGlobalStyle`
+  html {
+    height: 100%;
+  }
   html, body {
     position: relative;
     overflow-x: hidden;
-    height: 100%;
-    /* overflow-y: auto;
-    height: 100vh; */
   }
   body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: ${theme.colors.gray010};
+    /* height: 100%; */
   }
 `;
 
