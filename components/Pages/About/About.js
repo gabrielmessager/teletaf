@@ -5,7 +5,7 @@ import { Container, H1, H3, Paragraph } from '../Components';
 export function About() {
   return (
     <Container>
-      <H1>Une plateforme pour trouver votre prochain travail à distance</H1>
+      <H1>Trouvez votre prochain travail à distance</H1>
       <H3>Travaillez depuis chez vous 👩‍💻</H3>
       <Paragraph>
         Nous avons listé{' '}
@@ -30,7 +30,8 @@ export function About() {
       <Paragraph>
         Toutes nos offres sont séléctionnées et triées manuellement pour
         s'assurer de la qualité des offres que vous consultez sur notre
-        plateforme.
+        plateforme. Ah, et nous proposons que des CDI ou équivalent lorsque
+        l'offre est à l'étranger.
       </Paragraph>
       <H3>Design simplifié 🙂</H3>
       <Paragraph>

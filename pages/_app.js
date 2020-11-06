@@ -45,6 +45,9 @@ export default function App({ Component, pageProps, router }) {
               opacity: 1,
             },
           }}
+          style={{
+            height: '100vh',
+          }}
         >
           <Component {...pageProps} />
         </motion.div>
