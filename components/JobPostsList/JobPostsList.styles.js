@@ -23,19 +23,13 @@ export const FilterWrapper = styled.div`
 `;
 
 export const FilterContainer = styled.div`
-  width: 100%;
+  width: 900px;
   ${nunitoBold}
   font-size: 12px;
   display: flex;
   justify-content: space-between;
   align-items: start;
   text-align: center;
-
-  ${theme.mediaQueries.tablet} {
-    overflow-x: scroll;
-    width: 900px;
-    justify-content: left;
-  }
 `;
 
 export const Filter = styled.div`
