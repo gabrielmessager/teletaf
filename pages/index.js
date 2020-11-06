@@ -5,7 +5,7 @@ import { JobPostsList } from '../components/JobPostsList/JobPostsList';
 
 export default function Home({ isConnected, jobposts }) {
   return (
-    <main style={{ height: '100vh' }}>
+    <main>
       {isConnected && (
         <>
           <NewsletterEmailBar />

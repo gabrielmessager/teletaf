@@ -9,6 +9,8 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     position: relative;
     overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
   }
   body {
     margin: 0;
@@ -45,10 +47,6 @@ export default function App({ Component, pageProps, router }) {
               opacity: 1,
             },
           }}
-          // style={{
-          //   height: '100vh',
-          //   overflowY: 'scroll',
-          // }}
         >
           <Component {...pageProps} />
         </motion.div>
