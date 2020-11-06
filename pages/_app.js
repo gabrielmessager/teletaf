@@ -47,6 +47,7 @@ export default function App({ Component, pageProps, router }) {
           }}
           style={{
             height: '100vh',
+            overflowY: 'scroll',
           }}
         >
           <Component {...pageProps} />
