@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
-import Media from "react-media";
-import { Input } from "../Input";
-import { Select } from "../Select";
-import { LARGE_MIN, theme } from "../../theme/theme";
+import React, { useEffect, useState, useRef } from 'react';
+import Media from 'react-media';
+import { Input } from '../Input';
+import { Select } from '../Select';
+import { LARGE_MIN, theme } from '../../theme/theme';
 import {
   Container,
   InputContainer,
@@ -12,21 +12,21 @@ import {
   Text,
   FormContainer,
   MessageContainer,
-} from "./NewsletterEmailBar.styles";
-import { useWindowWidth } from "../../hooks/useWindowWidth";
-import { useRefHeight } from "../../hooks/useRefHeight";
+} from './NewsletterEmailBar.styles';
+import { useWindowWidth } from '../../hooks/useWindowWidth';
+import { useRefHeight } from '../../hooks/useRefHeight';
 
 export function NewsletterEmailBar({ onSubmit }) {
   const [fontSize, setFontSize] = useState(18);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
   const { windowWidth } = useWindowWidth();
   const ref = useRef(null);
   const refHeight = useRefHeight(ref);
 
   function hideMessage() {
-    setTimeout(() => setMessage(""), 5000);
+    setTimeout(() => setMessage(''), 5000);
   }
 
   useEffect(() => {
@@ -39,19 +39,19 @@ export function NewsletterEmailBar({ onSubmit }) {
 
   async function onSubmit({ email }) {
     if (!email) {
-      setMessage("⚠️ Veuillez indiquer votre email 📮");
+      setMessage('⚠️ Veuillez indiquer votre email 📮');
       hideMessage();
       return;
     }
     try {
-      setMessage("");
+      setMessage('');
       setIsSubmitting(true);
-      const contentType = "application/json";
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
+      const contentType = 'application/json';
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
         headers: {
           Accept: contentType,
-          "Content-Type": contentType,
+          'Content-Type': contentType,
         },
         body: JSON.stringify({ email }),
       });
@@ -61,12 +61,12 @@ export function NewsletterEmailBar({ onSubmit }) {
         throw new Error(res.status);
       }
 
-      setMessage("🙏 Merci! Votre email a bien été enregistré! ✅");
-      setValue("");
+      setMessage('🙏 Merci! Votre email a bien été enregistré! ✅');
+      setValue('');
       hideMessage();
     } catch (error) {
       setMessage(
-        "Hmm...🤔 Nous n’avons pas pu vous enregistrer. Contactez-nous à télétaf@gmail.com"
+        'Hmm...🤔 Nous n’avons pas pu vous enregistrer. Contactez-nous à teletafofficiel@gmail.com'
       );
       hideMessage();
     }

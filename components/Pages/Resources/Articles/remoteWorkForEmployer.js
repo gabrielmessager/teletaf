@@ -17,9 +17,8 @@ export const remoteWorkForEmployer = {
       </Paragraph>
       <H3>Diminuez vos coût fixes 💵</H3>
       <Paragraph>
-        Vous réduisez vos coûts fixes liés à vos bureaux et à la rémunération
-        (vous pouvez embaucher des gens qui vivent dans des zones où le coût de
-        la vie est moins élevé)
+        Vous réduisez vos coûts fixes liés à vos bureaux et au fonctionnement
+        général de votre entreprise.
       </Paragraph>
       <H3>Attirez des employés motivés 🌟</H3>
       <Paragraph>
@@ -30,11 +29,10 @@ export const remoteWorkForEmployer = {
       <H3>Développez votre entreprise plus facilement 📈</H3>
       <Paragraph>
         Faire grandir votre entreprise n'a jamais été aussi facile. Par exemple,
-        en période de croissance importante, vous devriez changer de locaux
-        relativement souvent ce qui entraine des dépenses importantes mais pas
-        forcément idéales pour votre entreprise. Grâce au télétravail, ceci
-        n'est plus un souci et vous pouvez affecter ces fonds où vous en avez
-        vraiment besoin.
+        en période de croissance, vous devriez changer de locaux relativement
+        souvent ce qui entraine des dépenses importantes. Grâce au télétravail,
+        ceci n'est plus un souci et vous pouvez affecter ces fonds où vous en
+        avez vraiment besoin.
       </Paragraph>
       <H3>Pensez au futur 🔮</H3>
       <Paragraph>
@@ -44,9 +42,10 @@ export const remoteWorkForEmployer = {
       </Paragraph>
       <H3>Des groupes de travail plus efficaces 💡</H3>
       <Paragraph>
-        Vous avez moins de réunions et elles sont plus efficaces. Il est moins
-        facile de s'arrêter au bureau du collègue et de faire des réunions
-        ad-hoc.
+        Vous avez moins de réunions et elles sont plus efficaces. Il est
+        difficile d'être passif lors d'un call vidéo. Par conséquent, il faut
+        s'assurer que la réunion et la présence de chaque participant est
+        vraiment nécessaire. Autrement, n'hésitez pas à l'annuler.
       </Paragraph>
       <H3>Moins de frais à l'embauche 💰</H3>
       <Paragraph>

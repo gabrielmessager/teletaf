@@ -58,6 +58,13 @@ export const JobPostsList = ({ jobposts }) => {
   const [selectedFilter, setSelectedFilter] = useState(null);
   const router = useRouter();
 
+  useEffect(() => {
+    const {
+      query: { filter },
+    } = router;
+    if (filter) setSelectedFilter(filter);
+  }, [setSelectedFilter, router]);
+
   const toggleJobPost = (jobPostId) => {
     // close JobPost if currently opened
     if (openedJobPosts[jobPostId]) {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Container, H1, H3, Paragraph } from '../Components';
+import { Footer } from '../../Footer';
 
 export function About() {
   return (
@@ -49,8 +50,9 @@ export function About() {
       </Paragraph>
       <H3>Vous avez une question / suggestion ❓</H3>
       <Paragraph>
-        N'hésitez pas à nous contacter à l'adresse suivante: email@example.com.
-        Nous ferons notre possible pour vous répondre sous 24h ⏱.
+        N'hésitez pas à nous contacter à l'adresse suivante:
+        teletafofficiel@gmail.com. Nous ferons notre possible pour vous répondre
+        sous 24h ⏱.
       </Paragraph>
 
       {/* <H2>Qui sommes nous? 👋</H2>
@@ -63,6 +65,7 @@ export function About() {
         me contacter si vous avez des questions, suggestions, ou simplement
         besoin d'aide dans votre recherche.
       </Paragraph> */}
+      {/* <Footer /> */}
     </Container>
   );
 }
