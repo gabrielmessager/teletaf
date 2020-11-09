@@ -30,6 +30,8 @@ export default function App({ Component, pageProps, router }) {
           rel="stylesheet"
         />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta property="og:title" content="Teletaf" />
+        <meta property="og:image" content="/favicon.svg" />
       </Head>
       <ThemeProvider theme={theme}>
         <Header pathname={router.pathname} />
