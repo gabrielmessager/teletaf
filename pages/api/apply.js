@@ -1,4 +1,6 @@
-import mailchimp from '@mailchimp/mailchimp_marketing';
+// import mailchimp from '@mailchimp/mailchimp_marketing';
+import { connectToDatabase } from '../../util/mongodb';
+import { ObjectID } from 'mongodb';
 
 async function apply() {
   // mailchimp.setConfig({
@@ -23,16 +25,13 @@ export default async (req, res) => {
     // const response = await subscribeEmail(email);
     // res.status(201).json({ success: true, error: '' });
     console.log('hello in export', id);
-    // const query = { id, update: applicants:  };
-    // const jobposts = await db.collection('jobs').findAndModify(query).toArray();
+    const { db } = await connectToDatabase();
 
-    // await req.db
-    //   .collection('jobs')
-    //   .updateOne(
-    //     { date: new Date(data.date) },
-    //     { $set: data },
-    //     { upsert: true }
-    //   );
+    // const query = { id, { $inc: { applicants: 1 } } };
+    const test = await db
+      .collection('jobs')
+      .updateOne({ _id: ObjectID(id) }, { $inc: { applicants: 1 } });
+    res.status(204).json({ success: true, error: '' });
   } catch (error) {
     res
       .status(400)
