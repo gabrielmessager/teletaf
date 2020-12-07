@@ -4,6 +4,7 @@ import Link from 'next/link';
 import {
   Container,
   ListElement,
+  LogoContainer,
   UnorderedList,
   Wrapper,
   ImageContainer,
@@ -13,8 +14,9 @@ import {
   Bullet,
   BulletContainer,
   StyledImage,
+  TagLine,
 } from './Header.styles';
-import Logo from '../../public/logo.svg';
+import Logo from '../../public/logo.png';
 import MenuIcon from '../../public/icon_menu.svg';
 import { Button } from '../../components/Button';
 import { LARGE, LARGE_MIN } from '../../theme/theme';
@@ -69,7 +71,10 @@ export function Header({ pathname }) {
     <Wrapper>
       <Container showFixedNavbar={showFixedNavbar}>
         <Link href="/">
-          <StyledImage src={Logo} width="153" height="35" />
+          <LogoContainer>
+            <StyledImage src={Logo} width="153" height="35" />
+            <TagLine>Trouvez un CDI en télétravail</TagLine>
+          </LogoContainer>
         </Link>
         <nav>
           <UnorderedList>

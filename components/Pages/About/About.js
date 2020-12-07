@@ -31,7 +31,7 @@ export function About() {
       <Paragraph>
         Toutes nos offres sont séléctionnées et triées manuellement pour
         s'assurer de la qualité des offres que vous consultez sur notre
-        plateforme. Ah, et nous proposons que des CDI ou équivalent lorsque
+        plateforme. Ah, et nous ne proposons que des CDI ou équivalent lorsque
         l'offre est à l'étranger.
       </Paragraph>
       <H3>Design simplifié 🙂</H3>
@@ -57,7 +57,7 @@ export function About() {
 
       {/* <H2>Qui sommes nous? 👋</H2>
       <Paragraph>
-        Je m'appelle Gabriel et j'ai développé télétaf pour vous aider a trouver
+        Je m'appelle Gabriel et j'ai développé Télétaf pour vous aider a trouver
         un travail a distance simplement. Je suis moi-même passé par la case
         "recherche d'emploi" et j'ai toujours détesté l'interface de site comme
         LinkedIn ou Indeed qui listent un peu tout et n'importe quoi. Dans cette

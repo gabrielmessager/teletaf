@@ -4,21 +4,34 @@ import { theme, MEDIUM_DOWN } from '../../theme/theme';
 import { nunitoLight, nunitoRegular, nunitoBold } from '../../theme/fonts';
 
 const MOBILE_OFFSET = 75;
+const HEADER_HEIGHT = 80;
+
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
 
 export const StyledImage = styled.img`
   cursor: pointer;
 `;
 
+export const TagLine = styled.span`
+  ${nunitoLight}
+  font-size: 12px;
+  margin-top: 4px;
+`;
+
 export const Wrapper = styled.div`
   position: relative;
-  height: 70px;
+  height: ${HEADER_HEIGHT}px;
   z-index: 2;
 `;
 
 export const Container = styled.div`
   position: ${(p) => p.showFixedNavbar && 'fixed'};
   background-color: #fff;
-  height: 70px;
+  height: ${HEADER_HEIGHT}px;
   width: 100%;
   display: flex;
   align-items: center;

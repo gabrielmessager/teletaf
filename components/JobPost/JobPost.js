@@ -13,7 +13,9 @@ import {
   ThumbContainer,
   TimeAndButtonContainer,
   StyledButton,
+  StyledImage,
 } from './JobPost.styles';
+import Caret from '../../public/caret.svg';
 import { Thumb } from '../Thumb';
 import { Tag } from '../Tag';
 import { Time } from '../Time';
@@ -32,6 +34,46 @@ export const JobPost = ({ onClick, jobpost, isOpen = false }) => {
   const postedAt = formatDistanceToNowStrict(date);
   const ref = useRef(null);
   const refHeight = useRefHeight(ref);
+
+  async function onSubmit() {
+    console.log('submitting');
+    // if (!email) {
+    //   setMessage('⚠️ Veuillez indiquer votre email 📮');
+    //   hideMessage();
+    //   return;
+    // }
+    try {
+      // setMessage('');
+      // setIsSubmitting(true);
+      const contentType = 'application/json';
+      console.log('in try');
+
+      const res = await fetch('/api/apply', {
+        method: 'POST',
+        headers: {
+          Accept: contentType,
+          'Content-Type': contentType,
+        },
+        body: JSON.stringify({ id: jobpost?._id }),
+      });
+
+      // Throw error with status code in case Fetch API req failed
+      if (!res.ok) {
+        throw new Error(res.status);
+      }
+
+      // setMessage('🙏 Merci! Votre email a bien été enregistré! ✅');
+      // setValue('');
+      // hideMessage();
+    } catch (error) {
+      console.log('error', error);
+      // setMessage(
+      //   'Hmm...🤔 Nous n’avons pas pu vous enregistrer. Contactez-nous à teletafofficiel@gmail.com'
+      // );
+      // hideMessage();
+    }
+    // setIsSubmitting(false);
+  }
 
   return (
     <div style={{ width: '100%' }}>
@@ -67,10 +109,14 @@ export const JobPost = ({ onClick, jobpost, isOpen = false }) => {
             className="JobPost__ApplyButton__Desktop"
             href={jobpost?.url}
             // prevent job post from opening
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+              onSubmit();
+            }}
           >
             Postuler
           </Button>
+          <StyledImage src={Caret} width="27" height="15" />
         </TimeAndButtonContainer>
       </Container>
       <DescriptionContainer height={refHeight} isOpen={!isOpen}>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { JobPost } from '../JobPost';
 import {
@@ -65,7 +65,7 @@ export const JobPostsList = ({ jobposts }) => {
     if (filter) setSelectedFilter(filter);
   }, [setSelectedFilter, router]);
 
-  const toggleJobPost = (jobPostId) => {
+  const toggleJobPost = (jobPostId, index) => {
     // close JobPost if currently opened
     if (openedJobPosts[jobPostId]) {
       return setOpenedJobPosts({ ...openedJobPosts, [jobPostId]: false });
@@ -107,10 +107,10 @@ export const JobPostsList = ({ jobposts }) => {
 
       {jobposts.length > 0 ? (
         <>
-          {jobposts.map((jobpost) => (
+          {jobposts.map((jobpost, index) => (
             <JobPost
               onClick={() => {
-                toggleJobPost(jobpost._id);
+                toggleJobPost(jobpost._id, index);
               }}
               isOpen={!!openedJobPosts[jobpost._id]}
               jobpost={jobpost}

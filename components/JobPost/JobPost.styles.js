@@ -165,3 +165,7 @@ export const StyledButton = styled(Button)`
   height: 50px;
   font-size: 18px;
 `;
+
+export const StyledImage = styled.img`
+  cursor: pointer;
+`;

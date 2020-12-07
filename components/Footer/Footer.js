@@ -14,7 +14,7 @@ import {
   BulletContainer,
   StyledImage,
 } from './Footer.styles';
-import Logo from '../../public/logo.svg';
+import Logo from '../../public/logo.png';
 import MenuIcon from '../../public/icon_menu.svg';
 import { Button } from '../../components/Button';
 import { LARGE, LARGE_MIN } from '../../theme/theme';
