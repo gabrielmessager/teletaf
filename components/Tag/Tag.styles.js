@@ -1,10 +1,12 @@
-import styled from "styled-components";
-import { nunitoExtraBold } from "../../theme/fonts";
+import styled from 'styled-components';
+import { nunitoExtraBold } from '../../theme/fonts';
 
 export const Container = styled.div`
-  background-color: ${(p) => p.backgroundColor || "none"};
-  border: ${(p) => !p.backgroundColor && "solid 2px black"};
+  background-color: ${(p) => p.backgroundColor || 'none'};
+  border: ${(p) =>
+    p.backgroundColor ? `solid 2px ${p.backgroundColor}` : 'solid 2px black'};
   border-radius: 4px;
+  color: ${(p) => p.color || '#000'};
   display: inline-block;
   ${nunitoExtraBold}
   font-size: 10px;
@@ -23,4 +25,15 @@ export const Container = styled.div`
     color: white;
     background-color: black;
   }
+`;
+
+export const InnerContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const CloseButton = styled.div`
+  cursor: pointer;
+  margin: 0 2px 0 8px;
+  height: 16px;
 `;

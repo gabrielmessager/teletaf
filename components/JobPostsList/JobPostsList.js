@@ -9,6 +9,7 @@ import {
   FilterWrapper,
   Text,
 } from './JobPostsList.styles';
+import { Tag } from '../Tag';
 
 const FILTERS = {
   ARTS: {
@@ -56,6 +57,8 @@ const FILTERS = {
 export const JobPostsList = ({ jobposts }) => {
   const [openedJobPosts, setOpenedJobPosts] = useState({});
   const [selectedFilter, setSelectedFilter] = useState(null);
+  const [selectedTags, setSelectedTags] = useState([]);
+
   const router = useRouter();
 
   useEffect(() => {
@@ -85,6 +88,23 @@ export const JobPostsList = ({ jobposts }) => {
     router.push(`/?filter=${filter}`);
   };
 
+  const onTagClick = (e, tag) => {
+    e.stopPropagation();
+    const tagExist = selectedTags.indexOf(tag) > -1;
+    if (tagExist) return selectedTags;
+    return setSelectedTags((prevTags) => [...prevTags, tag]);
+  };
+
+  const onTagRemove = (tag) => {
+    const indexOfTag = selectedTags.indexOf(tag);
+    const tagExist = indexOfTag > -1;
+    if (!tagExist) return selectedTags;
+    const newSelectedTags = selectedTags.filter(
+      (selectedTag) => selectedTag !== tag
+    );
+    return setSelectedTags(newSelectedTags);
+  };
+
   return (
     <Container>
       <FilterWrapper>
@@ -105,6 +125,21 @@ export const JobPostsList = ({ jobposts }) => {
         </FilterContainer>
       </FilterWrapper>
 
+      <div>
+        {selectedTags.length > 0 &&
+          selectedTags.map((tag) => (
+            <Tag
+              key={tag}
+              backgroundColor="#000"
+              color="#fff"
+              onRemove={() => onTagRemove(tag)}
+              withCloseButton
+            >
+              {tag}
+            </Tag>
+          ))}
+      </div>
+
       {jobposts.length > 0 ? (
         <>
           {jobposts.map((jobpost, index) => (
@@ -115,6 +150,7 @@ export const JobPostsList = ({ jobposts }) => {
               isOpen={!!openedJobPosts[jobpost._id]}
               jobpost={jobpost}
               key={jobpost._id}
+              onTagClick={onTagClick}
             />
           ))}
         </>

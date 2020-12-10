@@ -31,6 +31,8 @@ export default async (req, res) => {
     const test = await db
       .collection('jobs')
       .updateOne({ _id: ObjectID(id) }, { $inc: { applicants: 1 } });
+    console.log('test in export', test);
+
     res.status(204).json({ success: true, error: '' });
   } catch (error) {
     res
