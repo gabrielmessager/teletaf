@@ -92,7 +92,14 @@ export const JobPostsList = ({ jobposts }) => {
     e.stopPropagation();
     const tagExist = selectedTags.indexOf(tag) > -1;
     if (tagExist) return selectedTags;
-    return setSelectedTags((prevTags) => [...prevTags, tag]);
+
+    const newSelectedTags = [...selectedTags];
+    newSelectedTags.push(tag);
+    console.log('newSelectedTags', newSelectedTags);
+    const queryParams = newSelectedTags.join(',').toLowerCase();
+    console.log('queryParams', queryParams);
+    return setSelectedTags(newSelectedTags);
+    // return router.push(`/?filter=${queryParams}`);
   };
 
   const onTagRemove = (tag) => {
