@@ -76,3 +76,8 @@ export const Text = styled.div`
   padding: 16px;
   text-align: center;
 `;
+
+export const TagsContainer = styled.div`
+  height: 32px;
+  margin-top: 4px;
+`;

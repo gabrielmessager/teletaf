@@ -7,6 +7,7 @@ import {
   FilterContainer,
   Filter,
   FilterWrapper,
+  TagsContainer,
   Text,
 } from './JobPostsList.styles';
 import { Tag } from '../Tag';
@@ -63,12 +64,16 @@ export const JobPostsList = ({ jobposts }) => {
 
   useEffect(() => {
     const {
-      query: { filter },
+      query: { filter, tags },
     } = router;
     if (filter) setSelectedFilter(filter);
-  }, [setSelectedFilter, router]);
+    if (tags) {
+      const tagsToRender = tags.split(',');
+      setSelectedTags(tagsToRender);
+    }
+  }, [router]);
 
-  const toggleJobPost = (jobPostId, index) => {
+  const toggleJobPost = (jobPostId) => {
     // close JobPost if currently opened
     if (openedJobPosts[jobPostId]) {
       return setOpenedJobPosts({ ...openedJobPosts, [jobPostId]: false });
@@ -77,6 +82,7 @@ export const JobPostsList = ({ jobposts }) => {
   };
 
   const onFilterClick = (e) => {
+    setSelectedTags([]);
     const filter = e.target.getAttribute('data-filter');
     // reset filter if already selected
     if (selectedFilter === filter) {
@@ -93,23 +99,27 @@ export const JobPostsList = ({ jobposts }) => {
     const tagExist = selectedTags.indexOf(tag) > -1;
     if (tagExist) return selectedTags;
 
+    setSelectedFilter(null);
     const newSelectedTags = [...selectedTags];
     newSelectedTags.push(tag);
-    console.log('newSelectedTags', newSelectedTags);
     const queryParams = newSelectedTags.join(',').toLowerCase();
-    console.log('queryParams', queryParams);
-    return setSelectedTags(newSelectedTags);
-    // return router.push(`/?filter=${queryParams}`);
+    setSelectedTags(newSelectedTags);
+    return router.push(`/?tags=${queryParams}`);
   };
 
   const onTagRemove = (tag) => {
     const indexOfTag = selectedTags.indexOf(tag);
     const tagExist = indexOfTag > -1;
     if (!tagExist) return selectedTags;
+
     const newSelectedTags = selectedTags.filter(
       (selectedTag) => selectedTag !== tag
     );
-    return setSelectedTags(newSelectedTags);
+    const queryParams = newSelectedTags.join(',').toLowerCase();
+    setSelectedTags(newSelectedTags);
+    return newSelectedTags.length > 0
+      ? router.push(`/?tags=${queryParams}`)
+      : router.push(`/`);
   };
 
   return (
@@ -132,7 +142,7 @@ export const JobPostsList = ({ jobposts }) => {
         </FilterContainer>
       </FilterWrapper>
 
-      <div>
+      <TagsContainer>
         {selectedTags.length > 0 &&
           selectedTags.map((tag) => (
             <Tag
@@ -145,7 +155,7 @@ export const JobPostsList = ({ jobposts }) => {
               {tag}
             </Tag>
           ))}
-      </div>
+      </TagsContainer>
 
       {jobposts.length > 0 ? (
         <>

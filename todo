@@ -1,4 +1,5 @@
 [] - keyboard shortcuts
+[] - add animation (page transition?) when applying / removing tag
 [] - finish conting # applicants
 [] - adjust <Time /> in <JobPost /> - see line 30-32 + line 91
 [] - test browsers
@@ -16,7 +17,7 @@
 [x] - fix Message for newsletter on mobile (slightly off screen)
 [] - add mailto to all emails
 [] - add data about if user applied to job
-[] - add section about workig remotely
+[] - add section about working remotely
 [] - add best equipment to work remotely in resources
 [] - add link to company when clicking on name or thumbnail
 [] - Jobpost - show # views and # applications

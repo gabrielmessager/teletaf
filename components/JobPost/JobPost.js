@@ -28,7 +28,6 @@ const dateFromObjectId = (objectId) => {
 };
 
 export const JobPost = ({ onClick, jobpost, isOpen = false, onTagClick }) => {
-  const tags = [...jobpost?.primary_tag, ...jobpost?.extra_tags];
   const date = dateFromObjectId(jobpost?._id);
   const formattedDate = date.toISOString();
   const postedAt = formatDistanceToNowStrict(date);
@@ -93,22 +92,22 @@ export const JobPost = ({ onClick, jobpost, isOpen = false, onTagClick }) => {
             <Tag backgroundColor="lightgrey">{jobpost?.location}</Tag>
           </div>
           <TagsContainer className="JobPost__TagsContainer__Mobile">
-            {tags.map((tag) => (
-              <Tag key={tag}>{tag}</Tag>
-            ))}
+            {jobpost?.tags.length > 0 &&
+              jobpost?.tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}
           </TagsContainer>
         </JobContainer>
         <TagsContainer className="JobPost__TagsContainer__Desktop">
-          {tags.map((tag) => (
-            <Tag
-              key={tag}
-              onClick={(e) => {
-                onTagClick(e, tag);
-              }}
-            >
-              {tag}
-            </Tag>
-          ))}
+          {jobpost?.tags.length > 0 &&
+            jobpost?.tags.map((tag) => (
+              <Tag
+                key={tag}
+                onClick={(e) => {
+                  onTagClick(e, tag);
+                }}
+              >
+                {tag}
+              </Tag>
+            ))}
         </TagsContainer>
         <TimeAndButtonContainer>
           <Time datetime={formattedDate}>{postedAt}</Time>
