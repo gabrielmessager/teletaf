@@ -93,7 +93,16 @@ export const JobPost = ({ onClick, jobpost, isOpen = false, onTagClick }) => {
           </div>
           <TagsContainer className="JobPost__TagsContainer__Mobile">
             {jobpost?.tags.length > 0 &&
-              jobpost?.tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}
+              jobpost?.tags.map((tag) => (
+                <Tag
+                  key={tag}
+                  onClick={(e) => {
+                    onTagClick(e, tag);
+                  }}
+                >
+                  {tag}
+                </Tag>
+              ))}
           </TagsContainer>
         </JobContainer>
         <TagsContainer className="JobPost__TagsContainer__Desktop">
