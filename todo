@@ -1,7 +1,6 @@
 [] - keyboard shortcuts
 [] - add animation (page transition?) when applying / removing tag
 [] - finish counting # applicants
-[] - adjust <Time /> in <JobPost /> - see line 30-32 + line 91
 [] - test browsers
 [] - add resources
 [] - <HeaderImage />

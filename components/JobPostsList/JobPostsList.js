@@ -59,8 +59,10 @@ export const JobPostsList = ({ jobposts }) => {
   const [openedJobPosts, setOpenedJobPosts] = useState({});
   const [selectedFilter, setSelectedFilter] = useState(null);
   const [selectedTags, setSelectedTags] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
+  const timeout = useRef();
 
   useEffect(() => {
     const {
@@ -71,6 +73,9 @@ export const JobPostsList = ({ jobposts }) => {
       const tagsToRender = tags.split(',');
       setSelectedTags(tagsToRender);
     }
+    setLoading(false);
+    // clearTimeout(timeout.current);
+    return () => clearTimeout(timeout.current);
   }, [router]);
 
   const toggleJobPost = (jobPostId) => {
@@ -82,6 +87,7 @@ export const JobPostsList = ({ jobposts }) => {
   };
 
   const onFilterClick = (e) => {
+    setLoading(true);
     setSelectedTags([]);
     const filter = e.target.getAttribute('data-filter');
     // reset filter if already selected
@@ -98,6 +104,7 @@ export const JobPostsList = ({ jobposts }) => {
     e.stopPropagation();
     const tagExist = selectedTags.indexOf(tag) > -1;
     if (tagExist) return selectedTags;
+    timeout.current = setTimeout(() => setLoading(true), 600);
     if (selectedFilter) {
       setSelectedFilter(null);
     }
@@ -112,7 +119,7 @@ export const JobPostsList = ({ jobposts }) => {
     const indexOfTag = selectedTags.indexOf(tag);
     const tagExist = indexOfTag > -1;
     if (!tagExist) return selectedTags;
-
+    timeout.current = setTimeout(() => setLoading(true), 600);
     const newSelectedTags = selectedTags.filter(
       (selectedTag) => selectedTag !== tag
     );
@@ -122,6 +129,10 @@ export const JobPostsList = ({ jobposts }) => {
       ? router.push(`/?tags=${queryParams}`)
       : router.push(`/`);
   };
+
+  if (loading) {
+    return <div>loading</div>;
+  }
 
   return (
     <Container>
