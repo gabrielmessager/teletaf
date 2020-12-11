@@ -87,7 +87,7 @@ export const JobPostsList = ({ jobposts }) => {
   };
 
   const onFilterClick = (e) => {
-    setLoading(true);
+    timeout.current = setTimeout(() => setLoading(true), 600);
     setSelectedTags([]);
     const filter = e.target.getAttribute('data-filter');
     // reset filter if already selected
