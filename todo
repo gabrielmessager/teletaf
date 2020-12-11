@@ -1,20 +1,13 @@
 [] - keyboard shortcuts
 [] - add animation (page transition?) when applying / removing tag
-[] - finish conting # applicants
+[] - finish counting # applicants
 [] - adjust <Time /> in <JobPost /> - see line 30-32 + line 91
 [] - test browsers
-[x] - create new job post page
 [] - add resources
-[x] - favicon
-[] - change "days" to say "jours"
 [] - <HeaderImage />
-[x] - add email validation for newsletter
-[x] - handle error / confirmation when subscribing to newsletter
 [] - allow to close mobile menu by clicking wherever
 [] - make mobile menu fixed
 [] - font-size job description + in general mobile
-[x] - add confirmation message when email is successfully registered
-[x] - fix Message for newsletter on mobile (slightly off screen)
 [] - add mailto to all emails
 [] - add data about if user applied to job
 [] - add section about working remotely
@@ -22,7 +15,6 @@
 [] - add link to company when clicking on name or thumbnail
 [] - Jobpost - show # views and # applications
 [x] - add page transition / loader
-[x] - see if we can add filters
 [x] - indicate if cabinet de recrutement
 [] - report expired offer
 [] - add footer with contact and twitter

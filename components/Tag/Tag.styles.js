@@ -21,10 +21,12 @@ export const Container = styled.div`
   vertical-align: middle;
   white-space: nowrap;
 
-  &:hover {
-    color: white;
-    background-color: black;
-  }
+  ${(p) =>
+    p.onClick &&
+    `&:hover {
+      color: white;
+      background-color: black;
+    }`}
 `;
 
 export const InnerContainer = styled.div`

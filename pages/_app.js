@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Header } from '../components/Header';
 import { theme } from '../theme/theme';
@@ -35,7 +35,7 @@ export default function App({ Component, pageProps, router }) {
       </Head>
       <ThemeProvider theme={theme}>
         <Header pathname={router.pathname} />
-        <motion.div
+        {/* <motion.div
           key={router.route}
           initial="pageInitial"
           animate="pageAnimate"
@@ -45,11 +45,24 @@ export default function App({ Component, pageProps, router }) {
             },
             pageAnimate: {
               opacity: 1,
+              transition: {
+                duration: 0.2,
+              },
             },
           }}
-        >
-          <Component {...pageProps} />
-        </motion.div>
+        > */}
+        {/* <AnimatePresence exitBeforeEnter>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.5, 0, 0, 1] }}
+            key={`${router.asPath}`}
+          > */}
+        <Component {...pageProps} />
+        {/* </motion.div>
+        </AnimatePresence> */}
+        {/* </motion.div> */}
       </ThemeProvider>
     </>
   );

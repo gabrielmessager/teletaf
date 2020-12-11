@@ -98,8 +98,9 @@ export const JobPostsList = ({ jobposts }) => {
     e.stopPropagation();
     const tagExist = selectedTags.indexOf(tag) > -1;
     if (tagExist) return selectedTags;
-
-    setSelectedFilter(null);
+    if (selectedFilter) {
+      setSelectedFilter(null);
+    }
     const newSelectedTags = [...selectedTags];
     newSelectedTags.push(tag);
     const queryParams = newSelectedTags.join(',').toLowerCase();

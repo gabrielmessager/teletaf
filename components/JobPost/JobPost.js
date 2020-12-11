@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import formatDistanceToNowStrict from 'date-fns/formatDistanceToNowStrict';
+import { fr } from 'date-fns/locale';
 import {
   ButtonContainer,
   Container,
@@ -30,7 +31,7 @@ const dateFromObjectId = (objectId) => {
 export const JobPost = ({ onClick, jobpost, isOpen = false, onTagClick }) => {
   const date = dateFromObjectId(jobpost?._id);
   const formattedDate = date.toISOString();
-  const postedAt = formatDistanceToNowStrict(date);
+  const postedAt = formatDistanceToNowStrict(date, { locale: fr });
   const ref = useRef(null);
   const refHeight = useRefHeight(ref);
 
