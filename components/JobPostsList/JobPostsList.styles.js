@@ -16,6 +16,11 @@ export const Container = styled.div`
 `;
 
 export const FilterWrapper = styled.div`
+  width: '100%';
+  overflow-x: 'scroll';
+`;
+
+export const FilterInnerContainer = styled.div`
   position: relative;
   overflow-x: scroll;
   width: 100%;
@@ -128,7 +133,7 @@ export const Spinner = styled.div`
 `;
 
 export const ArrowWrapper = styled.div`
-  position: fixed;
+  position: absolute;
   pointer-events: none;
   cursor: pointer;
   display: flex;
@@ -143,7 +148,7 @@ export const ArrowContainer = styled.div`
   padding: 0 8px;
 `;
 
-export const Test = styled.div`
+export const ArrowInnerContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

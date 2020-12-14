@@ -6,6 +6,7 @@ import {
   EmptyContainer,
   FilterContainer,
   Filter,
+  FilterInnerContainer,
   FilterWrapper,
   TagsContainer,
   Text,
@@ -13,7 +14,7 @@ import {
   Spinner,
   ArrowWrapper,
   ArrowContainer,
-  Test,
+  ArrowInnerContainer,
 } from './JobPostsList.styles';
 import { Tag } from '../Tag';
 import DoubleArrow from '../../public/double_arrow.svg';
@@ -154,32 +155,34 @@ export const JobPostsList = ({ jobposts }) => {
 
   return (
     <Container>
-      <FilterWrapper>
-        <FilterContainer>
-          {filters.map((key, i) => {
-            const { emoji, label } = FILTERS[key];
-            return (
-              <Filter
-                isSelected={selectedFilter === label}
-                onClick={onFilterClick}
-                data-filter={label}
-                last={i === filters.length - 1}
-              >
-                {emoji}
-                <span>{label}</span>
-              </Filter>
-            );
-          })}
-          {!isLarge && (
-            <ArrowWrapper>
-              <Test>
-                <ArrowContainer>
-                  <img src={DoubleArrow} width="16" height="16" />
-                </ArrowContainer>
-              </Test>
-            </ArrowWrapper>
-          )}
-        </FilterContainer>
+      <FilterWrapper style={{ width: '100%', overflowX: 'scroll' }}>
+        <FilterInnerContainer>
+          <FilterContainer>
+            {filters.map((key, i) => {
+              const { emoji, label } = FILTERS[key];
+              return (
+                <Filter
+                  isSelected={selectedFilter === label}
+                  onClick={onFilterClick}
+                  data-filter={label}
+                  last={i === filters.length - 1}
+                >
+                  {emoji}
+                  <span>{label}</span>
+                </Filter>
+              );
+            })}
+          </FilterContainer>
+        </FilterInnerContainer>
+        {!isLarge && (
+          <ArrowWrapper>
+            <ArrowInnerContainer>
+              <ArrowContainer>
+                <img src={DoubleArrow} width="16" height="16" />
+              </ArrowContainer>
+            </ArrowInnerContainer>
+          </ArrowWrapper>
+        )}
       </FilterWrapper>
 
       <TagsContainer>
