@@ -33,6 +33,9 @@ export const FilterContainer = styled.div`
   justify-content: space-between;
   align-items: start;
   text-align: center;
+  ${theme.mediaQueries.tablet} {
+    width: 1118px;
+  }
 `;
 
 export const Filter = styled.div`
@@ -60,13 +63,13 @@ export const Filter = styled.div`
       p.isSelected ? `${theme.colors.gray020}` : '#fff'};
   }
 
-  /* ${theme.mediaQueries.tablet} {
+  ${theme.mediaQueries.tablet} {
     ${(p) =>
-    p.last &&
-    `
-      margin-right: 100px;
+      p.last &&
+      `
+      margin-right: 118px;
     `}
-  } */
+  }
 `;
 
 export const EmptyContainer = styled.div`
