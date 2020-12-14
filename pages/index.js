@@ -2,12 +2,14 @@ import Head from 'next/head';
 import { connectToDatabase } from '../util/mongodb';
 import { NewsletterEmailBar } from '../components/NewsletterEmailBar';
 import { JobPostsList } from '../components/JobPostsList/JobPostsList';
+import { Header } from '../components/Header';
 
-export default function Home({ isConnected, jobposts }) {
+export default function Home({ isConnected, jobposts, router }) {
   return (
     <main>
       {isConnected && (
         <>
+          <Header pathname={router.pathname} />
           <NewsletterEmailBar />
           <JobPostsList jobposts={jobposts} />
         </>

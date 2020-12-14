@@ -34,7 +34,6 @@ export default function App({ Component, pageProps, router }) {
         <meta property="og:image" content="/favicon.svg" />
       </Head>
       <ThemeProvider theme={theme}>
-        <Header pathname={router.pathname} />
         {/* <motion.div
           key={router.route}
           initial="pageInitial"
@@ -59,7 +58,7 @@ export default function App({ Component, pageProps, router }) {
             transition={{ duration: 0.3, ease: [0.5, 0, 0, 1] }}
             key={`${router.asPath}`}
           > */}
-        <Component {...pageProps} />
+        <Component {...pageProps} router={router} />
         {/* </motion.div>
         </AnimatePresence> */}
         {/* </motion.div> */}
