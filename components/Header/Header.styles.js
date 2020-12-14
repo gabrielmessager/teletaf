@@ -36,7 +36,6 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  /* box-shadow: -2px 0px 8px 0px ${theme.colors.gray030}; */
 `;
 
 export const UnorderedList = styled.ul`
@@ -47,10 +46,6 @@ export const UnorderedList = styled.ul`
   background: #fff;
   margin: 0;
   padding: 0;
-
-  @media ${MEDIUM_DOWN} {
-    width: ${MOBILE_OFFSET}%;
-  }
 `;
 
 export const BulletContainer = styled.div`
@@ -79,21 +74,24 @@ export const ListElement = styled.li`
 `;
 
 export const MobileNav = styled.nav`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   ${UnorderedList} {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
   }
 `;
 
-export const ImageContainer = styled.div`
+export const MenuButtonContainer = styled.div`
   position: absolute;
   top: 0px;
   right: 0px;
-  padding: 16px;
-  padding-top: 19px;
+  padding: 12px;
   margin-top: 8px;
-  z-index: 2;
+  z-index: 4;
   background-color: #fff;
   border-radius: 4px;
   cursor: pointer;
@@ -105,21 +103,69 @@ export const MobileWrapper = styled.div`
 
 export const NavContainer = styled.div`
   position: absolute;
-  left: 100%;
   background-color: #fff;
   width: 100%;
-  height: 100%;
-  transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  transition: transform 0.5s ease;
-  transition: -webkit-transform 0.5s ease;
-  box-shadow: -2px 0px 8px 0px ${theme.colors.gray030};
-  z-index: 1;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
   ${(p) =>
     p.isOpen &&
-    `transform: translateX(-${MOBILE_OFFSET}%);
-    -webkit-transform: translateX(-${MOBILE_OFFSET}%);
-    -ms-transform: translateX(-${MOBILE_OFFSET}%);
+    `
+      opacity: 1;
+      pointer-events: all;
+  `}
+`;
+
+export const MenuButton = styled.div`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+
+  .line {
+    fill: none;
+    stroke: black;
+    stroke-width: 6;
+    transition: stroke-dasharray 400ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+  .line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+  }
+  .line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+
+  ${(p) =>
+    p.isOpen &&
+    `
+      .line1 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+        stroke-width: 6;
+      }
+      .line2 {
+        stroke-dasharray: 1 60;
+        stroke-dashoffset: -30;
+        stroke-width: 6;
+      }
+      .line3 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+        stroke-width: 6;
+      }
   `}
 `;

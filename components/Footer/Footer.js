@@ -15,7 +15,6 @@ import {
   StyledImage,
 } from './Footer.styles';
 import Logo from '../../public/logo.png';
-import MenuIcon from '../../public/icon_menu.svg';
 import { Button } from '../../components/Button';
 import { LARGE, LARGE_MIN } from '../../theme/theme';
 import { useWindowWidth } from '../../hooks/useWindowWidth';

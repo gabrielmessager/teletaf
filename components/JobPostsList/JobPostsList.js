@@ -16,6 +16,8 @@ import {
 } from './JobPostsList.styles';
 import { Tag } from '../Tag';
 import DoubleArrow from '../../public/double_arrow.svg';
+import { LARGE_MIN } from '../../theme/theme';
+import { useWindowWidth } from '../../hooks/useWindowWidth';
 
 const FILTERS = {
   ARTS: {
@@ -65,6 +67,8 @@ export const JobPostsList = ({ jobposts }) => {
   const [selectedFilter, setSelectedFilter] = useState(null);
   const [selectedTags, setSelectedTags] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [isLarge, setIsLarge] = useState(false);
+  const { windowWidth } = useWindowWidth();
 
   const router = useRouter();
   const timeout = useRef();
@@ -72,6 +76,14 @@ export const JobPostsList = ({ jobposts }) => {
   const showSpinner = () => {
     timeout.current = setTimeout(() => setLoading(true), 600);
   };
+
+  useEffect(() => {
+    if (windowWidth > LARGE_MIN) {
+      setIsLarge(true);
+    } else {
+      setIsLarge(false);
+    }
+  }, [isLarge, setIsLarge, windowWidth]);
 
   useEffect(() => {
     const {
@@ -157,14 +169,16 @@ export const JobPostsList = ({ jobposts }) => {
             );
           })}
         </FilterContainer>
-        <ArrowWrapper>
-          <ArrowContainer rotate>
-            <img src={DoubleArrow} width="16" height="16" />
-          </ArrowContainer>
-          <ArrowContainer>
-            <img src={DoubleArrow} width="16" height="16" />
-          </ArrowContainer>
-        </ArrowWrapper>
+        {!isLarge && (
+          <ArrowWrapper>
+            <ArrowContainer rotate180>
+              <img src={DoubleArrow} width="16" height="16" />
+            </ArrowContainer>
+            <ArrowContainer>
+              <img src={DoubleArrow} width="16" height="16" />
+            </ArrowContainer>
+          </ArrowWrapper>
+        )}
       </FilterWrapper>
 
       <TagsContainer>

@@ -142,7 +142,7 @@ export const ArrowContainer = styled.div`
   padding: 0 8px;
 
   ${(p) =>
-    p.rotate &&
+    p.rotate180 &&
     `
       transform: rotate(-180deg);
     `}

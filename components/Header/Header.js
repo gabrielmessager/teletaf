@@ -7,7 +7,8 @@ import {
   LogoContainer,
   UnorderedList,
   Wrapper,
-  ImageContainer,
+  MenuButtonContainer,
+  MenuButton,
   MobileWrapper,
   NavContainer,
   MobileNav,
@@ -17,9 +18,8 @@ import {
   TagLine,
 } from './Header.styles';
 import Logo from '../../public/logo.png';
-import MenuIcon from '../../public/icon_menu.svg';
 import { Button } from '../../components/Button';
-import { LARGE, LARGE_MIN } from '../../theme/theme';
+import { LARGE_MIN } from '../../theme/theme';
 import { useWindowWidth } from '../../hooks/useWindowWidth';
 import {
   HOME_URL,
@@ -35,7 +35,6 @@ const MENU = {
 };
 
 export function Header({ pathname }) {
-  // const [showFixedNavbar, setShowFixedNavbar] = useState(false);
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   const [isLarge, setIsLarge] = useState(false);
   const { windowWidth } = useWindowWidth();
@@ -52,24 +51,8 @@ export function Header({ pathname }) {
     }
   }, [isLarge, setIsLarge, windowWidth]);
 
-  // useEffect(() => {
-  //   function shouldShowFixedNavbar(e) {
-  //     const scrollTop = e.target.documentElement.scrollTop;
-  //     if (isLarge) {
-  //       if (scrollTop > 1) {
-  //         setShowFixedNavbar(true);
-  //       } else {
-  //         setShowFixedNavbar(false);
-  //       }
-  //     }
-  //   }
-  //   window.addEventListener('scroll', shouldShowFixedNavbar);
-  //   return () => window.removeEventListener('scroll', shouldShowFixedNavbar);
-  // }, [showFixedNavbar, setShowFixedNavbar, isLarge]);
-
   return isLarge ? (
     <Wrapper>
-      {/* <Container showFixedNavbar={showFixedNavbar}> */}
       <Container>
         <Link href="/">
           <LogoContainer>
@@ -107,11 +90,23 @@ export function Header({ pathname }) {
     </Wrapper>
   ) : (
     <MobileWrapper>
-      <ImageContainer
+      <MenuButtonContainer
         onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
       >
-        <img src={MenuIcon} width="24" height="17" />
-      </ImageContainer>
+        <MenuButton isOpen={isMobileMenuOpened}>
+          <svg width="32" height="32" viewBox="0 0 100 100">
+            <path
+              className="line line1"
+              d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+            />
+            <path className="line line2" d="M 20,50 H 80" />
+            <path
+              className="line line3"
+              d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+            />
+          </svg>
+        </MenuButton>
+      </MenuButtonContainer>
       <NavContainer isOpen={isMobileMenuOpened}>
         <MobileNav>
           <UnorderedList>
