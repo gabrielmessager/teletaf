@@ -9,6 +9,8 @@ import {
   FilterWrapper,
   TagsContainer,
   Text,
+  SpinnerContainer,
+  Spinner,
 } from './JobPostsList.styles';
 import { Tag } from '../Tag';
 
@@ -64,6 +66,10 @@ export const JobPostsList = ({ jobposts }) => {
   const router = useRouter();
   const timeout = useRef();
 
+  const showSpinner = () => {
+    timeout.current = setTimeout(() => setLoading(true), 600);
+  };
+
   useEffect(() => {
     const {
       query: { filter, tags },
@@ -87,7 +93,7 @@ export const JobPostsList = ({ jobposts }) => {
   };
 
   const onFilterClick = (e) => {
-    timeout.current = setTimeout(() => setLoading(true), 600);
+    showSpinner();
     setSelectedTags([]);
     const filter = e.target.getAttribute('data-filter');
     // reset filter if already selected
@@ -104,7 +110,7 @@ export const JobPostsList = ({ jobposts }) => {
     e.stopPropagation();
     const tagExist = selectedTags.indexOf(tag) > -1;
     if (tagExist) return selectedTags;
-    timeout.current = setTimeout(() => setLoading(true), 600);
+    showSpinner();
     if (selectedFilter) {
       setSelectedFilter(null);
     }
@@ -119,7 +125,7 @@ export const JobPostsList = ({ jobposts }) => {
     const indexOfTag = selectedTags.indexOf(tag);
     const tagExist = indexOfTag > -1;
     if (!tagExist) return selectedTags;
-    timeout.current = setTimeout(() => setLoading(true), 600);
+    showSpinner();
     const newSelectedTags = selectedTags.filter(
       (selectedTag) => selectedTag !== tag
     );
@@ -129,10 +135,6 @@ export const JobPostsList = ({ jobposts }) => {
       ? router.push(`/?tags=${queryParams}`)
       : router.push(`/`);
   };
-
-  if (loading) {
-    return <div>loading</div>;
-  }
 
   return (
     <Container>
@@ -169,28 +171,34 @@ export const JobPostsList = ({ jobposts }) => {
           ))}
       </TagsContainer>
 
-      {jobposts.length > 0 ? (
-        <>
-          {jobposts.map((jobpost, index) => (
-            <JobPost
-              onClick={() => {
-                toggleJobPost(jobpost._id, index);
-              }}
-              isOpen={!!openedJobPosts[jobpost._id]}
-              jobpost={jobpost}
-              key={jobpost._id}
-              onTagClick={onTagClick}
-            />
-          ))}
-        </>
-      ) : (
-        <EmptyContainer>
-          <Text>
-            Nous continuons de chercher des offres d'emploi pour cette
-            catégorie. 🙂
-          </Text>
-        </EmptyContainer>
+      {loading && (
+        <SpinnerContainer>
+          <Spinner />
+        </SpinnerContainer>
       )}
+      {!loading &&
+        (jobposts.length > 0 ? (
+          <>
+            {jobposts.map((jobpost, index) => (
+              <JobPost
+                onClick={() => {
+                  toggleJobPost(jobpost._id, index);
+                }}
+                isOpen={!!openedJobPosts[jobpost._id]}
+                jobpost={jobpost}
+                key={jobpost._id}
+                onTagClick={onTagClick}
+              />
+            ))}
+          </>
+        ) : (
+          <EmptyContainer>
+            <Text>
+              Nous continuons de chercher des offres d'emploi pour cette
+              catégorie. 🙂
+            </Text>
+          </EmptyContainer>
+        ))}
     </Container>
   );
 };

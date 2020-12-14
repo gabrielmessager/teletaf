@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { theme } from '../../theme/theme';
 import { nunitoBold } from '../../theme/fonts';
 
@@ -10,7 +10,6 @@ export const Container = styled.div`
   width: 900px;
   margin: 0 auto;
   padding-bottom: 116px;
-
   ${theme.mediaQueries.tablet} {
     width: 100%;
   }
@@ -80,4 +79,42 @@ export const Text = styled.div`
 export const TagsContainer = styled.div`
   height: 32px;
   margin-top: 4px;
+`;
+
+const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const SpinnerContainer = styled.div`
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+`;
+
+export const Spinner = styled.div`
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: ${spin} 0.7s infinite linear;
+  animation: ${spin} 0.7s infinite linear;
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+  border-right: 2px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  border-left: 2px solid #000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
 `;
