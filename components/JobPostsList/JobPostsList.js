@@ -13,6 +13,7 @@ import {
   Spinner,
   ArrowWrapper,
   ArrowContainer,
+  Test,
 } from './JobPostsList.styles';
 import { Tag } from '../Tag';
 import DoubleArrow from '../../public/double_arrow.svg';
@@ -168,17 +169,16 @@ export const JobPostsList = ({ jobposts }) => {
               </Filter>
             );
           })}
+          {!isLarge && (
+            <ArrowWrapper>
+              <Test>
+                <ArrowContainer>
+                  <img src={DoubleArrow} width="16" height="16" />
+                </ArrowContainer>
+              </Test>
+            </ArrowWrapper>
+          )}
         </FilterContainer>
-        {!isLarge && (
-          <ArrowWrapper>
-            <ArrowContainer rotate180>
-              <img src={DoubleArrow} width="16" height="16" />
-            </ArrowContainer>
-            <ArrowContainer>
-              <img src={DoubleArrow} width="16" height="16" />
-            </ArrowContainer>
-          </ArrowWrapper>
-        )}
       </FilterWrapper>
 
       <TagsContainer>

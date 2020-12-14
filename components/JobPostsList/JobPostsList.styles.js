@@ -122,28 +122,30 @@ export const Spinner = styled.div`
 
 export const ArrowWrapper = styled.div`
   position: fixed;
-  width: 64px;
-  border-radius: 4px;
   pointer-events: none;
+  cursor: pointer;
   display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding-top: 8px;
-  /* background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.95) 50%,
-    rgba(255, 255, 255, 1) 100%
-  ); */
+  top: 8px;
+  height: 56px;
+  right: 66px;
 `;
 
 export const ArrowContainer = styled.div`
+  display: flex;
   height: 16px;
   padding: 0 8px;
+`;
 
-  ${(p) =>
-    p.rotate180 &&
-    `
-      transform: rotate(-180deg);
-    `}
+export const Test = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 64px;
+  border-radius: 4px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(242, 245, 247, 1) 45%,
+    rgba(242, 245, 247, 1) 100%
+  );
 `;
