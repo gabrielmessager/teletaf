@@ -16,6 +16,7 @@ export const Container = styled.div`
 `;
 
 export const FilterWrapper = styled.div`
+  position: relative;
   overflow-x: scroll;
   width: 100%;
   margin-top: 8px;
@@ -117,4 +118,32 @@ export const Spinner = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
+`;
+
+export const ArrowWrapper = styled.div`
+  position: fixed;
+  width: 64px;
+  border-radius: 4px;
+  pointer-events: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 8px;
+  /* background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(255, 255, 255, 1) 100%
+  ); */
+`;
+
+export const ArrowContainer = styled.div`
+  height: 16px;
+  padding: 0 8px;
+
+  ${(p) =>
+    p.rotate &&
+    `
+      transform: rotate(-180deg);
+    `}
 `;

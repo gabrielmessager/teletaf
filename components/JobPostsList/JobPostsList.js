@@ -11,8 +11,11 @@ import {
   Text,
   SpinnerContainer,
   Spinner,
+  ArrowWrapper,
+  ArrowContainer,
 } from './JobPostsList.styles';
 import { Tag } from '../Tag';
+import DoubleArrow from '../../public/double_arrow.svg';
 
 const FILTERS = {
   ARTS: {
@@ -154,6 +157,14 @@ export const JobPostsList = ({ jobposts }) => {
             );
           })}
         </FilterContainer>
+        <ArrowWrapper>
+          <ArrowContainer rotate>
+            <img src={DoubleArrow} width="16" height="16" />
+          </ArrowContainer>
+          <ArrowContainer>
+            <img src={DoubleArrow} width="16" height="16" />
+          </ArrowContainer>
+        </ArrowWrapper>
       </FilterWrapper>
 
       <TagsContainer>
