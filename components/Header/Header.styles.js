@@ -25,7 +25,7 @@ export const TagLine = styled.span`
 export const Wrapper = styled.div`
   position: relative;
   height: ${HEADER_HEIGHT}px;
-  z-index: 2;
+  /* z-index: 2; */
 `;
 
 export const Container = styled.div`
@@ -36,7 +36,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  box-shadow: -2px 0px 8px 0px ${theme.colors.gray030};
+  /* box-shadow: -2px 0px 8px 0px ${theme.colors.gray030}; */
 `;
 
 export const UnorderedList = styled.ul`

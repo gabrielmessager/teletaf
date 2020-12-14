@@ -35,7 +35,7 @@ const MENU = {
 };
 
 export function Header({ pathname }) {
-  const [showFixedNavbar, setShowFixedNavbar] = useState(false);
+  // const [showFixedNavbar, setShowFixedNavbar] = useState(false);
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   const [isLarge, setIsLarge] = useState(false);
   const { windowWidth } = useWindowWidth();
@@ -52,24 +52,25 @@ export function Header({ pathname }) {
     }
   }, [isLarge, setIsLarge, windowWidth]);
 
-  useEffect(() => {
-    function shouldShowFixedNavbar(e) {
-      const scrollTop = e.target.documentElement.scrollTop;
-      if (isLarge) {
-        if (scrollTop > 1) {
-          setShowFixedNavbar(true);
-        } else {
-          setShowFixedNavbar(false);
-        }
-      }
-    }
-    window.addEventListener('scroll', shouldShowFixedNavbar);
-    return () => window.removeEventListener('scroll', shouldShowFixedNavbar);
-  }, [showFixedNavbar, setShowFixedNavbar, isLarge]);
+  // useEffect(() => {
+  //   function shouldShowFixedNavbar(e) {
+  //     const scrollTop = e.target.documentElement.scrollTop;
+  //     if (isLarge) {
+  //       if (scrollTop > 1) {
+  //         setShowFixedNavbar(true);
+  //       } else {
+  //         setShowFixedNavbar(false);
+  //       }
+  //     }
+  //   }
+  //   window.addEventListener('scroll', shouldShowFixedNavbar);
+  //   return () => window.removeEventListener('scroll', shouldShowFixedNavbar);
+  // }, [showFixedNavbar, setShowFixedNavbar, isLarge]);
 
   return isLarge ? (
     <Wrapper>
-      <Container showFixedNavbar={showFixedNavbar}>
+      {/* <Container showFixedNavbar={showFixedNavbar}> */}
+      <Container>
         <Link href="/">
           <LogoContainer>
             <StyledImage src={Logo} width="153" height="35" />
