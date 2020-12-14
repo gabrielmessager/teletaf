@@ -70,9 +70,9 @@ export const JobPostsList = ({ jobposts }) => {
   const [loading, setLoading] = useState(false);
   const [isLarge, setIsLarge] = useState(false);
   const { windowWidth } = useWindowWidth();
-
   const router = useRouter();
   const timeout = useRef();
+  const filters = Object.keys(FILTERS);
 
   const showSpinner = () => {
     timeout.current = setTimeout(() => setLoading(true), 600);
@@ -156,13 +156,14 @@ export const JobPostsList = ({ jobposts }) => {
     <Container>
       <FilterWrapper>
         <FilterContainer>
-          {Object.keys(FILTERS).map((key) => {
+          {filters.map((key, i) => {
             const { emoji, label } = FILTERS[key];
             return (
               <Filter
                 isSelected={selectedFilter === label}
                 onClick={onFilterClick}
                 data-filter={label}
+                last={i === filters.length - 1}
               >
                 {emoji}
                 <span>{label}</span>

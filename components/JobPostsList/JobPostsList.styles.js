@@ -20,6 +20,9 @@ export const FilterWrapper = styled.div`
   overflow-x: scroll;
   width: 100%;
   margin-top: 8px;
+  /* ${theme.mediaQueries.tablet} {
+    width: calc(100% - 132px);
+  } */
 `;
 
 export const FilterContainer = styled.div`
@@ -30,10 +33,6 @@ export const FilterContainer = styled.div`
   justify-content: space-between;
   align-items: start;
   text-align: center;
-
-  ${theme.mediaQueries.tablet} {
-    padding-right: 66px;
-  }
 `;
 
 export const Filter = styled.div`
@@ -60,6 +59,14 @@ export const Filter = styled.div`
     background-color: ${(p) =>
       p.isSelected ? `${theme.colors.gray020}` : '#fff'};
   }
+
+  /* ${theme.mediaQueries.tablet} {
+    ${(p) =>
+    p.last &&
+    `
+      margin-right: 100px;
+    `}
+  } */
 `;
 
 export const EmptyContainer = styled.div`
@@ -127,7 +134,7 @@ export const ArrowWrapper = styled.div`
   display: flex;
   top: 8px;
   height: 56px;
-  right: 66px;
+  right: 55px;
 `;
 
 export const ArrowContainer = styled.div`
@@ -139,13 +146,13 @@ export const ArrowContainer = styled.div`
 export const Test = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   width: 64px;
   border-radius: 4px;
   background: linear-gradient(
     to right,
     rgba(255, 255, 255, 0) 0%,
-    rgba(242, 245, 247, 1) 45%,
+    rgba(242, 245, 247, 1) 25%,
     rgba(242, 245, 247, 1) 100%
   );
 `;
