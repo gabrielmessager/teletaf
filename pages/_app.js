@@ -31,7 +31,10 @@ export default function App({ Component, pageProps, router }) {
           rel="stylesheet"
         />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta property="og:image" content={`${PreviewImage}`} />
+        <meta
+          property="og:image"
+          content={`https://teletaf.io/${PreviewImage}`}
+        />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
