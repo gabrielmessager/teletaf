@@ -30,8 +30,50 @@ export default function App({ Component, pageProps, router }) {
           rel="stylesheet"
         />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta property="og:title" content="Teletaf" />
+        <meta property="og:image" content="../public/preview.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="" />
+
+        {/* Primary Meta Tags */}
+        <title>
+          Télétaf | Offres d'emploi en CDI et en télétravail pour francophones
+        </title>
+        <meta
+          name="title"
+          content="Télétaf | Offres d'emploi en CDI et en télétravail pour francophones"
+        />
+        <meta
+          name="description"
+          content="Trouvez votre prochain CDI en télétravail en France ou dans des pays francophones. Consultez nos offres d'emplois et n'attendez plus pour trouver votre prochaine opportunité."
+        />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://teletaf.io/" />
+        <meta
+          property="og:title"
+          content="Télétaf | Offres d'emploi en CDI et en télétravail pour francophones"
+        />
+        <meta
+          property="og:description"
+          content="Trouvez votre prochain CDI en télétravail en France ou dans des pays francophones. Consultez nos offres d'emplois et n'attendez plus pour trouver votre prochaine opportunité."
+        />
         <meta property="og:image" content="/favicon.svg" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://teletaf.io/" />
+        <meta
+          property="twitter:title"
+          content="Télétaf | Offres d'emploi en CDI et en télétravail pour francophones"
+        />
+        <meta
+          property="twitter:description"
+          content="Trouvez votre prochain CDI en télétravail en France ou dans des pays francophones. Consultez nos offres d'emplois et n'attendez plus pour trouver votre prochaine opportunité."
+        />
+        <meta property="twitter:image" content="/favicon.svg" />
       </Head>
       <ThemeProvider theme={theme}>
         <Header pathname={router.pathname} />
