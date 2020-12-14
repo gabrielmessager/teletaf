@@ -20,9 +20,6 @@ export const FilterWrapper = styled.div`
   overflow-x: scroll;
   width: 100%;
   margin-top: 8px;
-  /* ${theme.mediaQueries.tablet} {
-    width: calc(100% - 132px);
-  } */
 `;
 
 export const FilterContainer = styled.div`
