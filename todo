@@ -1,11 +1,9 @@
 [] - keyboard shortcuts
-[] - add animation (page transition?) when applying / removing tag
+[] - add job id in URL so jobpost is already opened when sharing
+[] - add animation (page / div transition?) when applying / removing tag
 [] - finish counting # applicants
 [] - test browsers
 [] - add resources
-[] - <HeaderImage />
-[] - allow to close mobile menu by clicking wherever
-[] - make mobile menu fixed
 [] - font-size job description + in general mobile
 [] - add mailto to all emails
 [] - add data about if user applied to job
@@ -13,11 +11,13 @@
 [] - add best equipment to work remotely in resources
 [] - add link to company when clicking on name or thumbnail
 [] - Jobpost - show # views and # applications
-[x] - add page transition / loader
-[x] - indicate if cabinet de recrutement
 [] - report expired offer
 [] - add footer with contact and twitter
-[] - create preview when sharing
+[x] - allow to close mobile menu by clicking wherever
+[x] - make mobile menu fixed
+[x] - add page transition / loader
+[x] - indicate if cabinet de recrutement
+[x] - create preview when sharing
 
 
 SOURCES:

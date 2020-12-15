@@ -155,7 +155,7 @@ export const JobPostsList = ({ jobposts }) => {
 
   return (
     <Container>
-      <FilterWrapper style={{ width: '100%', overflowX: 'scroll' }}>
+      <FilterWrapper>
         <FilterInnerContainer>
           <FilterContainer>
             {filters.map((key, i) => {
