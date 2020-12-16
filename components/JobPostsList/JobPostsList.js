@@ -97,7 +97,6 @@ export const JobPostsList = ({ jobposts }) => {
       setSelectedTags(tagsToRender);
     }
     setLoading(false);
-    // clearTimeout(timeout.current);
     return () => clearTimeout(timeout.current);
   }, [router]);
 

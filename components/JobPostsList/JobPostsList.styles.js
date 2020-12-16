@@ -16,8 +16,8 @@ export const Container = styled.div`
 `;
 
 export const FilterWrapper = styled.div`
-  width: '100%';
-  overflow-x: 'scroll';
+  width: 100%;
+  overflow-x: scroll;
 `;
 
 export const FilterInnerContainer = styled.div`
