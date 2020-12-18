@@ -76,19 +76,29 @@ export const JobPostsList = ({ jobposts }) => {
   const router = useRouter();
   const timeout = useRef();
   const filters = Object.keys(FILTERS);
+  const {
+    query: { filter, tags, jobId },
+  } = router;
+
+  function getQueryParams() {
+    if (filter) {
+      return `filter=${filter}`;
+    }
+    if (tags) {
+      return `tags=${tags}`;
+    }
+    return '';
+  }
 
   const showSpinner = () => {
     timeout.current = setTimeout(() => setLoading(true), 600);
   };
 
   useIsomorphicLayoutEffect(() => {
-    const {
-      query: { job },
-    } = router;
     setTimeout(() => {
-      const list = document.getElementsByClassName(`${job}`);
+      const list = document.getElementsByClassName(`${jobId}`);
       setListEl(list);
-      setOpenedJobPosts({ ...openedJobPosts, [job]: true });
+      setOpenedJobPosts({ ...openedJobPosts, [jobId]: true });
     }, 400);
 
     setTimeout(() => {
@@ -110,9 +120,6 @@ export const JobPostsList = ({ jobposts }) => {
   }, [isLarge, setIsLarge, windowWidth]);
 
   useEffect(() => {
-    const {
-      query: { filter, tags },
-    } = router;
     if (filter) setSelectedFilter(filter);
     if (tags) {
       const tagsToRender = tags.split(',');
@@ -120,33 +127,33 @@ export const JobPostsList = ({ jobposts }) => {
     }
     setLoading(false);
     return () => clearTimeout(timeout.current);
-  }, [router]);
+  }, [router, filter, tags]);
 
   const toggleJobPost = (jobPostId) => {
-    // const {
-    //   query: { filter, tags },
-    // } = router;
-    const query = filter ? `filter=${filter}` : `tags=${tags}`;
+    const queryParams = getQueryParams();
+
     // close JobPost if currently opened
     if (openedJobPosts[jobPostId]) {
       return setOpenedJobPosts({ ...openedJobPosts, [jobPostId]: false });
     }
     setOpenedJobPosts({ ...openedJobPosts, [jobPostId]: true });
-    router.push(`/?${query}&job=${jobPostId}`);
+    return queryParams
+      ? router.push(`/?${queryParams}&jobId=${jobPostId}`)
+      : router.push(`/?jobId=${jobPostId}`);
   };
 
   const onFilterClick = (e) => {
     showSpinner();
     setSelectedTags([]);
-    const filter = e.target.getAttribute('data-filter');
+    const newFilter = e.target.getAttribute('data-filter');
     // reset filter if already selected
-    if (selectedFilter === filter) {
+    if (selectedFilter === newFilter) {
       setSelectedFilter(null);
-      router.push('/');
-      return;
+      return jobId ? router.push(`/?jobId=${jobId}`) : router.push('/');
     }
-    setSelectedFilter(filter);
-    router.push(`/?filter=${filter}`);
+    setSelectedFilter(newFilter);
+    setOpenedJobPosts({});
+    return router.push(`/?filter=${newFilter}`);
   };
 
   const onTagClick = (e, tag) => {
@@ -161,6 +168,7 @@ export const JobPostsList = ({ jobposts }) => {
     newSelectedTags.push(tag);
     const queryParams = newSelectedTags.join(',').toLowerCase();
     setSelectedTags(newSelectedTags);
+    setOpenedJobPosts({});
     return router.push(`/?tags=${queryParams}`);
   };
 
@@ -172,11 +180,24 @@ export const JobPostsList = ({ jobposts }) => {
     const newSelectedTags = selectedTags.filter(
       (selectedTag) => selectedTag !== tag
     );
-    const queryParams = newSelectedTags.join(',').toLowerCase();
+    const tagsQueryParams = newSelectedTags.join(',').toLowerCase();
     setSelectedTags(newSelectedTags);
-    return newSelectedTags.length > 0
-      ? router.push(`/?tags=${queryParams}`)
-      : router.push(`/`);
+
+    // has tags and jobId
+    if (newSelectedTags.length > 0 && jobId) {
+      return router.push(`/?tags=${tagsQueryParams}&jobId=${jobId}`);
+    }
+
+    // has tags and NO jobId
+    if (newSelectedTags.length > 0 && !jobId) {
+      return router.push(`/?tags=${tagsQueryParams}`);
+    }
+
+    // has NO tags and jobId
+    if (!newSelectedTags.length > 0 && jobId) {
+      return router.push(`/?jobId=${jobId}`);
+    }
+    return router.push(`/`);
   };
 
   return (
