@@ -20,6 +20,7 @@ import { Tag } from '../Tag';
 import DoubleArrow from '../../public/double_arrow.svg';
 import { LARGE_MIN } from '../../theme/theme';
 import { useWindowWidth } from '../../hooks/useWindowWidth';
+import { useIsomorphicLayoutEffect } from '../../hooks/useIsomorphicLayoutEffect';
 
 const FILTERS = {
   ARTS: {
@@ -68,6 +69,7 @@ export const JobPostsList = ({ jobposts }) => {
   const [openedJobPosts, setOpenedJobPosts] = useState({});
   const [selectedFilter, setSelectedFilter] = useState(null);
   const [selectedTags, setSelectedTags] = useState([]);
+  const [listEl, setListEl] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isLarge, setIsLarge] = useState(false);
   const { windowWidth } = useWindowWidth();
@@ -78,6 +80,26 @@ export const JobPostsList = ({ jobposts }) => {
   const showSpinner = () => {
     timeout.current = setTimeout(() => setLoading(true), 600);
   };
+
+  useIsomorphicLayoutEffect(() => {
+    const {
+      query: { job },
+    } = router;
+    setTimeout(() => {
+      const list = document.getElementsByClassName(`${job}`);
+      setListEl(list);
+      setOpenedJobPosts({ ...openedJobPosts, [job]: true });
+    }, 400);
+
+    setTimeout(() => {
+      const top = listEl[0] && listEl[0].getBoundingClientRect().top;
+      window.scrollTo({
+        top: top - 8,
+        left: 0,
+        behavior: 'smooth',
+      });
+    }, 400);
+  }, [listEl]);
 
   useEffect(() => {
     if (windowWidth > LARGE_MIN) {
@@ -101,11 +123,16 @@ export const JobPostsList = ({ jobposts }) => {
   }, [router]);
 
   const toggleJobPost = (jobPostId) => {
+    // const {
+    //   query: { filter, tags },
+    // } = router;
+    const query = filter ? `filter=${filter}` : `tags=${tags}`;
     // close JobPost if currently opened
     if (openedJobPosts[jobPostId]) {
       return setOpenedJobPosts({ ...openedJobPosts, [jobPostId]: false });
     }
     setOpenedJobPosts({ ...openedJobPosts, [jobPostId]: true });
+    router.push(`/?${query}&job=${jobPostId}`);
   };
 
   const onFilterClick = (e) => {
@@ -216,6 +243,7 @@ export const JobPostsList = ({ jobposts }) => {
                 jobpost={jobpost}
                 key={jobpost._id}
                 onTagClick={onTagClick}
+                className={`${jobpost._id}`}
               />
             ))}
           </>
