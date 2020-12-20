@@ -21,11 +21,11 @@ const GlobalStyle = createGlobalStyle`
 
 export default function App({ Component, pageProps, router }) {
   return (
-    <>
+    <html lang="fr">
       <GlobalStyle />
       <Head>
-        <title>Télétaf | Offres de télétravail pour francophones</title>
         <link rel="icon" href="/favicon.svg" />
+        <link rel="canonical" href={`https://teletaf.io${router.pathname}`} />
         <link
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap"
           rel="stylesheet"
@@ -67,7 +67,10 @@ export default function App({ Component, pageProps, router }) {
         <meta property="og:image" content="/favicon.svg" />
 
         {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:card"
+          content={`https://teletaf.io/${PreviewImage}`}
+        />
         <meta property="twitter:url" content="https://teletaf.io/" />
         <meta
           property="twitter:title"
@@ -110,6 +113,6 @@ export default function App({ Component, pageProps, router }) {
         </AnimatePresence> */}
         {/* </motion.div> */}
       </ThemeProvider>
-    </>
+    </html>
   );
 }

@@ -1,6 +1,7 @@
 [] - keyboard shortcuts
-[] - add job id in URL so jobpost is already opened when sharing
-[] - add animation (page / div transition?) when applying / removing tag
+[] - when tag is selected, add black background
+[x] - add job id in URL so jobpost is already opened when sharing
+[x] - add animation (page / div transition?) when applying / removing tag
 [] - finish counting # applicants
 [] - test browsers
 [] - add resources
