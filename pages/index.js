@@ -1,18 +1,22 @@
-import Head from 'next/head';
+import React from 'react';
 import { connectToDatabase } from '../util/mongodb';
 import { NewsletterEmailBar } from '../components/NewsletterEmailBar';
 import { JobPostsList } from '../components/JobPostsList/JobPostsList';
+import { Layout } from '../components/Layout/Layout';
 
 export default function Home({ isConnected, jobposts }) {
   return (
-    <main>
-      {isConnected && (
-        <>
-          <NewsletterEmailBar />
-          <JobPostsList jobposts={jobposts} />
-        </>
-      )}
-    </main>
+    <>
+      <Layout />
+      <main>
+        {isConnected && (
+          <>
+            <NewsletterEmailBar />
+            <JobPostsList jobposts={jobposts} />
+          </>
+        )}
+      </main>
+    </>
   );
 }
 
