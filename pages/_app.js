@@ -64,7 +64,10 @@ export default function App({ Component, pageProps, router }) {
           property="og:description"
           content="Trouvez votre prochain CDI en télétravail en France ou dans des pays francophones. Consultez nos offres d'emplois et n'attendez plus pour trouver votre prochaine opportunité."
         />
-        <meta property="og:image" content="/favicon.svg" />
+        <meta
+          property="og:image"
+          content={`https://teletaf.io/${PreviewImage}`}
+        />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
@@ -77,7 +80,10 @@ export default function App({ Component, pageProps, router }) {
           property="twitter:description"
           content="Trouvez votre prochain CDI en télétravail en France ou dans des pays francophones. Consultez nos offres d'emplois et n'attendez plus pour trouver votre prochaine opportunité."
         />
-        <meta property="twitter:image" content="/favicon.svg" />
+        <meta
+          property="twitter:image"
+          content={`https://teletaf.io/${PreviewImage}`}
+        />
       </Head>
       <ThemeProvider theme={theme}>
         <div>
