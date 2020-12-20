@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { AnimatePresence, motion } from 'framer-motion';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Header } from '../components/Header';
 import { theme } from '../theme/theme';
 import PreviewImage from '../public/preview.jpg';
+import { getSEOTags } from '../constants/seo';
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -20,6 +21,14 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default function App({ Component, pageProps, router }) {
+  const [seoAttributes, setSeoAttributes] = useState({
+    description: '',
+    title: '',
+  });
+  useEffect(() => {
+    const { description, title } = getSEOTags(router);
+    setSeoAttributes({ description, title });
+  }, [router]);
   return (
     <>
       <GlobalStyle />
@@ -41,29 +50,18 @@ export default function App({ Component, pageProps, router }) {
         <meta property="og:image:alt" content="" />
 
         {/* Primary Meta Tags */}
-        <title>
-          Télétaf | Offres d'emploi en CDI et en télétravail pour francophones
-        </title>
-        <meta
-          name="title"
-          content="Télétaf | Offres d'emploi en CDI et en télétravail pour francophones"
-        />
-        <meta
-          name="description"
-          content="Trouvez votre prochain CDI en télétravail en France ou dans des pays francophones. Consultez nos offres d'emplois et n'attendez plus pour trouver votre prochaine opportunité."
-        />
+        <title>{seoAttributes.title}</title>
+        <meta name="title" content={seoAttributes.title} />
+        <meta name="description" content={seoAttributes.description} />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://teletaf.io/" />
         <meta
-          property="og:title"
-          content="Télétaf | Offres d'emploi en CDI et en télétravail pour francophones"
+          property="og:url"
+          content={`https://teletaf.io${router.pathname}`}
         />
-        <meta
-          property="og:description"
-          content="Trouvez votre prochain CDI en télétravail en France ou dans des pays francophones. Consultez nos offres d'emplois et n'attendez plus pour trouver votre prochaine opportunité."
-        />
+        <meta property="og:title" content={seoAttributes.title} />
+        <meta property="og:description" content={seoAttributes.description} />
         <meta
           property="og:image"
           content={`https://teletaf.io/${PreviewImage}`}
@@ -71,14 +69,14 @@ export default function App({ Component, pageProps, router }) {
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://teletaf.io/" />
         <meta
-          property="twitter:title"
-          content="Télétaf | Offres d'emploi en CDI et en télétravail pour francophones"
+          property="twitter:url"
+          content={`https://teletaf.io${router.pathname}`}
         />
+        <meta property="twitter:title" content={seoAttributes.title} />
         <meta
           property="twitter:description"
-          content="Trouvez votre prochain CDI en télétravail en France ou dans des pays francophones. Consultez nos offres d'emplois et n'attendez plus pour trouver votre prochaine opportunité."
+          content={seoAttributes.description}
         />
         <meta
           property="twitter:image"
