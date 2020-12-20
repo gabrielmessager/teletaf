@@ -67,10 +67,7 @@ export default function App({ Component, pageProps, router }) {
         <meta property="og:image" content="/favicon.svg" />
 
         {/* Twitter */}
-        <meta
-          property="twitter:card"
-          content={`https://teletaf.io/${PreviewImage}`}
-        />
+        <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://teletaf.io/" />
         <meta
           property="twitter:title"
