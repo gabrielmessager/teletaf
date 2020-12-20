@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
 export default function App({ Component, pageProps, router }) {
   return (
-    <html lang="fr">
+    <>
       <GlobalStyle />
       <Head>
         <link rel="icon" href="/favicon.svg" />
@@ -83,8 +83,9 @@ export default function App({ Component, pageProps, router }) {
         <meta property="twitter:image" content="/favicon.svg" />
       </Head>
       <ThemeProvider theme={theme}>
-        <Header pathname={router.pathname} />
-        {/* <motion.div
+        <div>
+          <Header pathname={router.pathname} />
+          {/* <motion.div
           key={router.route}
           initial="pageInitial"
           animate="pageAnimate"
@@ -100,7 +101,7 @@ export default function App({ Component, pageProps, router }) {
             },
           }}
         > */}
-        {/* <AnimatePresence exitBeforeEnter>
+          {/* <AnimatePresence exitBeforeEnter>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -108,11 +109,12 @@ export default function App({ Component, pageProps, router }) {
             transition={{ duration: 0.3, ease: [0.5, 0, 0, 1] }}
             key={`${router.asPath}`}
           > */}
-        <Component {...pageProps} />
-        {/* </motion.div>
+          <Component {...pageProps} />
+          {/* </motion.div>
         </AnimatePresence> */}
-        {/* </motion.div> */}
+          {/* </motion.div> */}
+        </div>
       </ThemeProvider>
-    </html>
+    </>
   );
 }
