@@ -21,14 +21,8 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default function App({ Component, pageProps, router }) {
-  const [seoAttributes, setSeoAttributes] = useState({
-    description: '',
-    title: '',
-  });
-  useEffect(() => {
-    const { description, title } = getSEOTags(router);
-    setSeoAttributes({ description, title });
-  }, [router]);
+  const { description, title } = getSEOTags(router);
+
   return (
     <>
       <GlobalStyle />
@@ -50,9 +44,9 @@ export default function App({ Component, pageProps, router }) {
         <meta property="og:image:alt" content="" />
 
         {/* Primary Meta Tags */}
-        <title>{seoAttributes.title}</title>
-        <meta name="title" content={seoAttributes.title} />
-        <meta name="description" content={seoAttributes.description} />
+        <title>{title}</title>
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
@@ -60,8 +54,8 @@ export default function App({ Component, pageProps, router }) {
           property="og:url"
           content={`https://teletaf.io${router.pathname}`}
         />
-        <meta property="og:title" content={seoAttributes.title} />
-        <meta property="og:description" content={seoAttributes.description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta
           property="og:image"
           content={`https://teletaf.io/${PreviewImage}`}
@@ -73,11 +67,8 @@ export default function App({ Component, pageProps, router }) {
           property="twitter:url"
           content={`https://teletaf.io${router.pathname}`}
         />
-        <meta property="twitter:title" content={seoAttributes.title} />
-        <meta
-          property="twitter:description"
-          content={seoAttributes.description}
-        />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
         <meta
           property="twitter:image"
           content={`https://teletaf.io/${PreviewImage}`}
