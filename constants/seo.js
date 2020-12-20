@@ -2,7 +2,7 @@ import { HOME_URL, ABOUT_URL, RESOURCES_URL, NEW_JOBPOST_URL } from './routes';
 
 const SEOTags = {
   [`${ABOUT_URL}`]: {
-    title: 'Télétaf | La plateforme trouver des CDIs en télétravail',
+    title: 'Télétaf | La plateforme pour trouver des CDIs en télétravail',
     description:
       'Des offres d’emplois en CDI et en télétravail pour francophones. Partout dans le monde.',
   },
@@ -19,7 +19,7 @@ const SEOTags = {
   },
   [`${RESOURCES_URL}`]: {
     title:
-      'Télétaf | Toutes les ressources pour réussir à travailler à distance sereinement',
+      'Télétaf | Toutes les ressources pour réussir à travailler à distance',
     description:
       'Retrouvez tous nos conseils pour bien travailler depuis la maison. Accompagnez vos salariés pour être productifs en télétravail.',
   },
