@@ -6,12 +6,15 @@ import PreviewImage from '../../public/preview.jpg';
 
 export function Layout({ children }) {
   const router = useRouter();
+  const { pathname } = router;
+  const pageUrl = `https://teletaf.io${pathname}`;
+  const imageUrl = `https://teletaf.io/${PreviewImage}`;
   const { description, title } = getSEOTags(router);
 
   return (
     <>
       <Head>
-        <link rel="canonical" href={`https://teletaf.io${router.pathname}`} />
+        <link rel="canonical" href={pageUrl} />
 
         {/* Primary Meta Tags */}
         <title>{title}</title>
@@ -21,30 +24,17 @@ export function Layout({ children }) {
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`https://teletaf.io${router.pathname}`}
-        />
+        <meta property="og:url" content={pageUrl} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta
-          property="og:image"
-          content={`https://teletaf.io/${PreviewImage}`}
-        />
+        <meta property="og:image" content={imageUrl} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        {/* <meta
-          name="twitter:url"
-          content={`https://teletaf.io${router.pathname}`}
-        /> */}
         <meta name="twitter:site" content="@teletafofficiel" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta
-          name="twitter:image"
-          content={`https://teletaf.io/${PreviewImage}`}
-        />
+        <meta name="twitter:image" content={imageUrl} />
       </Head>
       {children}
     </>
