@@ -15,6 +15,7 @@ import {
   ArrowWrapper,
   ArrowContainer,
   ArrowInnerContainer,
+  StyledH1,
 } from './JobPostsList.styles';
 import { Tag } from '../Tag';
 import DoubleArrow from '../../public/double_arrow.svg';
@@ -203,9 +204,9 @@ export const JobPostsList = ({ jobposts }) => {
 
   return (
     <Container>
-      <h1 style={{ height: 0, margin: 0, overflow: 'hidden' }}>
+      <StyledH1>
         Offres d’emploi en CDI et en télétravail pour francophones
-      </h1>
+      </StyledH1>
       <FilterWrapper>
         <FilterInnerContainer>
           <FilterContainer>

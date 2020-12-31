@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Container } from '../Components';
+import { Card, Container, HiddenH1 } from '../Components';
 import { articles } from './Articles';
 
 export function Resources() {
@@ -14,6 +14,10 @@ export function Resources() {
 
   return (
     <Container>
+      <HiddenH1>
+        Toutes les ressources pour l'employeur et le salarié pour réussir à
+        travailler à distance
+      </HiddenH1>
       {articles.map((article, i) => {
         const { content, title, subtitle } = article;
         return (

@@ -161,3 +161,9 @@ export const ArrowInnerContainer = styled.div`
     rgba(242, 245, 247, 1) 100%
   );
 `;
+
+export const StyledH1 = styled.h1`
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+`;

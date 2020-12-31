@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import { nunitoBold } from "../../../../theme/fonts";
+import styled, { css } from 'styled-components';
+import { nunitoBold } from '../../../../theme/fonts';
 
 const headerMarginCSS = css`
   margin: 8px 0;
@@ -20,4 +20,10 @@ export const H2 = styled.h2`
 export const H3 = styled.h3`
   ${nunitoBold}
   ${headerMarginCSS}
+`;
+
+export const HiddenH1 = styled.h1`
+  height: 0;
+  margin: 0;
+  overflow: hidden;
 `;
