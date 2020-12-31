@@ -15,8 +15,7 @@ export function Resources() {
   return (
     <Container>
       <HiddenH1>
-        Toutes les ressources pour l'employeur et le salarié pour réussir à
-        travailler à distance
+        Toutes les ressources pour réussir travailler à distance
       </HiddenH1>
       {articles.map((article, i) => {
         const { content, title, subtitle } = article;
