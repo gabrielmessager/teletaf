@@ -33,15 +33,15 @@ export function Layout({ children }) {
         />
 
         {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
-          property="twitter:url"
+          name="twitter:url"
           content={`https://teletaf.io${router.pathname}`}
         />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
         <meta
-          property="twitter:image"
+          name="twitter:image"
           content={`https://teletaf.io/${PreviewImage}`}
         />
       </Head>
