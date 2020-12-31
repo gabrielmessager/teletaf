@@ -1,3 +1,3 @@
 export function Testimonials() {
-  return ()
+  return null;
 }

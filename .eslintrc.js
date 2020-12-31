@@ -79,15 +79,4 @@ module.exports = {
     /** ssr rules */
     'react-hooks-ssr/react-hooks-global-ssr': ['warn'],
   },
-  settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.tsx', '.ts', '.js', '.json'], //allow interop imports
-    },
-    'import/resolver': {
-      'babel-module': {},
-      node: {
-        extensions: ['.js', '.tsx', '.ts', '.json'], //see https://github.com/benmosher/eslint-plugin-import/issues/1573#issuecomment-566347246
-      },
-    },
-  },
 };
