@@ -38,7 +38,7 @@ export function Layout({ children }) {
           name="twitter:url"
           content={`https://teletaf.io${router.pathname}`}
         /> */}
-        <meta name="twitter:site" content="@teletafofficiel"> - @teletafofficiel
+        <meta name="twitter:site" content="@teletafofficiel" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta
