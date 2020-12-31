@@ -203,7 +203,9 @@ export const JobPostsList = ({ jobposts }) => {
 
   return (
     <Container>
-      <h1 style={{ height: 0, margin: 0, overflow: 'hidden' }}>Test</h1>
+      <h1 style={{ height: 0, margin: 0, overflow: 'hidden' }}>
+        Offres d’emploi en CDI et en télétravail pour francophones
+      </h1>
       <FilterWrapper>
         <FilterInnerContainer>
           <FilterContainer>

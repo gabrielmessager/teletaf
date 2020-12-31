@@ -7,8 +7,7 @@ const SEOTags = {
       'Des offres d’emplois en CDI et en télétravail pour francophones. Partout dans le monde.',
   },
   [`${HOME_URL}`]: {
-    title:
-      'Télétaf | Offres d’emploi en CDI et en télétravail pour francophones',
+    title: 'Télétaf | Offres de CDIs en télétravail pour francophones',
     description:
       'Trouvez votre prochain CDI en télétravail en France ou dans des pays francophones. Consultez nos offres d’emplois et n’attendez plus pour trouver votre prochaine opportunité.',
   },
