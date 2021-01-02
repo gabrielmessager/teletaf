@@ -87,7 +87,12 @@ export function Header({ pathname }) {
             </ListElement>
           </UnorderedList>
         </nav>
-        <Button as="a" href={NEW_JOBPOST_URL} target="_self">
+        <Button
+          as="a"
+          href={NEW_JOBPOST_URL}
+          target="_self"
+          rel="noreferrer noopener"
+        >
           Publier mon annonce
         </Button>
       </Container>

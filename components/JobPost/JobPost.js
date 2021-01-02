@@ -135,7 +135,7 @@ export const JobPost = ({
           <Button
             className="JobPost__ApplyButton__Desktop"
             href={jobpost?.url}
-            rel="noopener"
+            rel="noreferrer noopener"
             // prevent job post from opening
             onClick={(e) => {
               e.stopPropagation();
@@ -232,7 +232,7 @@ export const JobPost = ({
           <ButtonContainer>
             <StyledButton
               href={jobpost?.url}
-              rel="noopener"
+              rel="noreferrer noopener"
               // prevent job post from opening
               onClick={(e) => {
                 e.stopPropagation();

@@ -1,10 +1,11 @@
 [] - keyboard shortcuts
+[] - fix flashing when clicking post new job
 [] - newsletter email bar - see if we can set the font size with css
 [x] - add job id in URL so jobpost is already opened when sharing
 [x] - add animation (page / div transition?) when applying / removing tag
 [] - finish counting # applicants
 [x] - test browsers
-[] - add resources
+[x] - add resources
 [] - font-size job description + in general mobile
 [] - add mailto to all emails
 [] - add data about if user applied to job
