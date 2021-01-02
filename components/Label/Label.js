@@ -1,5 +1,5 @@
-import React from "react"
-import { StyledLabel } from "./Label.styles"
+import React from 'react';
+import { StyledLabel } from './Label.styles';
 
 export function Label({ children, isRequired = true }) {
   return (
@@ -7,5 +7,5 @@ export function Label({ children, isRequired = true }) {
       {children}
       {isRequired && <>*</>}
     </StyledLabel>
-  )
+  );
 }

@@ -1,9 +1,9 @@
 [] - keyboard shortcuts
-[] - when tag is selected, add black background
+[] - newsletter email bar - see if we can set the font size with css
 [x] - add job id in URL so jobpost is already opened when sharing
 [x] - add animation (page / div transition?) when applying / removing tag
 [] - finish counting # applicants
-[] - test browsers
+[x] - test browsers
 [] - add resources
 [] - font-size job description + in general mobile
 [] - add mailto to all emails
@@ -19,6 +19,8 @@
 [x] - add page transition / loader
 [x] - indicate if cabinet de recrutement
 [x] - create preview when sharing
+
+https://github.com/vercel/next.js/tree/442fbfaa4d4e8205cf10c7e5d27b8f51b7a4bdc6/examples/with-socket.io
 
 
 SOURCES:

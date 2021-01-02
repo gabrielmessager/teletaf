@@ -26,43 +26,83 @@ import { useIsomorphicLayoutEffect } from '../../hooks/useIsomorphicLayoutEffect
 const FILTERS = {
   ARTS: {
     label: 'arts',
-    emoji: <span>🎨</span>,
+    emoji: (
+      <span role="img" aria-label="arts">
+        🎨
+      </span>
+    ),
   },
   GESTION: {
     label: 'gestion',
-    emoji: <span>🗄</span>,
+    emoji: (
+      <span role="img" aria-label="gestion">
+        🗄
+      </span>
+    ),
   },
   TOURISME: {
     label: 'tourisme',
-    emoji: <span>✈️</span>,
+    emoji: (
+      <span role="img" aria-label="tourisme">
+        ✈️
+      </span>
+    ),
   },
   LOGISTIQUE: {
     label: 'logistique',
-    emoji: <span>🏗</span>,
+    emoji: (
+      <span role="img" aria-label="logistique">
+        🏗
+      </span>
+    ),
   },
   NATURE: {
     label: 'nature',
-    emoji: <span>🌲</span>,
+    emoji: (
+      <span role="img" aria-label="nature">
+        🌲
+      </span>
+    ),
   },
   MARKETING: {
     label: 'marketing',
-    emoji: <span>📈</span>,
+    emoji: (
+      <span role="img" aria-label="marketing">
+        📈
+      </span>
+    ),
   },
   INDUSTRIE: {
     label: 'industrie',
-    emoji: <span>🏭</span>,
+    emoji: (
+      <span role="img" aria-label="industrie">
+        🏭
+      </span>
+    ),
   },
   BANQUE: {
     label: 'banque',
-    emoji: <span>🏦</span>,
+    emoji: (
+      <span role="img" aria-label="banque">
+        🏦
+      </span>
+    ),
   },
   IT: {
     label: 'it',
-    emoji: <span>💻</span>,
+    emoji: (
+      <span role="img" aria-label="it">
+        💻
+      </span>
+    ),
   },
   SANTE: {
     label: 'santé',
-    emoji: <span>🚑</span>,
+    emoji: (
+      <span role="img" aria-label="santé">
+        🚑
+      </span>
+    ),
   },
 };
 
@@ -163,6 +203,7 @@ export const JobPostsList = ({ jobposts }) => {
     const tagExist = selectedTags.indexOf(tag) > -1;
     if (tagExist) return selectedTags;
     showSpinner();
+    // reset tag if already selected
     if (selectedFilter) {
       setSelectedFilter(null);
     }
@@ -230,7 +271,12 @@ export const JobPostsList = ({ jobposts }) => {
           <ArrowWrapper>
             <ArrowInnerContainer>
               <ArrowContainer>
-                <img src={DoubleArrow} width="16" height="16" />
+                <img
+                  alt="scrolling arrows"
+                  src={DoubleArrow}
+                  width="16"
+                  height="16"
+                />
               </ArrowContainer>
             </ArrowInnerContainer>
           </ArrowWrapper>
@@ -277,7 +323,10 @@ export const JobPostsList = ({ jobposts }) => {
           <EmptyContainer>
             <Text>
               Nous continuons de chercher des offres d'emploi pour cette
-              catégorie. 🙂
+              catégorie.{' '}
+              <span role="img" aria-label="pas d'offres d'emploi">
+                🙂
+              </span>
             </Text>
           </EmptyContainer>
         ))}

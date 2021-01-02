@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { Button } from "../Button";
-import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts";
-import { theme, MEDIUM_DOWN } from "../../theme/theme";
+import styled from 'styled-components';
+import { Button } from '../Button';
+import { nunitoRegular } from '../../theme/fonts';
+import { theme, MEDIUM_DOWN } from '../../theme/theme';
 
 export const Container = styled.div`
   width: 100%;
@@ -45,7 +45,7 @@ export const InputContainer = styled.div`
 export const Text = styled.p`
   ${nunitoRegular};
   font-size: 18px;
-  color: ${(p) => (p.dark ? "#000" : "#fff")};
+  color: ${(p) => (p.dark ? '#000' : '#fff')};
   /* margin-right: 4px; */
   padding: 0 8px;
   letter-spacing: 0.4px;
@@ -72,12 +72,12 @@ export const MessageContainer = styled.div`
   bottom: ${(p) => `calc(${p.height}px + 16px)`};
   width: 100%;
   background-color: #fff;
-  height: ${(p) => (p.isActive ? "64px" : 0)};
-  opacity: ${(p) => (p.isActive ? "1" : 0)};
+  height: ${(p) => (p.isActive ? '64px' : 0)};
+  opacity: ${(p) => (p.isActive ? '1' : 0)};
   transition: all 0.2s ease-in;
   overflow: hidden;
 
   @media ${MEDIUM_DOWN} {
-    height: ${(p) => (p.isActive ? "51px" : 0)};
+    height: ${(p) => (p.isActive ? '51px' : 0)};
   }
 `;

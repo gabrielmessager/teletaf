@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
-import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts";
-import { easeCurves } from "../../theme/eases";
+import styled from 'styled-components';
+import { nunitoRegular } from '../../theme/fonts';
+import { easeCurves } from '../../theme/eases';
 
 export const Container = styled.div`
   position: relative;

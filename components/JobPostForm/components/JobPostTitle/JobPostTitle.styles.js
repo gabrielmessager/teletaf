@@ -1,5 +1,9 @@
-import styled from "styled-components"
-import { nunitoLight, nunitoRegular, nunitoBold } from "../../../../theme/fonts"
+import styled from 'styled-components';
+import {
+  nunitoLight,
+  nunitoRegular,
+  nunitoBold,
+} from '../../../../theme/fonts';
 
 export const InputContainer = styled.div`
   background-color: #fbfbfb;
@@ -8,7 +12,7 @@ export const InputContainer = styled.div`
   border: solid 1px #ddd;
   padding: 8px 0;
   margin-top: 4px;
-`
+`;
 
 export const Description = styled.p`
   ${nunitoLight};
@@ -18,4 +22,4 @@ export const Description = styled.p`
   letter-spacing: 0.4px;
   margin: 0;
   padding: 12px 0;
-`
+`;

@@ -1,16 +1,16 @@
-import { Formik, Form, Field, ErrorMessage, withFormik } from "formik"
-import React, { useState, useEffect } from "react"
-import * as Yup from "yup"
-import { FormSection, FormSubSectionContainer } from "../../../FormSection"
-import { Checkbox } from "../../../Checkbox"
-import { ColorPicker } from "../../../ColorPicker"
+import { Formik, Form, Field, ErrorMessage, withFormik } from 'formik';
+import React, { useState, useEffect } from 'react';
+import * as Yup from 'yup';
+import { FormSection, FormSubSectionContainer } from '../../../FormSection';
+import { Checkbox } from '../../../Checkbox';
+import { ColorPicker } from '../../../ColorPicker';
 
 import {
   Container,
   CheckboxContainer,
   Description,
   InputContainer,
-} from "./JobPostDesign.styles"
+} from './JobPostDesign.styles';
 
 const DEFAULT_COLOR = {
   rgb: {
@@ -19,18 +19,18 @@ const DEFAULT_COLOR = {
     g: 13,
     r: 214,
   },
-}
+};
 
 export function JobPostDesign({ setJobPostDesign }) {
-  const [showLogo, setShowLogo] = useState(false)
-  const [isRecurring, setIsRecurring] = useState(false)
-  const [shouldHiglight, setShouldHiglight] = useState(false)
-  const [color, setColor] = useState(DEFAULT_COLOR)
-  const [isOpen, setIsOpen] = useState(false)
+  const [showLogo, setShowLogo] = useState(false);
+  const [isRecurring, setIsRecurring] = useState(false);
+  const [shouldHiglight, setShouldHiglight] = useState(false);
+  const [color, setColor] = useState(DEFAULT_COLOR);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    setJobPostDesign({ showLogo, isRecurring, shouldHiglight, color })
-  }, [showLogo, isRecurring, shouldHiglight, color])
+    setJobPostDesign({ showLogo, isRecurring, shouldHiglight, color });
+  }, [showLogo, isRecurring, shouldHiglight, color]);
 
   return (
     <FormSection title="Personnalisez votre annonce">
@@ -91,7 +91,7 @@ export function JobPostDesign({ setJobPostDesign }) {
         </Description>
       </FormSubSectionContainer>
     </FormSection>
-  )
+  );
 }
 
 // const formikOptions = {

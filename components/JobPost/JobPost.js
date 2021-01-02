@@ -1,5 +1,4 @@
-import React, { useState, useRef } from 'react';
-import PropTypes from 'prop-types';
+import React, { useRef } from 'react';
 import formatDistanceToNowStrict from 'date-fns/formatDistanceToNowStrict';
 import { fr } from 'date-fns/locale';
 import {
@@ -41,6 +40,7 @@ export const JobPost = ({
   const ref = useRef(null);
   const refHeight = useRefHeight(ref);
 
+  // update # of applicants for jobpost
   async function onSubmit() {
     console.log('submitting');
     // if (!email) {
@@ -145,13 +145,23 @@ export const JobPost = ({
         <Description ref={ref}>
           {jobpost?.job_description && (
             <>
-              <h3>Description du poste 👩‍💻</h3>
+              <h3>
+                Description du poste{' '}
+                <span role="img" aria-label="description">
+                  👩‍💻
+                </span>
+              </h3>
               {jobpost?.job_description}
             </>
           )}
           {jobpost?.responsabilities?.length > 0 && (
             <>
-              <h3>Vos responsabilités 💼</h3>
+              <h3>
+                Vos responsabilités{' '}
+                <span role="img" aria-label="responsabilités">
+                  💼
+                </span>
+              </h3>
               <ul>
                 {jobpost?.responsabilities?.map((responsability, i) => (
                   <li key={i}>{responsability}</li>
@@ -161,7 +171,12 @@ export const JobPost = ({
           )}
           {jobpost?.requirements?.length > 0 && (
             <>
-              <h3>Votre expérience 🏆</h3>
+              <h3>
+                Votre expérience{' '}
+                <span role="img" aria-label="expérience">
+                  🏆
+                </span>
+              </h3>
               <ul>
                 {jobpost?.requirements?.map((requirement, i) => (
                   <li key={i}>{requirement}</li>
@@ -171,7 +186,12 @@ export const JobPost = ({
           )}
           {jobpost?.benefits?.length > 0 && (
             <>
-              <h3>Les avantages 👌</h3>
+              <h3>
+                Les avantages{' '}
+                <span role="img" aria-label="avantages">
+                  👌
+                </span>
+              </h3>
               <ul>
                 {jobpost?.benefits?.map((benefit, i) => (
                   <li key={i}>{benefit}</li>
@@ -181,7 +201,12 @@ export const JobPost = ({
           )}
           {jobpost?.salary?.length > 0 && (
             <>
-              <h3>Rémunération 💰</h3>
+              <h3>
+                Rémunération{' '}
+                <span role="img" aria-label="rémunération">
+                  💰
+                </span>
+              </h3>
               <ul>
                 <li>{jobpost?.salary}</li>
               </ul>
@@ -189,7 +214,12 @@ export const JobPost = ({
           )}
           {jobpost?.company_description && (
             <>
-              <h3>Qui sommes nous? 👋</h3>
+              <h3>
+                Qui sommes nous?{' '}
+                <span role="img" aria-label="présentation compagnie">
+                  👋
+                </span>
+              </h3>
               {jobpost?.company_description}
             </>
           )}
@@ -198,14 +228,13 @@ export const JobPost = ({
           </ButtonContainer>
           <h5>
             N'hésitez pas à mentionner que Télétaf vous a aidé à trouver cette
-            opportunité lorsque vous postulez 🙏
+            opportunité lorsque vous postulez{' '}
+            <span role="img" aria-label="mention télétaf">
+              🙏
+            </span>
           </h5>
         </Description>
       </DescriptionContainer>
     </div>
   );
-};
-
-JobPost.propTypes = {
-  jobpost: PropTypes.object.isRequired,
 };

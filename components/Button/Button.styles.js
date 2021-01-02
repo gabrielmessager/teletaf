@@ -31,7 +31,8 @@ export const StyledButton = styled.button`
     `
       pointer-events: none;
       opacity: 0.3;
-      background-color: ${(p) => p.backgroundColor || theme.colors.green050};
+      background-color: ${(props) =>
+        props.backgroundColor || theme.colors.green050};
     `}
 
   &:hover {

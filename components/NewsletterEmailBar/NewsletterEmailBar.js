@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Media from 'react-media';
 import { Input } from '../Input';
 import { Select } from '../Select';
-import { LARGE_MIN, theme } from '../../theme/theme';
+import { LARGE_MIN } from '../../theme/theme';
 import {
   Container,
   InputContainer,
@@ -16,7 +15,7 @@ import {
 import { useWindowWidth } from '../../hooks/useWindowWidth';
 import { useRefHeight } from '../../hooks/useRefHeight';
 
-export function NewsletterEmailBar({ onSubmit }) {
+export function NewsletterEmailBar() {
   const [fontSize, setFontSize] = useState(18);
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);

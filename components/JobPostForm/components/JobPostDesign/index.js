@@ -1,1 +1,1 @@
-export { JobPostDesign } from "./JobPostDesign"
+export { JobPostDesign } from './JobPostDesign';

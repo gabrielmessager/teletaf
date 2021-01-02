@@ -1,1 +1,1 @@
-export { JobPostTitle } from "./JobPostTitle"
+export { JobPostTitle } from './JobPostTitle';

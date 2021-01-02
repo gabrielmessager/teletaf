@@ -1,1 +1,0 @@
-export { HeaderImage } from "./HeaderImage"

@@ -1,1 +1,1 @@
-export { NewsletterEmailBar } from "./NewsletterEmailBar"
+export { NewsletterEmailBar } from './NewsletterEmailBar';
