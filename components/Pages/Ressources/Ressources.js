@@ -1,7 +1,6 @@
 import { Router, useRouter } from 'next/router';
-import React, { useState } from 'react';
-
-import { Card, Container, HiddenH1, H1 } from '../Components';
+import React from 'react';
+import { Card, Container, H1 } from '../Components';
 import { pages } from './Pages';
 
 export function Ressources() {
@@ -10,7 +9,7 @@ export function Ressources() {
   return (
     <Container>
       <H1 style={{ marginBottom: '32px' }}>
-        Toutes les ressources pour réussir travailler à distance
+        Toutes les ressources pour réussir à télétravailler
       </H1>
       {pages.map((article, i) => {
         const { title, subtitle, url } = article;

@@ -21,9 +21,3 @@ export const H3 = styled.h3`
   ${nunitoBold}
   ${headerMarginCSS}
 `;
-
-export const HiddenH1 = styled.h1`
-  height: 0;
-  margin: 0;
-  overflow: hidden;
-`;
