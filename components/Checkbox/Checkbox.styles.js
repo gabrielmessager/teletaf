@@ -1,16 +1,16 @@
-import styled from "styled-components"
-import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts"
+import styled from 'styled-components';
+import { nunitoRegular } from '../../theme/fonts';
 
 export const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
-  width: ${p => `${p.width}px`};
-  height: ${p => `${p.height}px`};
-`
+  width: ${(p) => `${p.width}px`};
+  height: ${(p) => `${p.height}px`};
+`;
 
 // Hide checkbox visually but remain accessible to screen readers.
 // Source: https://polished.js.org/docs/#hidevisually
-export const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
+export const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   border: 0;
   clip: rect(0 0 0 0);
   clippath: inset(50%);
@@ -21,19 +21,19 @@ export const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
   position: absolute;
   white-space: nowrap;
   width: 1px;
-`
+`;
 
 export const Icon = styled.svg`
   fill: none;
   stroke: white;
   stroke-width: 2px;
-`
+`;
 
 export const StyledCheckbox = styled.div`
   display: inline-block;
-  width: ${p => `${p.width}px`};
-  height: ${p => `${p.height}px`};
-  background: ${props => (props.checked ? "salmon" : "papayawhip")};
+  width: ${(p) => `${p.width}px`};
+  height: ${(p) => `${p.height}px`};
+  background: ${(props) => (props.checked ? 'salmon' : 'papayawhip')};
   border-radius: 4px;
   transition: all 150ms;
 
@@ -42,12 +42,12 @@ export const StyledCheckbox = styled.div`
   }
 
   ${Icon} {
-    visibility: ${props => (props.checked ? "visible" : "hidden")};
+    visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
   }
-`
+`;
 export const Label = styled.span`
   ${nunitoRegular};
   font-size: 16px;
   color: #444;
   margin-left: 8px;
-`
+`;

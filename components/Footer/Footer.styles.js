@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 import { theme, MEDIUM_DOWN } from '../../theme/theme';
-import { nunitoLight, nunitoRegular, nunitoBold } from '../../theme/fonts';
+import { nunitoRegular } from '../../theme/fonts';
 
 const MOBILE_OFFSET = 75;
 

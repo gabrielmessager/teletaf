@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Media from 'react-media';
 import Link from 'next/link';
 import {
   Container,
@@ -18,15 +17,10 @@ import {
   TagLine,
 } from './Header.styles';
 import Logo from '../../public/logo.png';
-import { Button } from '../../components/Button';
+import { Button } from '../Button';
 import { LARGE_MIN } from '../../theme/theme';
 import { useWindowWidth } from '../../hooks/useWindowWidth';
-import {
-  HOME_URL,
-  ABOUT_URL,
-  RESOURCES_URL,
-  NEW_JOBPOST_URL,
-} from '../../constants/routes';
+import { HOME_URL, ABOUT_URL, RESOURCES_URL } from '../../constants/routes';
 
 const MENU = {
   ABOUT: 'Pourquoi choisir Télétaf?',

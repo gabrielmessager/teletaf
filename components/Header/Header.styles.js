@@ -1,9 +1,6 @@
 import styled from 'styled-components';
-import Link from 'next/link';
-import { theme, MEDIUM_DOWN } from '../../theme/theme';
-import { nunitoLight, nunitoRegular, nunitoBold } from '../../theme/fonts';
+import { nunitoLight, nunitoRegular } from '../../theme/fonts';
 
-const MOBILE_OFFSET = 75;
 const HEADER_HEIGHT = 80;
 
 export const LogoContainer = styled.div`

@@ -1,11 +1,11 @@
-import React, { useState } from "react"
+import React from 'react';
 import {
   CheckboxContainer,
   HiddenCheckbox,
   Icon,
   StyledCheckbox,
   Label,
-} from "./Checkbox.styles"
+} from './Checkbox.styles';
 
 export function Checkbox({
   height = 16,
@@ -20,7 +20,7 @@ export function Checkbox({
         <CheckboxContainer width={width} height={height}>
           <HiddenCheckbox
             checked={checked}
-            onChange={evt => setChecked(evt.target.checked)}
+            onChange={(evt) => setChecked(evt.target.checked)}
           />
           <StyledCheckbox checked={checked} width={width} height={height}>
             <Icon viewBox="0 0 24 24">
@@ -31,5 +31,5 @@ export function Checkbox({
         <Label>{label}</Label>
       </label>
     </div>
-  )
+  );
 }

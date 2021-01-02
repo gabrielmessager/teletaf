@@ -1,5 +1,5 @@
-import React from "react"
-import { FormSectionContainer, Title } from "./FormSection.styles"
+import React from 'react';
+import { FormSectionContainer, Title } from './FormSection.styles';
 
 export function FormSection({ title, children }) {
   return (
@@ -7,5 +7,5 @@ export function FormSection({ title, children }) {
       <Title>{title}</Title>
       <>{children}</>
     </FormSectionContainer>
-  )
+  );
 }

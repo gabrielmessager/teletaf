@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts"
+import styled from 'styled-components';
+import { nunitoBold } from '../../theme/fonts';
 
-export const FormSubSectionContainer = styled.div``
+export const FormSubSectionContainer = styled.div``;
 
 export const FormSectionContainer = styled.div`
   border: solid 1px #ddd;
@@ -12,7 +12,7 @@ export const FormSectionContainer = styled.div`
   ${FormSubSectionContainer} + ${FormSubSectionContainer} {
     margin-top: 8px;
   }
-`
+`;
 export const Title = styled.span`
   ${nunitoBold};
   font-size: 14px;
@@ -23,4 +23,4 @@ export const Title = styled.span`
   transform: translate(-50%, calc(-50% - 16px));
   padding: 0 8px;
   background-color: white;
-`
+`;
