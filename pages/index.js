@@ -25,8 +25,6 @@ export async function getServerSideProps(context) {
 
   const isConnected = await client.isConnected(); // Returns true or false
   let jobposts;
-  console.log('context.query', context.query);
-  console.log('context.query.filter', context.query.filter);
 
   // get jobposts based on filters
   if (context.query.filter) {

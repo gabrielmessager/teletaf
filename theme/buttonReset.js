@@ -1,4 +1,4 @@
-import { css } from "styled-components"
+import { css } from 'styled-components';
 
 export const buttonReset = css`
   text-decoration: none;
@@ -11,4 +11,4 @@ export const buttonReset = css`
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   box-shadow: none;
-`
+`;

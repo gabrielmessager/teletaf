@@ -1,1 +1,1 @@
-export { JobPostForm } from "./JobPostForm"
+export { JobPostForm } from './JobPostForm';

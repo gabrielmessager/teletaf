@@ -1,1 +1,1 @@
-export { Thumb } from "./Thumb"
+export { Thumb } from './Thumb';

@@ -8,7 +8,7 @@ export const eases = {
 };
 
 export const cubicBezierEase = (list = []) =>
-  `cubic-bezier(${list.join(", ")})`;
+  `cubic-bezier(${list.join(', ')})`;
 
 export const easeCurves = new Proxy(eases, {
   get: (obj, prop) => {

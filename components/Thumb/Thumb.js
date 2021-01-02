@@ -1,10 +1,10 @@
-import React from "react"
+import React from 'react';
 import {
   Container,
   PrimaryThumb,
   StyledImage,
   ThumbWrapper,
-} from "./Thumb.styles"
+} from './Thumb.styles';
 
 export function Thumb({ alt, src, srcSet }) {
   return (
@@ -15,5 +15,5 @@ export function Thumb({ alt, src, srcSet }) {
         </Container>
       </PrimaryThumb>
     </ThumbWrapper>
-  )
+  );
 }

@@ -1,1 +1,1 @@
-export { NewJobPost } from "./NewJobPost";
+export { NewJobPost } from './NewJobPost';

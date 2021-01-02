@@ -9,7 +9,7 @@ export function Resources() {
     if (openedCards[cardId]) {
       return setOpenedCards({ ...openedCards, [cardId]: false });
     }
-    setOpenedCards({ ...openedCards, [cardId]: true });
+    return setOpenedCards({ ...openedCards, [cardId]: true });
   };
 
   return (

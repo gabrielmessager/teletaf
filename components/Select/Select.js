@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { StyledSelect } from "./Select.styles"
+import React, { useState } from 'react';
+import { StyledSelect } from './Select.styles';
 
 export function Select({ backgroundColor, color, fontSize, id, name, values }) {
   return (
@@ -10,11 +10,11 @@ export function Select({ backgroundColor, color, fontSize, id, name, values }) {
       name={name}
       id={id}
     >
-      {values.map(value => (
+      {values.map((value) => (
         <option key={value} value={value}>
           {value}
         </option>
       ))}
     </StyledSelect>
-  )
+  );
 }

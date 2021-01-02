@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, H1, H3, Paragraph } from '../Components';
 
 export function NewJobPost() {
   return (
     <Container>
-      <H1>Publier votre annonce sur Télétaf 📝</H1>
-      <H3>Contactez nous 📮</H3>
+      <H1>
+        Publier votre annonce sur Télétaf{' '}
+        <span role="img" aria-label="Publier annonce">
+          📝
+        </span>
+      </H1>
+      <H3>
+        Contactez-nous{' '}
+        <span role="img" aria-label="Contactez-nous">
+          📮
+        </span>
+      </H3>
       <Paragraph>
         Pour publier votre annonce, veuillez nous{' '}
         <b>
@@ -16,7 +26,12 @@ export function NewJobPost() {
         Nous serons en contact avec vous sous 24h ⏱ pour personaliser votre
         annonce et vous communiquer nos tarifs.
       </Paragraph>
-      <Paragraph>Merci d'avance! 🙏</Paragraph>
+      <Paragraph>
+        Merci d'avance!{' '}
+        <span role="img" aria-label="Merci">
+          🙏
+        </span>
+      </Paragraph>
     </Container>
   );
 }

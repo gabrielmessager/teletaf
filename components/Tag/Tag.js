@@ -17,7 +17,7 @@ export function Tag({
         <span>{children}</span>
         {withCloseButton && (
           <CloseButton onClick={onRemove}>
-            <img src={CloseButtonSVG} width="16" height="16" />
+            <img alt="close icon" src={CloseButtonSVG} width="16" height="16" />
           </CloseButton>
         )}
       </InnerContainer>

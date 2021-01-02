@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { nunitoLight, nunitoRegular, nunitoBold } from "../../theme/fonts";
+import styled from 'styled-components';
+import { nunitoRegular } from '../../theme/fonts';
 
 export const StyledSelect = styled.select`
   ${nunitoRegular}

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { theme } from "../../../../theme/theme";
+import styled from 'styled-components';
+import { theme } from '../../../../theme/theme';
 
 export const Container = styled.div`
   width: 900px;

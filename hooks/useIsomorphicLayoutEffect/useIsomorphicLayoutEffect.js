@@ -1,10 +1,10 @@
-import { useLayoutEffect, useEffect } from "react";
+import { useLayoutEffect, useEffect } from 'react';
 
 export function canUseDOM() {
   return (
-    typeof window !== "undefined" &&
-    typeof window.document !== "undefined" &&
-    typeof window.document.createElement !== "undefined"
+    typeof window !== 'undefined' &&
+    typeof window.document !== 'undefined' &&
+    typeof window.document.createElement !== 'undefined'
   );
 }
 

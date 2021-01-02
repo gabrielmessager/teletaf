@@ -6,7 +6,6 @@ import {
 } from '../../../../theme/fonts';
 import { easeCurves } from '../../../../theme/eases';
 import { theme } from '../../../../theme/theme';
-import { Button } from '../../../../components/Button';
 
 export const Container = styled.div`
   display: flex;
@@ -17,36 +16,6 @@ export const Container = styled.div`
   background-color: ${theme.colors.whiteA100};
   border-radius: ${(p) => (p.isOpen ? '0' : '4px')};
   margin-top: 8px;
-
-  .JobPost__ApplyButton__Desktop {
-    opacity: 0;
-    transition: opacity 0.2s ${easeCurves.primary};
-  }
-
-  &:hover {
-    background-color: ${theme.colors.gray020};
-    .JobPost__ApplyButton__Desktop {
-      opacity: 1;
-    }
-  }
-
-  .JobPost__TagsContainer__Desktop {
-    display: block;
-  }
-  .JobPost__TagsContainer__Mobile {
-    display: none;
-  }
-
-  ${theme.mediaQueries.mobile} {
-    .JobPost__TagsContainer__Mobile {
-      display: block;
-    }
-
-    .JobPost__ApplyButton__Desktop,
-    .JobPost__TagsContainer__Desktop {
-      display: none;
-    }
-  }
 `;
 
 export const JobContainer = styled.div`
@@ -63,16 +32,6 @@ export const JobContainer = styled.div`
   }
 `;
 
-export const ThumbContainer = styled.div`
-  min-width: 48px;
-  min-height: 48px;
-  width: 48px;
-  height: 48px;
-  background-color: ${theme.colors.whiteA100};
-  border-radius: 4px;
-  border: 1px solid ${theme.colors.gray020};
-`;
-
 export const JobTitle = styled.h2`
   ${nunitoBold}
   font-size: 18px;
@@ -85,27 +44,6 @@ export const CompanyName = styled.h3`
   font-size: 16px;
   margin: 0;
   margin-bottom: 4px;
-`;
-
-export const TagsContainer = styled.div`
-  padding: 0 16px;
-  width: 30%;
-
-  ${theme.mediaQueries.mobile} {
-    width: 100%;
-    padding: 4px 0;
-  }
-`;
-
-export const TimeAndButtonContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 30%;
-
-  ${theme.mediaQueries.mobile} {
-    width: 20%;
-  }
 `;
 
 export const DescriptionContainer = styled.div`
@@ -148,17 +86,4 @@ export const Description = styled.div`
   ${theme.mediaQueries.mobile} {
     padding: 16px 32px;
   }
-`;
-
-export const ButtonContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 32px;
-`;
-
-export const StyledButton = styled(Button)`
-  width: 200px;
-  height: 50px;
-  font-size: 18px;
 `;
