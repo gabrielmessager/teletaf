@@ -74,7 +74,7 @@ export function Header({ pathname }) {
                 <Bullet />
               </BulletContainer>
             </ListElement>
-            <ListElement isSelected={pathname === RESSOURCES_URL}>
+            <ListElement isSelected={pathname.includes(RESSOURCES_URL)}>
               <Link href={RESSOURCES_URL}>{MENU.RESSOURCES}</Link>
               <BulletContainer>
                 <Bullet />
@@ -122,7 +122,7 @@ export function Header({ pathname }) {
                 <Bullet />
               </BulletContainer>
             </ListElement>
-            <ListElement isSelected={pathname === RESSOURCES_URL}>
+            <ListElement isSelected={pathname.includes(RESSOURCES_URL)}>
               <Link href={RESSOURCES_URL}>{MENU.RESSOURCES}</Link>
               <BulletContainer>
                 <Bullet />
