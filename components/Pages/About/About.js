@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { RESSOURCES_URL } from '../../../constants/routes';
 import { Container, H1, H3, Paragraph } from '../Components';
 import { Footer } from '../../Footer';
 
@@ -15,8 +16,10 @@ export function About() {
       </H3>
       <Paragraph>
         Nous avons listé{' '}
-        <Link href="/resources">les différents avantages du télétravail</Link>.
-        N'attendez plus et consultez <Link href="/">nos offres</Link> dès
+        <Link href={RESSOURCES_URL}>
+          les différents avantages du télétravail
+        </Link>
+        . N'attendez plus et consultez <Link href="/">nos offres</Link> dès
         maintenant.
       </Paragraph>
       <H3>

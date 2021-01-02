@@ -1,10 +1,16 @@
 import React from 'react';
-import { H3, Paragraph } from '../../Components';
+import { Container, H1, H3, Paragraph } from '../../Components';
 
-export const remoteWorkForEmployer = {
-  content: () => (
-    <>
-      <H3 style={{ marginTop: 0 }}>
+export function RemoteWorkForEmployer() {
+  return (
+    <Container>
+      <H1>
+        Télétravail - Les avantages pour l’employeur
+        <span role="img" aria-label="Avantages employeur">
+          👩‍💼
+        </span>
+      </H1>
+      <H3>
         Embauchez où vous voulez{' '}
         <span role="img" aria-label="Embauchez où vous voulez">
           🌍
@@ -118,8 +124,6 @@ export const remoteWorkForEmployer = {
         Avec plus de flexibilité, vous attirez plus de diversité au sein de
         votre organisation.
       </Paragraph>
-    </>
-  ),
-  title: 'Télétravail',
-  subtitle: 'Les avantages pour l’employeur 👩‍💼',
-};
+    </Container>
+  );
+}

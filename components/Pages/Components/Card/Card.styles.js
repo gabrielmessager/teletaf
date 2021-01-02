@@ -16,6 +16,10 @@ export const Container = styled.div`
   background-color: ${theme.colors.whiteA100};
   border-radius: ${(p) => (p.isOpen ? '0' : '4px')};
   margin-top: 8px;
+
+  &:hover {
+    background-color: ${theme.colors.gray020};
+  }
 `;
 
 export const JobContainer = styled.div`

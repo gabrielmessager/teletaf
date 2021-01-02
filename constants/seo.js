@@ -1,10 +1,27 @@
-import { HOME_URL, ABOUT_URL, RESOURCES_URL, NEW_JOBPOST_URL } from './routes';
+import {
+  AVANTAGES_SALARIE_URL,
+  AVANTAGES_EMPLOYEUR_URL,
+  HOME_URL,
+  ABOUT_URL,
+  RESSOURCES_URL,
+  NEW_JOBPOST_URL,
+} from './routes';
 
 const SEOTags = {
   [`${ABOUT_URL}`]: {
     title: 'Télétaf | La plateforme pour trouver des CDIs en télétravail',
     description:
       'Des offres d’emplois en CDI et en télétravail pour francophones. Partout dans le monde.',
+  },
+  [`${AVANTAGES_SALARIE_URL}`]: {
+    title: 'Télétaf | Réussir à travailler à distance en tant que salarié',
+    description:
+      'Retrouvez tous nos conseils pour bien travailler depuis la maison. Devenir un pro du télétravail.',
+  },
+  [`${AVANTAGES_EMPLOYEUR_URL}`]: {
+    title: 'Télétaf | Réussir le travail à distance en tant qu’employeur',
+    description:
+      'Retrouvez tous nos conseils pour réussir la transition au télétravail dans votre entreprise.',
   },
   [`${HOME_URL}`]: {
     title: 'Télétaf | Offres de CDIs en télétravail pour francophones',
@@ -16,7 +33,7 @@ const SEOTags = {
     description:
       'Partagez vos offres en CDI avec notre communauté et trouvez votre futur employé en télétravail.',
   },
-  [`${RESOURCES_URL}`]: {
+  [`${RESSOURCES_URL}`]: {
     title:
       'Télétaf | Toutes les ressources pour réussir à travailler à distance',
     description:
