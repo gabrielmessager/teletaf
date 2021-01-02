@@ -147,7 +147,7 @@ export const JobPost = ({
       </Container>
       <DescriptionContainer height={refHeight} isOpen={!isOpen}>
         <Description ref={ref}>
-          {jobpost?.job_description && (
+          {jobpost?.description && (
             <>
               <h3>
                 Description du poste{' '}
@@ -155,7 +155,7 @@ export const JobPost = ({
                   👩‍💻
                 </span>
               </h3>
-              {jobpost?.job_description}
+              {jobpost?.description}
             </>
           )}
           {jobpost?.responsabilities?.length > 0 && (
