@@ -88,6 +88,8 @@ export const JobPost = ({
           <Thumb
             alt={`${jobpost?.company_name} logo`}
             src={jobpost?.company_logo}
+            width="48"
+            height="48"
           />
         </ThumbContainer>
         <JobContainer>

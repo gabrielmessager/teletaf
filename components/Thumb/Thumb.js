@@ -6,12 +6,18 @@ import {
   ThumbWrapper,
 } from './Thumb.styles';
 
-export function Thumb({ alt, src, srcSet }) {
+export function Thumb({ alt, height, src, srcSet, width }) {
   return (
     <ThumbWrapper>
       <PrimaryThumb>
         <Container>
-          <StyledImage alt={alt} src={src} srcSet={srcSet} />
+          <StyledImage
+            alt={alt}
+            height={height}
+            src={src}
+            srcSet={srcSet}
+            width={width}
+          />
         </Container>
       </PrimaryThumb>
     </ThumbWrapper>
