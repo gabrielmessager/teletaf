@@ -55,7 +55,12 @@ export function Header({ pathname }) {
       <Container>
         <Link href="/">
           <LogoContainer>
-            <StyledImage src={Logo} width="153" height="35" />
+            <StyledImage
+              alt="teletaf logo"
+              src={Logo}
+              width="153"
+              height="35"
+            />
             <TagLine>Trouvez un CDI en télétravail</TagLine>
           </LogoContainer>
         </Link>

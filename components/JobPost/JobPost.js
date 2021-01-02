@@ -85,7 +85,10 @@ export const JobPost = ({
     <div style={{ width: '100%' }}>
       <Container onClick={onClick} isOpen={isOpen} className={className}>
         <ThumbContainer>
-          <Thumb src={jobpost?.company_logo} />
+          <Thumb
+            alt={`${jobpost?.company_name} logo`}
+            src={jobpost?.company_logo}
+          />
         </ThumbContainer>
         <JobContainer>
           <CompanyName>
@@ -138,7 +141,7 @@ export const JobPost = ({
           >
             Postuler
           </Button>
-          <StyledImage src={Caret} width="27" height="15" />
+          <StyledImage alt="caret" src={Caret} width="27" height="15" />
         </TimeAndButtonContainer>
       </Container>
       <DescriptionContainer height={refHeight} isOpen={!isOpen}>
