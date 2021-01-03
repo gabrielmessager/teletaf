@@ -176,7 +176,7 @@ export const JobPostsList = ({ jobposts }) => {
     // close JobPost if currently opened
     if (openedJobPosts[jobPostId]) {
       setOpenedJobPosts({ ...openedJobPosts, [jobPostId]: false });
-      return router.push(`/`);
+      return queryParams ? router.push(`/?${queryParams}`) : router.push(`/`);
     }
     setOpenedJobPosts({ ...openedJobPosts, [jobPostId]: true });
     return queryParams

@@ -94,7 +94,15 @@ export const JobPost = ({
         </ThumbContainer>
         <JobContainer>
           <CompanyName>
-            <span>{jobpost?.company_name}</span>
+            <span>
+              <a
+                href={jobpost?.company_website}
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                {jobpost?.company_name}
+              </a>
+            </span>
             {/* {jobpost?.is_recruiting_agency && <>🕵️‍♀️</>} */}
           </CompanyName>
           <JobTitle>{jobpost?.title}</JobTitle>

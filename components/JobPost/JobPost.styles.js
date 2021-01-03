@@ -12,7 +12,6 @@ export const Container = styled.div`
   transition: background-color 0.3s ${easeCurves.primary};
   background-color: ${theme.colors.whiteA100};
   border-radius: ${(p) => (p.isOpen ? '4px 4px 0 0' : '4px')};
-
   margin-top: 8px;
 
   .JobPost__ApplyButton__Desktop {
@@ -85,6 +84,15 @@ export const CompanyName = styled.h3`
 
   span {
     margin-right: 4px;
+  }
+
+  span a {
+    text-decoration: none;
+    color: #000;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
