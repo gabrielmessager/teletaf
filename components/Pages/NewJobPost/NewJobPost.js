@@ -19,7 +19,11 @@ export function NewJobPost() {
       <Paragraph>
         Pour publier votre annonce, veuillez nous{' '}
         <b>
-          envoyer un email à l'addresse suivante: teletafofficiel@gmail.com.
+          envoyer un email à l'addresse suivante:{' '}
+          <a href="mailto:teletafofficiel@gmail.com?subject=Publier%20mon%20annonce%20sur%20Télétaf">
+            teletafofficiel@gmail.com
+          </a>
+          .
         </b>
       </Paragraph>
       <Paragraph>

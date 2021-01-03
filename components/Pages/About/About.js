@@ -37,7 +37,7 @@ export function About() {
       <H3>
         Consultez des offres récentes{' '}
         <span role="img" aria-label="Consultez des offres récentes">
-          🇫🆕
+          🆕
         </span>
       </H3>
       <Paragraph>
@@ -61,7 +61,7 @@ export function About() {
         l'offre est à l'étranger.
       </Paragraph>
       <H3>
-        Design simplifié
+        Design simplifié{' '}
         <span role="img" aria-label="Design simplifié">
           🙂
         </span>
@@ -91,9 +91,11 @@ export function About() {
         </span>
       </H3>
       <Paragraph>
-        N'hésitez pas à nous contacter à l'adresse suivante:
-        teletafofficiel@gmail.com. Nous ferons notre possible pour vous répondre
-        sous 24h{' '}
+        N'hésitez pas à nous contacter à l'adresse suivante:{' '}
+        <a href="mailto:teletafofficiel@gmail.com?subject=Question%20/%20suggestion%20pour%20Télétaf">
+          teletafofficiel@gmail.com
+        </a>
+        . Nous ferons notre possible pour vous répondre sous 24h
         <span role="img" aria-label="Contactez-nous">
           ⏱
         </span>

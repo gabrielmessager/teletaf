@@ -3,6 +3,8 @@ import Head from 'next/head';
 import { AnimatePresence, motion } from 'framer-motion';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
+
 import { theme } from '../theme/theme';
 import PreviewImage from '../public/preview.jpg';
 
@@ -67,6 +69,7 @@ export default function App({ Component, pageProps, router }) {
             key={`${router.asPath}`}
           > */}
           <Component {...pageProps} />
+          {/* <Footer /> */}
           {/* </motion.div>
         </AnimatePresence> */}
           {/* </motion.div> */}

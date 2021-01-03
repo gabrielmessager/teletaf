@@ -14,14 +14,14 @@ const SEOTags = {
       'Des offres d’emplois en CDI et en télétravail pour francophones. Partout dans le monde.',
   },
   [`${AVANTAGES_SALARIE_URL}`]: {
-    title: 'Télétaf | Réussir à travailler à distance en tant que salarié',
+    title: 'Télétaf | Télétravail: les avantages pour le salarié',
     description:
       'Retrouvez tous nos conseils pour bien travailler depuis la maison. Devenir un pro du télétravail.',
   },
   [`${AVANTAGES_EMPLOYEUR_URL}`]: {
-    title: 'Télétaf | Réussir le travail à distance en tant qu’employeur',
+    title: 'Télétaf | Télétravail: les avantages pour l’employeur',
     description:
-      'Retrouvez tous nos conseils pour réussir la transition au télétravail dans votre entreprise.',
+      'Retrouvez tous nos conseils pour réussir mettre en place le télétravail en entreprise.',
   },
   [`${HOME_URL}`]: {
     title: 'Télétaf | Offres de CDIs en télétravail pour francophones',
