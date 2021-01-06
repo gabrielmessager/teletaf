@@ -142,7 +142,7 @@ export const JobPost = ({
           <Time datetime={formattedDate}>{postedAt}</Time>
           <Button
             className="JobPost__ApplyButton__Desktop"
-            href={jobpost?.url}
+            href={jobpost?.url || `mailto:${jobpost?.email}`}
             rel="noreferrer noopener"
             // prevent job post from opening
             onClick={(e) => {
@@ -237,9 +237,20 @@ export const JobPost = ({
               {jobpost?.company_description}
             </>
           )}
+          {jobpost?.application_process && (
+            <>
+              <h3>
+                Vous êtes intéressé?{' '}
+                <span role="img" aria-label="Vous êtes intéressé">
+                  😀
+                </span>
+              </h3>
+              {jobpost?.application_process}
+            </>
+          )}
           <ButtonContainer>
             <StyledButton
-              href={jobpost?.url}
+              href={jobpost?.url || `mailto:${jobpost?.email}`}
               rel="noreferrer noopener"
               // prevent job post from opening
               onClick={(e) => {

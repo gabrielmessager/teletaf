@@ -1,20 +1,23 @@
 [] - keyboard shortcuts
-[] - fix flashing when clicking post new job
+[] - create new email list mailchimp
+[] - create new prod collection mongodb
+[] - add / finish footer
+[] - give immediate feedback when clicking navbar
 [] - newsletter email bar - see if we can set the font size with css
-[x] - add job id in URL so jobpost is already opened when sharing
-[x] - add animation (page / div transition?) when applying / removing tag
-[] - finish counting # applicants
-[x] - test browsers
-[x] - add resources
 [] - font-size job description + in general mobile
-[] - add mailto to all emails
+[] - finish counting # applicants
 [] - add data about if user applied to job
 [] - add section about working remotely
 [] - add best equipment to work remotely in resources
-[] - add link to company when clicking on name or thumbnail
 [] - Jobpost - show # views and # applications
 [] - report expired offer
-[] - add footer with contact and twitter
+[x] - fix flashing when clicking post new job
+[x] - add job id in URL so jobpost is already opened when sharing
+[x] - add animation (page / div transition?) when applying / removing tag
+[x] - test browsers
+[x] - add resources
+[x] - add mailto to all emails
+[x] - add link to company when clicking on name or thumbnail
 [x] - allow to close mobile menu by clicking wherever
 [x] - make mobile menu fixed
 [x] - add page transition / loader
@@ -25,6 +28,7 @@ https://github.com/vercel/next.js/tree/442fbfaa4d4e8205cf10c7e5d27b8f51b7a4bdc6/
 
 
 SOURCES:
+linkedin
 pole emploi
 profil culture
 indeed

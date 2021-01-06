@@ -129,6 +129,7 @@ export const DescriptionContainer = styled.div`
   background-color: ${theme.colors.whiteA100};
   border-radius: ${(p) => (p.isOpen ? '0' : '0 0 4px 4px')};
   will-change: transform, height;
+  cursor: default;
 
   h5 {
     ${nunitoLight}
