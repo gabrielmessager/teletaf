@@ -7,13 +7,13 @@ export const Container = styled.div`
     p.backgroundColor ? `solid 2px ${p.backgroundColor}` : 'solid 2px black'};
   border-radius: 4px;
   color: ${(p) => p.color || '#000'};
+  cursor: ${(p) => (p.onClick ? 'pointer' : 'default')};
   display: inline-block;
   ${nunitoExtraBold}
   font-size: 10px;
   margin: 0;
   margin-right: 4px;
   margin-top: 4px;
-  max-width: 140px;
   overflow: hidden;
   padding: 4px;
   text-overflow: ellipsis;

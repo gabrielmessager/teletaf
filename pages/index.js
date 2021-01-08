@@ -31,6 +31,7 @@ export async function getServerSideProps(context) {
     jobposts = await db
       .collection('jobs')
       .find({ category: context.query.filter })
+      .sort({ $natural: -1 }) // most recent posts first
       .toArray();
 
     return {
@@ -55,6 +56,7 @@ export async function getServerSideProps(context) {
       .find({
         $and: formattedQuery,
       })
+      .sort({ $natural: -1 }) // most recent posts first
       .toArray();
 
     return {
@@ -66,7 +68,11 @@ export async function getServerSideProps(context) {
   }
 
   // get all jobposts
-  jobposts = await db.collection('jobs').find({}).toArray();
+  jobposts = await db
+    .collection('jobs')
+    .find({})
+    .sort({ $natural: -1 }) // most recent posts first
+    .toArray();
 
   return {
     props: {
